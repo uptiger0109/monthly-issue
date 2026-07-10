@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>월간이슈 특별판 3탄 · 2026 농지법 개정 완전 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  /* 특별판 3탄 — 포레스트 그린 + 골드 악센트 */
+  --grn:#2D5A3D;--grn2:#1E4430;--grn3:#163624;
+  --grn-light:#3A7052;--grn-mid:#4E8B65;
+  --gold:#C8A84B;--gold2:#E2C97A;--gold3:#F0DFA0;
+  --sage:#8FB89A;--sage2:#B8D4C0;--sage3:#DFF0E5;
+  --ink:#1A1E18;--ink2:#3E4A3C;--ink3:#7A8878;--ink4:#B8C4B4;
+  --bg:#F4F8F2;--bg2:#EAF2E8;--bg3:#DDE8DA;--bd:#C8D8C4;--bd2:#B0C4AA;
+  --cream:#F7FAF5;
+  --warn:#C85A2A;--warn2:#E06B35;
+}
+html,body{width:100%;height:100%;background:var(--bg3);font-family:'Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased;}
+.viewer{width:100%;max-width:430px;margin:0 auto;height:100dvh;overflow-y:scroll;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--cream);}
+.viewer::-webkit-scrollbar{display:none;}
+.card{width:100%;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+
+/* ── STITCH ── */
+.stitch{width:calc(100% - 72px);height:1px;background:#000;margin:15px 36px 0;flex-shrink:0;}
+
+/* ── COVER ── */
+.c01{background:var(--grn);}
+.c01-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:54px 36px 48px;}
+.c01-rule{width:100%;height:2px;background:#fff;}
+.c01-monthly-wrap{display:flex;flex-direction:column;margin-top:20px;}
+.c01-line{display:flex;font-size:72px;font-weight:900;color:#fff;line-height:1.08;letter-spacing:-2px;font-family:'Noto Sans KR',sans-serif;}
+.char{width:72px;display:inline-flex;align-items:center;justify-content:center;}
+.c01-monthrow{display:flex;align-items:flex-end;gap:14px;margin-top:2px;}
+.c01-spline{color:var(--gold2);align-items:flex-end;}
+.c01-mon{font-size:44px;font-weight:900;color:var(--gold2);line-height:1;letter-spacing:-2px;margin-bottom:10px;margin-left:4px;}
+.c01-spwrap{display:flex;flex-direction:column;align-items:center;gap:6px;margin-left:12px;margin-bottom:14px;}
+.c01-spdate{font-size:14px;font-weight:500;color:rgba(255,255,255,.9);letter-spacing:.3px;}
+.c01-spbadge{padding:5px 26px 7px;background:var(--gold2);border-radius:999px;font-size:16px;font-weight:800;color:var(--grn3);letter-spacing:1px;white-space:nowrap;}
+.c01-rule2{width:100%;height:2px;background:rgba(255,255,255,.75);margin:22px 0 14px;}
+.c01-2026{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:400;color:rgba(255,255,255,.55);width:100%;display:flex;justify-content:space-between;}
+.c01-hook{font-size:30px;font-weight:900;color:#fff;line-height:1.3;letter-spacing:-1px;word-break:keep-all;margin-top:34px;}
+.c01-hook em{font-style:normal;color:var(--gold2);}
+.c01-badge-row{display:flex;align-items:center;gap:8px;margin-top:20px;flex-wrap:wrap;}
+.c01-badge{padding:4px 16px 6px;border:1.3px solid var(--gold2);border-radius:999px;background:transparent;font-size:14px;font-weight:700;color:var(--gold2);display:inline-flex;align-items:center;}
+
+/* ── ISSUE TAG ── */
+.tag-row{margin-top:32px;display:flex;align-items:center;gap:10px;}
+.tag-dot{width:18px;height:18px;border-radius:50%;border:1px solid var(--grn);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tag-txt{font-size:18px;font-weight:400;color:var(--ink2);}
+
+/* ── WARN BADGE ── */
+.warn-badge{display:inline-block;background:var(--warn);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;}
+.grn-badge{display:inline-block;background:var(--grn);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;}
+.gold-badge{display:inline-block;background:var(--gold);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--grn3);margin-bottom:16px;border-radius:999px;}
+
+/* ── CTA ── */
+.c-cta-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:46px 36px 0;gap:0;}
+.c-cta-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:rgba(255,255,255,.65);letter-spacing:2px;margin-bottom:14px;}
+.c-cta-headline{font-size:50px;font-weight:900;color:#fff;line-height:1.04;letter-spacing:-2px;word-break:keep-all;margin-bottom:28px;}
+.c-cta-sub{font-size:18px;font-weight:400;color:rgba(255,255,255,.92);line-height:1.7;word-break:keep-all;margin-bottom:32px;}
+.c-cta-sub strong{font-weight:700;color:var(--gold2);}
+.c-cta-footer{padding:22px 36px 28px;display:flex;align-items:center;justify-content:flex-start;flex-shrink:0;}
+.c-cta-footer p{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.5px;text-align:left;line-height:1.4;}
+
+/* ── ARROW SVG ── */
+.arr-grn{stroke:var(--grn);}
+.arr-warn{stroke:var(--warn);}
+</style>
+</head>
+<body>
+<div class="viewer" id="viewer">
+
+
+<!-- ══════════════════════════
+  CARD 01 · COVER
+══════════════════════════ -->
+<div class="card c01">
+  <div class="c01-body">
+    <div class="c01-rule"></div>
+    <div class="c01-monthly-wrap">
+      <div class="c01-line"><span class="char">월</span><span class="char">간</span><span class="char">이</span><span class="char">슈</span></div>
+      <div style="font-size:72px;font-weight:800;color:#fff;font-family:'Noto Sans KR',sans-serif;letter-spacing:0px;line-height:1.08;transform:scaleX(1.05);transform-origin:left;display:inline-block;margin-left:3px;">MONEY</div>
+      <div class="c01-line c01-spline">
+        <span class="char">특</span><span class="char">별</span><span class="char">판</span><span class="c01-spwrap"><span class="c01-spdate">2026. 07월</span><span class="c01-spbadge">3탄</span></span>
+      </div>
+    </div>
+    <div class="c01-rule2"></div>
+    <div class="c01-2026"><span>2</span><span>0</span><span>2</span><span>6</span><span>&nbsp;</span><span>m</span><span>o</span><span>n</span><span>t</span><span>h</span><span>l</span><span>y</span><span>&nbsp;</span><span>i</span><span>s</span><span>s</span><span>u</span><span>e</span><span>·</span><span>s</span><span>p</span><span>e</span><span>c</span><span>i</span><span>a</span><span>l</span><span>&nbsp;</span><span>e</span><span>d</span><span>i</span><span>t</span><span>i</span><span>o</span><span>n</span></div>
+    <p class="c01-hook">대표님,<br>혹시 <em>농지</em> 갖고<br>계세요?</p>
+    <div class="c01-badge-row">
+      <span class="c01-badge">처분명령 의무화</span>
+      <span class="c01-badge">이행강제금 25%</span>
+      <span class="c01-badge">드론 전수조사</span>
+      <span class="c01-badge">양도세 절세</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 02 · 왜 지금인가
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch" style="margin-top:75px;"></div>
+  <div style="flex:1;display:flex;flex-direction:column;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">01</div>
+      <div class="warn-badge">🚨 지금 당장 확인하세요</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+        <span style="font-size:88px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;">30년</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink3);letter-spacing:2px;">REFORM</span>
+      </div>
+      <h2 style="font-size:29px;font-weight:900;color:var(--grn);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">농지법이 30년 만에<br>완전히 바뀌었습니다</h2>
+      <p style="font-size:17px;color:var(--ink2);line-height:1.6;word-break:keep-all;margin-bottom:20px;">2026년 5월 7일, 농지법 일부 개정안이 국회 본회의를 통과했습니다. <span style="font-weight:700;color:var(--ink);">농사 안 짓는 사람은 농지를 못 갖는다</span>는 원칙을 30년 만에 실효성 있게 작동시킨다는 선언입니다.</p>
+
+      <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:20px;">
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--grn);line-height:1.5;">①</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;"><b style="color:var(--ink);font-weight:700;">전수조사 법제화</b> — 드론·위성 데이터로 전국 15만 건 심층조사, 8월 시행</span>
+        </div>
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--grn);line-height:1.5;">②</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;"><b style="color:var(--ink);font-weight:700;">처분명령 의무화</b> — 지자체 재량 없음, 위반 적발 즉시 처분명령 발동</span>
+        </div>
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--warn);line-height:1.5;">③</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;"><b style="color:var(--warn);font-weight:700;">이행강제금 연 25%</b> — 10억 농지 기준 연 2.5억, 4년이면 농지 가격 전액</span>
+        </div>
+      </div>
+
+      <div style="background:var(--grn);border-radius:10px;padding:14px 18px;">
+        <div style="font-size:15px;font-weight:700;color:var(--gold2);margin-bottom:4px;">⚡ 8월이 기준점입니다</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.88);line-height:1.55;">드론 심층조사가 8월부터 본격 시행됩니다. 그 전에 내 농지 상황을 반드시 파악해야 합니다.</div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" class="arr-grn" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" class="arr-grn" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">30년 만의 농지법 대수술</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 03 · 내 농지 유형 진단
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">02</div>
+      <div class="grn-badge">📋 유형 진단</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+        <span style="font-size:88px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;">6가지</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink3);letter-spacing:2px;">TYPES</span>
+      </div>
+      <h2 style="font-size:29px;font-weight:900;color:var(--grn);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">내 농지는<br>어느 유형인가요?</h2>
+      <p style="font-size:16px;color:var(--ink2);line-height:1.55;word-break:keep-all;margin-bottom:18px;">농지를 어떻게 보유하느냐에 따라 결과가 완전히 달라집니다. 먼저 내 유형부터 파악하는 것이 출발점입니다.</p>
+
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:4px;">
+        <div style="border-left:4px solid var(--grn-mid);padding:10px 14px;background:var(--bg2);border-radius:0 8px 8px 0;">
+          <div style="font-size:14px;font-weight:700;color:var(--grn);margin-bottom:2px;">✅ 유형1 — 원칙적 안전</div>
+          <div style="font-size:15px;color:var(--ink2);line-height:1.45;">1996년 1월 1일 이전 취득 농지 — 소유제한·처분명령·이행강제금 모두 적용 제외</div>
+        </div>
+        <div style="border-left:4px solid var(--warn2);padding:10px 14px;background:#FEF3EC;border-radius:0 8px 8px 0;">
+          <div style="font-size:14px;font-weight:700;color:var(--warn);margin-bottom:2px;">⚠️ 유형2 — 위험</div>
+          <div style="font-size:15px;color:var(--ink2);line-height:1.45;">1996년 이후 취득 · 비자경 농지 — 처분 4단계 절차 진행 대상</div>
+        </div>
+        <div style="border-left:4px solid #C0392B;padding:10px 14px;background:#FDECEA;border-radius:0 8px 8px 0;">
+          <div style="font-size:14px;font-weight:700;color:#C0392B;margin-bottom:2px;">🚨 유형3 — 최고 위험</div>
+          <div style="font-size:15px;color:var(--ink2);line-height:1.45;">차명(명의신탁) 농지 — 형사처벌 + 부동산실명법 과징금(가액의 30%)</div>
+        </div>
+        <div style="border-left:4px solid var(--grn-mid);padding:10px 14px;background:var(--bg2);border-radius:0 8px 8px 0;">
+          <div style="font-size:14px;font-weight:700;color:var(--grn);margin-bottom:2px;">✅ 유형4 — 합법(조건부)</div>
+          <div style="font-size:15px;color:var(--ink2);line-height:1.45;">상속 농지 — 면적 상한 폐지(개정), 단 비자경 시 농어촌공사 위탁 의무화</div>
+        </div>
+        <div style="border-left:4px solid var(--warn2);padding:10px 14px;background:#FEF3EC;border-radius:0 8px 8px 0;">
+          <div style="font-size:14px;font-weight:700;color:var(--warn);margin-bottom:2px;">⚠️ 유형5 — 불법 임대</div>
+          <div style="font-size:15px;color:var(--ink2);line-height:1.45;">동네 농부에게 빌려준 농지 — 임대료 받든 안 받든 동일하게 위법</div>
+        </div>
+        <div style="border-left:4px solid #C0392B;padding:10px 14px;background:#FDECEA;border-radius:0 8px 8px 0;">
+          <div style="font-size:14px;font-weight:700;color:#C0392B;margin-bottom:2px;">🚨 유형6 — 불법 전용</div>
+          <div style="font-size:15px;color:var(--ink2);line-height:1.45;">컨테이너·창고·주차장 설치 농지 — 드론 8월 전수 적발 예정</div>
+        </div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" class="arr-grn" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" class="arr-grn" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">내 유형을 먼저 파악하세요</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 04 · 이행강제금의 실체
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">03</div>
+      <div class="warn-badge">💸 이행강제금</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+        <span style="font-size:88px;font-weight:600;color:var(--warn);line-height:.9;letter-spacing:-4px;">25%</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink3);letter-spacing:2px;">PER YEAR</span>
+      </div>
+      <h2 style="font-size:29px;font-weight:900;color:var(--grn);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">4년 버티면<br>농지가 사라집니다</h2>
+      <p style="font-size:17px;color:var(--ink2);line-height:1.6;word-break:keep-all;margin-bottom:20px;">농지법 제63조. 처분명령 미이행 시 <span style="font-weight:700;color:var(--warn);">감정가·공시지가 중 높은 금액의 25%를 매년 반복 부과</span>합니다. 상한이 없습니다.</p>
+
+      <div style="background:var(--grn);border-radius:12px;padding:18px 20px;margin-bottom:16px;">
+        <div style="font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:1px;margin-bottom:14px;">10억 농지 기준 시뮬레이션</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(255,255,255,.08);border-radius:6px;">
+            <span style="font-size:15px;color:rgba(255,255,255,.8);">1년차</span>
+            <span style="font-size:17px;font-weight:700;color:#fff;">–2.5억 원</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(255,255,255,.08);border-radius:6px;">
+            <span style="font-size:15px;color:rgba(255,255,255,.8);">2년차</span>
+            <span style="font-size:17px;font-weight:700;color:#fff;">–5.0억 원</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(255,255,255,.08);border-radius:6px;">
+            <span style="font-size:15px;color:rgba(255,255,255,.8);">3년차</span>
+            <span style="font-size:17px;font-weight:700;color:#fff;">–7.5억 원</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--gold);border-radius:6px;">
+            <span style="font-size:15px;font-weight:700;color:var(--grn3);">4년차</span>
+            <span style="font-size:17px;font-weight:900;color:var(--grn3);">농지 가격 전액 소진</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size:15px;color:var(--ink3);line-height:1.55;">"안 팔리니까 버티면 된다"는 <span style="font-weight:700;color:var(--warn);">절대 금물</span>입니다. 처분도 안 되고 위탁도 거절되는 산골 농지는 매년 25%씩 소진됩니다.</div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" class="arr-grn" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" class="arr-grn" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">버티면 농지가 사라집니다</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 05 · 처분명령 4단계 절차
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">04</div>
+      <div class="grn-badge">📬 절차 안내</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+        <span style="font-size:88px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;">4단계</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink3);letter-spacing:2px;">PROCESS</span>
+      </div>
+      <h2 style="font-size:29px;font-weight:900;color:var(--grn);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">처분명령은<br>이렇게 진행됩니다</h2>
+
+      <div style="display:flex;flex-direction:column;gap:0;margin-bottom:18px;">
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--bd);">
+          <div style="flex-shrink:0;width:32px;height:32px;background:var(--grn);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#fff;margin-top:2px;">1</div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:var(--ink);margin-bottom:3px;">처분의무 통지</div>
+            <div style="font-size:15px;color:var(--ink2);line-height:1.5;">지자체가 이용 실태 조사 후 통지 발송. <span style="font-weight:700;color:var(--warn);">의견 제출 기한·청문 날짜를 즉시 확인</span>하세요. 방치하면 자동 진행됩니다.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--bd);">
+          <div style="flex-shrink:0;width:32px;height:32px;background:var(--grn-mid);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#fff;margin-top:2px;">2</div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:var(--ink);margin-bottom:3px;">1년 유예기간</div>
+            <div style="font-size:15px;color:var(--ink2);line-height:1.5;">이 기간 내 영농 재개·농지은행 위탁·매도 중 하나를 완료해야 합니다. 청문에서 영농 재개를 입증하면 처분명령 자체를 막을 수 있습니다(행정법원 판례).</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--bd);">
+          <div style="flex-shrink:0;width:32px;height:32px;background:var(--warn);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#fff;margin-top:2px;">3</div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:var(--ink);margin-bottom:3px;">처분명령 발령 (농지법 제11조)</div>
+            <div style="font-size:15px;color:var(--ink2);line-height:1.5;">발령 후 6개월 내 처분 요구. 농어촌공사 매도위탁 계약 체결 시 최대 3년 유예 가능(제12조).</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;">
+          <div style="flex-shrink:0;width:32px;height:32px;background:#C0392B;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#fff;margin-top:2px;">4</div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#C0392B;margin-bottom:3px;">이행강제금 매년 25% 반복</div>
+            <div style="font-size:15px;color:var(--ink2);line-height:1.5;">형사처벌(불법 임대 2천만 원 이하 벌금)과 병행 가능. 가족 법인으로 이전해도 처분명령이 <span style="font-weight:700;">그대로 승계</span>됩니다.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" class="arr-grn" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" class="arr-grn" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">1년 유예가 마지막 기회입니다</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 06 · 불법 임대의 함정
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">05</div>
+      <div class="warn-badge">⚠️ 불법 임대</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+        <span style="font-size:72px;font-weight:600;color:var(--warn);line-height:.9;letter-spacing:-3px;">소작</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink3);letter-spacing:2px;">ILLEGAL</span>
+      </div>
+      <h2 style="font-size:29px;font-weight:900;color:var(--grn);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:14px;">동네 농부에게<br>빌려줬다면 위법입니다</h2>
+      <p style="font-size:16px;color:var(--ink2);line-height:1.6;word-break:keep-all;margin-bottom:18px;">농지법 제23조: 임대차·사용대차 원칙 금지. <span style="font-weight:700;color:var(--warn);">임대료를 받든 안 받든 동일하게 금지</span>됩니다. 인심 쓴다고 공짜로 빌려줘도 마찬가지입니다.</p>
+
+      <div style="background:var(--bg2);border-radius:10px;padding:14px 16px;margin-bottom:16px;">
+        <div style="font-size:14px;font-weight:700;color:var(--grn);margin-bottom:10px;">합법 임대 예외 5가지만 가능</div>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div style="font-size:14px;color:var(--ink2);display:flex;gap:8px;"><span style="color:var(--grn);font-weight:700;">①</span><span>1996년 이전 취득 농지</span></div>
+          <div style="font-size:14px;color:var(--ink2);display:flex;gap:8px;"><span style="color:var(--grn);font-weight:700;">②</span><span>60세 이상 + 5년 이상 자경 + 농지 소재 시군 거주</span></div>
+          <div style="font-size:14px;color:var(--ink2);display:flex;gap:8px;"><span style="color:var(--grn);font-weight:700;">③</span><span>징집·질병·공직 등 일시적 부득이한 사유</span></div>
+          <div style="font-size:14px;color:var(--ink2);display:flex;gap:8px;"><span style="color:var(--grn);font-weight:700;">④</span><span><b>농지은행 위탁 임대</b> (가장 현실적인 합법화 경로)</span></div>
+          <div style="font-size:14px;color:var(--ink2);display:flex;gap:8px;"><span style="color:var(--grn);font-weight:700;">⑤</span><span>주말체험영농 1,000㎡ 미만</span></div>
+        </div>
+      </div>
+
+      <div style="background:#FDECEA;border-radius:10px;padding:14px 16px;">
+        <div style="font-size:14px;font-weight:700;color:#C0392B;margin-bottom:6px;">🚁 신고 포상금 신설 — 임차인도 신고 가능</div>
+        <div style="font-size:14px;color:var(--ink2);line-height:1.55;">드론 현장조사 + 이장 인터뷰 + 농지대장 불일치 3가지 경로로 적발됩니다. 개정으로 임차인이 직접 신고해도 포상금이 지급됩니다. 지금 개인 간 불법 임대 중이라면 즉시 <span style="font-weight:700;">농지은행 위탁 전환</span>이 답입니다.</div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" class="arr-grn" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" class="arr-grn" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">농지은행 위탁으로 즉시 합법화</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 07 · 상속 농지 전략 (상담 유도형)
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">06</div>
+      <div class="gold-badge">🏡 상속 농지</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+        <span style="font-size:88px;font-weight:600;color:var(--grn);line-height:.9;letter-spacing:-4px;">출구</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink3);letter-spacing:2px;">EXISTS</span>
+      </div>
+      <h2 style="font-size:29px;font-weight:900;color:var(--grn);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:14px;">상속 농지에도<br>반드시 출구가 있습니다</h2>
+      <p style="font-size:16px;color:var(--ink2);line-height:1.6;word-break:keep-all;margin-bottom:20px;">이번 개정으로 상속 농지 <span style="font-weight:700;color:var(--grn);">면적 상한(1만㎡)이 폐지</span>됐습니다. 처분 대상이 되더라도 무조건 팔아야 하는 것은 아닙니다. <span style="font-weight:700;color:var(--ink);">상황에 따라 선택할 수 있는 경로가 분명히 존재합니다.</span></p>
+
+      <!-- 출구가 있다는 신호만 제시, 구체적 방법은 상담으로 -->
+      <div style="background:var(--grn);border-radius:14px;padding:22px 20px;margin-bottom:16px;">
+        <div style="font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:1.5px;margin-bottom:16px;">출구 전략은 이런 기준으로 갈립니다</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:16px;">📅</span>
+            </div>
+            <div>
+              <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:2px;">취득 시점</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.4;">1996년 이전이냐 이후냐에 따라 적용 법령이 완전히 달라집니다</div>
+            </div>
+          </div>
+          <div style="height:1px;background:rgba(255,255,255,.12);"></div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:16px;">🌾</span>
+            </div>
+            <div>
+              <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:2px;">부모님 자경 기간</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.4;">몇 년을 직접 경작했느냐가 양도세 감면 가능 여부를 결정합니다</div>
+            </div>
+          </div>
+          <div style="height:1px;background:rgba(255,255,255,.12);"></div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:16px;">📍</span>
+            </div>
+            <div>
+              <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:2px;">농지 위치와 현황</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.4;">용도지역·접도 조건·임차 수요 등에 따라 활용 가능한 전략이 달라집니다</div>
+            </div>
+          </div>
+          <div style="height:1px;background:rgba(255,255,255,.12);"></div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:16px;">⏱️</span>
+            </div>
+            <div>
+              <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:2px;">상속 후 경과 기간</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.4;">상속 시점부터 얼마나 지났느냐에 따라 선택할 수 있는 출구가 줄어듭니다</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--gold3);border-radius:10px;padding:14px 16px;">
+        <div style="font-size:15px;font-weight:700;color:var(--grn3);margin-bottom:5px;">💡 이것만 기억하세요</div>
+        <div style="font-size:14px;color:var(--grn2);line-height:1.6;">출구는 반드시 있습니다. 단, <span style="font-weight:700;">상황마다 최선의 경로가 다릅니다.</span> 어떤 전략이 적합한지는 농지의 조건과 보유 이력을 함께 보고 판단해야 합니다.</div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" class="arr-grn" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" class="arr-grn" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">내 상황에 맞는 출구를 찾아드립니다</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 08 · 양도세 비교
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">07</div>
+      <div class="grn-badge">💰 양도소득세</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+        <span style="font-size:72px;font-weight:600;color:var(--warn);line-height:.9;letter-spacing:-3px;">1억4천</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink3);letter-spacing:2px;">VS 1천</span>
+      </div>
+      <h2 style="font-size:29px;font-weight:900;color:var(--grn);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:14px;">같은 농지,<br>세금이 14배 다릅니다</h2>
+      <p style="font-size:16px;color:var(--ink2);line-height:1.6;word-break:keep-all;margin-bottom:18px;">불법 임대차나 방치가 확인되면 양도세 감면이 전액 부인되고 <span style="font-weight:700;color:var(--warn);">비사업용 토지 중과세(+10%p)까지 겹칩니다.</span></p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;">
+        <div style="background:#FDECEA;border-radius:10px;padding:16px 14px;display:flex;flex-direction:column;gap:6px;">
+          <div style="font-size:12px;font-weight:700;color:#C0392B;letter-spacing:.5px;">자경 입증 실패</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.4;">취득 1억 → 양도 5억<br>차익 4억, 중과세 적용</div>
+          <div style="height:1px;background:#FACAC5;margin:4px 0;"></div>
+          <div style="font-size:24px;font-weight:900;color:#C0392B;letter-spacing:-1px;">약 1억 4천</div>
+          <div style="font-size:12px;color:#C0392B;">만원 납부</div>
+        </div>
+        <div style="background:var(--bg2);border-radius:10px;padding:16px 14px;display:flex;flex-direction:column;gap:6px;">
+          <div style="font-size:12px;font-weight:700;color:var(--grn);letter-spacing:.5px;">8년 자경 감면</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.4;">동일 조건<br>자경 입증 + 재촌 충족</div>
+          <div style="height:1px;background:var(--bd);margin:4px 0;"></div>
+          <div style="font-size:24px;font-weight:900;color:var(--grn);letter-spacing:-1px;">약 1천</div>
+          <div style="font-size:12px;color:var(--grn);">만원 납부</div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg2);border-radius:10px;padding:14px 16px;margin-bottom:6px;">
+        <div style="font-size:14px;font-weight:700;color:var(--grn);margin-bottom:8px;">자경 입증 핵심 서류</div>
+        <div style="display:flex;flex-direction:column;gap:5px;">
+          <div style="font-size:14px;color:var(--ink2);">• 농협 조합원 가입 + 출자금 영수증</div>
+          <div style="font-size:14px;color:var(--ink2);">• 농자재(비료·농약·종자) 구입 영수증</div>
+          <div style="font-size:14px;color:var(--ink2);">• 농업경영체 등록 확인서</div>
+          <div style="font-size:14px;color:var(--ink2);">• 현장 사진 (날짜 포함, 경계 지물 노출)</div>
+        </div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" class="arr-grn" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" class="arr-grn" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">서류 하나가 수천만 원을 바꿉니다</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 09 · 합법화 전략 (상담 유도형)
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">08</div>
+      <div class="grn-badge">🚪 합법화 전략</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+        <span style="font-size:88px;font-weight:600;color:var(--grn);line-height:.9;letter-spacing:-4px;">방법</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink3);letter-spacing:2px;">EXISTS</span>
+      </div>
+      <h2 style="font-size:29px;font-weight:900;color:var(--grn);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:14px;">겁먹고 팔면 손해,<br>방법을 알면 수익</h2>
+      <p style="font-size:16px;color:var(--ink2);line-height:1.6;word-break:keep-all;margin-bottom:20px;">처분의무 통지서를 받았다고 무조건 팔아야 하는 것이 아닙니다. <span style="font-weight:700;color:var(--ink);">농지의 상태·위치·보유 이력에 따라 선택할 수 있는 합법화 경로가 다릅니다.</span></p>
+
+      <div style="background:var(--grn);border-radius:14px;padding:22px 20px;margin-bottom:16px;">
+        <div style="font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:1.5px;margin-bottom:16px;">합법화 경로는 이런 조건으로 갈립니다</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:16px;">🌱</span>
+            </div>
+            <div>
+              <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:2px;">현재 영농 가능 여부</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.4;">직접 경작을 재개할 수 있는 상황인지에 따라 처분명령 자체를 막을 수도 있습니다</div>
+            </div>
+          </div>
+          <div style="height:1px;background:rgba(255,255,255,.12);"></div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:16px;">🏦</span>
+            </div>
+            <div>
+              <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:2px;">농지 임차 수요 여부</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.4;">임차 수요가 있는 우량 농지라면 합법적 위탁 경로를 통해 보유를 유지할 수 있습니다</div>
+            </div>
+          </div>
+          <div style="height:1px;background:rgba(255,255,255,.12);"></div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:16px;">🗺️</span>
+            </div>
+            <div>
+              <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:2px;">용도지역·도로 조건</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.4;">입지 조건에 따라 농지법 적용을 영구적으로 벗어날 수 있는 경로도 존재합니다</div>
+            </div>
+          </div>
+          <div style="height:1px;background:rgba(255,255,255,.12);"></div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:16px;">⏰</span>
+            </div>
+            <div>
+              <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:2px;">통지서 수령 후 경과 시간</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.4;">시간이 지날수록 선택할 수 있는 경로가 줄어듭니다. 빠를수록 선택지가 많습니다</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#FDECEA;border-radius:10px;padding:12px 16px;margin-bottom:16px;">
+        <div style="font-size:13px;font-weight:700;color:#C0392B;margin-bottom:4px;">❌ 절대 하지 말아야 할 것</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.6;">① 통지서 받자마자 급매 처분 → 헐값 손실<br>② 가족 법인으로 이전 → 처분명령 그대로 승계<br>③ 산속이라 안 들키겠지 → 드론 전수조사 적발</div>
+      </div>
+
+      <div style="background:var(--gold3);border-radius:10px;padding:14px 16px;">
+        <div style="font-size:15px;font-weight:700;color:var(--grn3);margin-bottom:5px;">💡 이것만 기억하세요</div>
+        <div style="font-size:14px;color:var(--grn2);line-height:1.6;">같은 처분명령을 받아도 <span style="font-weight:700;">전략이 있는 사람과 없는 사람의 결과는 완전히 다릅니다.</span> 내 농지에 맞는 경로는 상담을 통해 함께 찾아드립니다.</div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" class="arr-grn" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" class="arr-grn" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">내 농지에 맞는 경로를 찾아드립니다</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 10 · 농지연금 역발상
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">09</div>
+      <div class="gold-badge">💡 역발상 전략</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+        <span style="font-size:88px;font-weight:600;color:var(--grn);line-height:.9;letter-spacing:-4px;">월300</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink3);letter-spacing:2px;">MAX/MO</span>
+      </div>
+      <h2 style="font-size:29px;font-weight:900;color:var(--grn);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:14px;">위기가<br>수익이 됩니다</h2>
+      <p style="font-size:16px;color:var(--ink2);line-height:1.6;word-break:keep-all;margin-bottom:18px;">농지법 강화로 <span style="font-weight:700;color:var(--grn);">농지 경매 유찰이 급증</span>하고 있습니다. 감정가의 30% 수준에 낙찰 후 농지연금을 신청하면 1억 투자로 종신 월 211만 원 수령이 가능합니다.</p>
+
+      <div style="background:var(--grn);border-radius:12px;padding:16px 18px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:1px;margin-bottom:12px;">경매 활용 농지연금 시나리오</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;font-size:14px;"><span style="color:rgba(255,255,255,.7);">감정가 9.85억 농지</span><span style="color:#fff;font-weight:600;">경매 낙찰가 3억</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;"><span style="color:rgba(255,255,255,.7);">경락자금 대출 상환</span><span style="color:#fff;font-weight:600;">선지급 30% (2.17억)</span></div>
+          <div style="height:1px;background:rgba(255,255,255,.2);"></div>
+          <div style="display:flex;justify-content:space-between;font-size:16px;"><span style="color:rgba(255,255,255,.8);">실투자 1억 기준</span><span style="color:var(--gold2);font-weight:800;">월 211만 원 종신</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;"><span style="color:rgba(255,255,255,.7);">20년 수령 총액</span><span style="color:#fff;font-weight:600;">약 5억 원</span></div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg2);border-radius:10px;padding:12px 16px;margin-bottom:6px;">
+        <div style="font-size:13px;font-weight:700;color:var(--grn);margin-bottom:6px;">농지연금 가입 핵심 요건</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.6;">만 60세 이상 / 영농 경력 5년 이상 / 전·답·과수원 / 보유 2년 이상 / 저당권 없음(선지급으로 상환 가능) / 공무원·국민연금 중복 수령 가능</div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" class="arr-grn" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" class="arr-grn" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">규제를 역이용하는 합법 전략</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 11 · 체크리스트
+══════════════════════════ -->
+<div class="card" style="background:var(--grn);">
+  <div style="flex:1;display:flex;flex-direction:column;padding:46px 36px 24px;">
+    <div>
+      <div style="display:inline-block;background:#fff;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--grn);margin-bottom:24px;border-radius:999px;">셀프 체크</div>
+      <h2 style="font-size:36px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1.5px;word-break:keep-all;margin-bottom:8px;">지금 당장<br>확인하세요</h2>
+      <div style="height:3px;background:var(--gold2);width:48px;margin:20px 0 22px;"></div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">1996년 이전/이후 취득인지 확인</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:3px;">등기부등본으로 취득일 확인 — 1996년 이전이면 보호, 이후면 즉시 대응 필요</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">농지에 불법 구조물 여부 확인</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:3px;">컨테이너·주차장·창고 설치 시 8월 드론 조사 전 자진 철거가 최선</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">개인 간 임대 여부 확인</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:3px;">합법 예외 5가지에 해당 안 되면 즉시 농지은행 위탁 전환</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">상속 농지 3개월 내 감정평가</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:3px;">상속세 신고 전 감정평가로 취득가액 상향 → 양도차익 축소 → 절세 극대화</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">처분의무 통지서 수령 시 즉시 행동</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:3px;">의견 제출 기한·청문 날짜 확인 → 영농 재개 + 전문가 상담 동시 진행</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:22px 0 4px;">
+      <div style="font-size:17px;font-weight:700;color:#fff;margin-bottom:1px;">하나라도 해당되면</div>
+      <div style="display:flex;align-items:center;margin-bottom:1px;"><div style="flex:1;height:1px;background:var(--gold2);"></div><div style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid var(--gold2);"></div></div>
+      <div style="font-size:17px;font-weight:500;color:rgba(255,255,255,.9);">지금 바로 상담을 받아보세요</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 12 · CTA
+══════════════════════════ -->
+<div class="card" style="background:var(--grn2);">
+  <div class="c-cta-body">
+    <div class="c-cta-eyebrow">CONSULTING FOR YOU</div>
+    <h2 class="c-cta-headline">무엇이든<br>물어보세요.</h2>
+    <p class="c-cta-sub">
+      농지는 <strong>아는 만큼 지킬 수 있습니다.</strong><br>
+      모르고 방치하면 매년 25%씩 사라지지만,<br>
+      제대로 대응하면 <strong>오히려 수익 구조</strong>가 만들어집니다.<span style="display:block;margin-top:8px;"></span>
+      내 농지가 어떤 상황인지 가볍게 여쭤보셔도 됩니다.<br>
+      <strong>함께 보면, 생각보다 많은 것이 달라집니다.</strong>
+    </p>
+    <!-- 협업 파트너 -->
+    <div style="margin-bottom:16px;">
+      <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.5px;margin-bottom:10px;">파트너사</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">⚖️</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.55);">세무법인</div>
+          <div style="font-size:12px;font-weight:700;color:#fff;">세무사 협업</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">📊</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.55);">회계법인</div>
+          <div style="font-size:12px;font-weight:700;color:#fff;">회계사 협업</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">💡</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.55);">특허법인</div>
+          <div style="font-size:12px;font-weight:700;color:#fff;">변리사 협업</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:8px;">
+      <!-- 전화 -->
+      <a href="tel:01091738141" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid var(--grn);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#2D5A3D" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#2D5A3D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:var(--grn);">전화 상담</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">평일 09:00~18:00</div>
+        </div>
+      </a>
+      <!-- 네이버 블로그 -->
+      <a href="https://blog.naver.com/bizinsightkorea" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid var(--grn);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#2D5A3D" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#2D5A3D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:var(--grn);">네이버 블로그</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">비즈인사이트 bizinsight</div>
+        </div>
+      </a>
+      <!-- 카카오 채널 -->
+      <a href="https://pf.kakao.com/_SxjFxdn" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid var(--grn);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#2D5A3D" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#2D5A3D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:var(--grn);">카카오 채널</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">24시간 당일 회신</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="c-cta-footer">
+    <p>서울시 강남구 테헤란로 4길 삼성생명금융서비스<br>법인 전문 컨설팅 박기범 전문위원</p>
+  </div>
+</div>
+
+
+</div><!-- /viewer -->
+</body>
+</html>
