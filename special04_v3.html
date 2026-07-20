@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>월간이슈 특별판 4탄 · 불법건축물 합법화</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  /* 4탄 톤 — 다크 네이비 + 오렌지 레드 */
+  --navy:#1D3557;--navy2:#16294A;--navy3:#0F1E38;
+  --red:#E63946;--red2:#C1121F;
+  --gold:#D9B871;--gold2:#F0D080;
+  --ink:#1A1A18;--ink2:#4A4844;--ink3:#8A8880;--ink4:#C4C1B8;
+  --bg:#F5F4F0;--bg2:#EEECE8;--bg3:#E4E2DC;--bd:#D8D5CE;--bd2:#C8C5BC;
+  --cream:#FAFAF7;
+}
+html,body{width:100%;height:100%;background:var(--bg3);font-family:'Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased;}
+.viewer{width:100%;max-width:430px;margin:0 auto;height:100dvh;overflow-y:scroll;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--cream);}
+.viewer::-webkit-scrollbar{display:none;}
+.card{width:100%;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+
+/* ── STITCH ── */
+.stitch{width:calc(100% - 72px);height:1px;background:#000;margin:15px 36px 0;flex-shrink:0;}
+.stitch-top{width:calc(100% - 72px);height:1px;background:#000;margin:75px 36px 0;flex-shrink:0;}
+
+/* ── COVER (특별판 — 다크 네이비) ── */
+.c01{background:var(--navy);}
+.c01-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:54px 36px 48px;}
+.c01-rule{width:100%;height:2px;background:#fff;}
+.c01-monthly-wrap{display:flex;flex-direction:column;margin-top:20px;}
+.c01-line{display:flex;font-size:72px;font-weight:900;color:#fff;line-height:1.08;letter-spacing:-2px;font-family:'Noto Sans KR',sans-serif;}
+.char{width:72px;display:inline-flex;align-items:center;justify-content:center;}
+.c01-spline{color:var(--gold2);align-items:flex-end;}
+.c01-mon{font-size:44px;font-weight:900;color:var(--gold2);line-height:1;letter-spacing:-2px;margin-bottom:10px;margin-left:4px;}
+.c01-spwrap{display:flex;flex-direction:column;align-items:center;gap:6px;margin-left:12px;margin-bottom:14px;}
+.c01-spdate{font-size:14px;font-weight:500;color:rgba(255,255,255,.9);letter-spacing:.3px;}
+.c01-spbadge{padding:5px 26px 7px;background:var(--gold2);border-radius:999px;font-size:16px;font-weight:800;color:var(--navy3);letter-spacing:1px;white-space:nowrap;}
+.c01-rule2{width:100%;height:2px;background:rgba(255,255,255,.85);margin:22px 0 14px;}
+.c01-2026{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:400;color:rgba(255,255,255,.6);width:100%;display:flex;justify-content:space-between;}
+.c01-hook{font-size:30px;font-weight:900;color:#fff;line-height:1.3;letter-spacing:-1px;word-break:keep-all;margin-top:34px;}
+.c01-hook em{font-style:normal;color:var(--gold2);}
+.c01-badge-row{display:flex;align-items:center;gap:8px;margin-top:20px;flex-wrap:wrap;}
+.c01-badge{padding:4px 16px 6px;border:1.3px solid var(--gold2);border-radius:999px;background:transparent;font-size:14px;font-weight:700;color:var(--gold2);display:inline-flex;align-items:center;}
+
+/* ── ISSUE TAG ── */
+.tag-row{margin-top:28px;display:flex;align-items:center;gap:10px;}
+.tag-dot{width:18px;height:18px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tag-txt{font-size:17px;font-weight:400;color:var(--ink2);}
+
+/* ── CTA CARD ── */
+.c-cta-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:46px 36px 0;gap:0;}
+.c-cta-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:rgba(255,255,255,.65);letter-spacing:2px;margin-bottom:14px;}
+.c-cta-headline{font-size:50px;font-weight:900;color:#fff;line-height:1.04;letter-spacing:-2px;word-break:keep-all;margin-bottom:28px;}
+.c-cta-sub{font-size:18px;font-weight:400;color:rgba(255,255,255,.92);line-height:1.7;word-break:keep-all;margin-bottom:32px;}
+.c-cta-sub strong{font-weight:700;color:var(--gold2);}
+.c-cta-footer{padding:22px 36px 28px;display:flex;align-items:center;justify-content:flex-start;flex-shrink:0;}
+.c-cta-footer p{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.5px;text-align:left;line-height:1.4;}
+</style>
+</head>
+<body>
+<div class="viewer" id="viewer">
+
+<!-- ══════════════════════════
+  CARD 01 · COVER
+══════════════════════════ -->
+<div class="card c01">
+  <div class="c01-body">
+    <div class="c01-rule"></div>
+    <div class="c01-monthly-wrap">
+      <div class="c01-line"><span class="char">월</span><span class="char">간</span><span class="char">이</span><span class="char">슈</span></div>
+      <div style="font-size:72px;font-weight:800;color:#fff;font-family:'Noto Sans KR',sans-serif;letter-spacing:0px;line-height:1.08;transform:scaleX(1.05);transform-origin:left;display:inline-block;margin-left:3px;">MONEY</div>
+      <div class="c01-line c01-spline">
+        <span class="char">특</span><span class="char">별</span><span class="char">판</span>
+        <span class="c01-spwrap">
+          <span class="c01-spdate">2026. 07</span>
+          <span class="c01-spbadge">4탄</span>
+        </span>
+      </div>
+    </div>
+    <div class="c01-rule2"></div>
+    <div class="c01-2026"><span>2</span><span>0</span><span>2</span><span>6</span><span>&nbsp;</span><span>m</span><span>o</span><span>n</span><span>t</span><span>h</span><span>l</span><span>y</span><span>&nbsp;</span><span>i</span><span>s</span><span>s</span><span>u</span><span>e</span><span>·</span><span>s</span><span>p</span><span>e</span><span>c</span><span>i</span><span>a</span><span>l</span><span>&nbsp;</span><span>e</span><span>d</span><span>i</span><span>t</span><span>i</span><span>o</span><span>n</span></div>
+    <p class="c01-hook">12년 만에 열린 기회<br><em>불법건축물,</em><br><em>지금 합법화하세요</em></p>
+    <div class="c01-badge-row">
+      <span class="c01-badge">위반건축물</span>
+      <span class="c01-badge">양성화 신고</span>
+      <span class="c01-badge">이행강제금</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 02 · 왜 지금인가
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch-top"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">01</div>
+      <div style="display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:18px;border-radius:999px;">한시적 기회</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px;">
+        <span style="font-size:90px;font-weight:900;color:var(--navy);line-height:.9;letter-spacing:-4px;">18</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--ink3);letter-spacing:2px;">MONTHS</span>
+      </div>
+      <h2 style="font-size:28px;font-weight:900;color:var(--navy);line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">이 기회,<br>2028년 6월에 끝납니다</h2>
+      <p style="font-size:17px;color:var(--ink2);line-height:1.6;word-break:keep-all;margin-bottom:20px;">
+        2026년 12월 17일부터 시행되는 <span style="font-weight:700;color:var(--ink);">특정건축물 정리에 관한 특별조치법</span>이 18개월 동안 불법건축물을 합법화할 기회를 줍니다.
+      </p>
+      <!-- 타임라인 -->
+      <div style="display:flex;flex-direction:column;gap:0;border-left:3px solid var(--navy);padding-left:18px;margin-bottom:8px;">
+        <div style="padding:10px 0 10px;">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);letter-spacing:1px;">2026.06.16</span></div>
+          <div style="font-size:16px;font-weight:700;color:var(--ink);">법률 공포</div>
+        </div>
+        <div style="padding:10px 0 10px;border-top:1px solid var(--bd);">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:1px;">2026.12.17</span><span style="font-size:11px;font-weight:700;color:var(--red);">▶ 시행</span></div>
+          <div style="font-size:16px;font-weight:700;color:var(--ink);">양성화 신고 접수 시작</div>
+        </div>
+        <div style="padding:10px 0 10px;border-top:1px solid var(--bd);">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:1px;">2028.06.17</span><span style="font-size:11px;font-weight:700;color:var(--red);">▶ 마감</span></div>
+          <div style="font-size:16px;font-weight:700;color:var(--ink);">신고 마감 — 이후 영구 불가</div>
+        </div>
+      </div>
+      <div style="background:var(--navy);padding:14px 18px;border-radius:6px;margin-top:8px;">
+        <div style="font-size:15px;font-weight:700;color:var(--gold2);line-height:1.5;">마감일까지 신고만 접수되면,<br>사용승인은 이후에 나도 인정됩니다.</div>
+      </div>
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">다음 기회는 언제 올지 모릅니다. 12년 전이 마지막이었습니다.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 03 · 합법화되면 뭐가 달라지나
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">02</div>
+      <div style="display:inline-block;background:var(--navy);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:18px;border-radius:999px;">합법화 효과</div>
+      <h2 style="font-size:28px;font-weight:900;color:var(--navy);line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:20px;">합법화 한 장으로<br>이 모든 게 풀립니다</h2>
+
+      <!-- 비교 카드 3개 -->
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px;">
+        <div style="border:1.5px solid var(--bd);border-radius:8px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;">
+            <div style="background:#f5f0f0;padding:14px 16px;">
+              <div style="font-size:11px;font-weight:700;color:var(--red);letter-spacing:.5px;margin-bottom:6px;">불법건축물 현재</div>
+              <div style="font-size:15px;color:var(--ink2);line-height:1.5;">매매 시 <b style="color:var(--red);">위반 사항 고지</b> 의무, 기피 매물</div>
+            </div>
+            <div style="background:#f0f4fa;padding:14px 16px;border-left:1.5px solid var(--bd);">
+              <div style="font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.5px;margin-bottom:6px;">합법화 이후</div>
+              <div style="font-size:15px;color:var(--ink2);line-height:1.5;"><b style="color:var(--navy);">정상 매매</b> 가능, 시세 정상화</div>
+            </div>
+          </div>
+        </div>
+        <div style="border:1.5px solid var(--bd);border-radius:8px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;">
+            <div style="background:#f5f0f0;padding:14px 16px;">
+              <div style="font-size:11px;font-weight:700;color:var(--red);letter-spacing:.5px;margin-bottom:6px;">불법건축물 현재</div>
+              <div style="font-size:15px;color:var(--ink2);line-height:1.5;">담보대출 <b style="color:var(--red);">거절 또는 한도 축소</b></div>
+            </div>
+            <div style="background:#f0f4fa;padding:14px 16px;border-left:1.5px solid var(--bd);">
+              <div style="font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.5px;margin-bottom:6px;">합법화 이후</div>
+              <div style="font-size:15px;color:var(--ink2);line-height:1.5;"><b style="color:var(--navy);">정상 대출</b> 가능, 금융 활용 재개</div>
+            </div>
+          </div>
+        </div>
+        <div style="border:1.5px solid var(--bd);border-radius:8px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;">
+            <div style="background:#f5f0f0;padding:14px 16px;">
+              <div style="font-size:11px;font-weight:700;color:var(--red);letter-spacing:.5px;margin-bottom:6px;">불법건축물 현재</div>
+              <div style="font-size:15px;color:var(--ink2);line-height:1.5;"><b style="color:var(--red);">이행강제금</b> 매년 부과, 무한 누적</div>
+            </div>
+            <div style="background:#f0f4fa;padding:14px 16px;border-left:1.5px solid var(--bd);">
+              <div style="font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.5px;margin-bottom:6px;">합법화 이후</div>
+              <div style="font-size:15px;color:var(--ink2);line-height:1.5;"><b style="color:var(--navy);">이행강제금 소멸</b>, 추가 부과 없음</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">사고·팔고·빌리는 것, 모두 정상으로 돌아옵니다.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 04 · 대상 건축물 ①
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">03</div>
+      <div style="display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:18px;border-radius:999px;">대상 요건</div>
+      <h2 style="font-size:28px;font-weight:900;color:var(--navy);line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:8px;">내 집이 해당되려면<br>먼저 이걸 확인하세요</h2>
+      <p style="font-size:16px;color:var(--ink3);line-height:1.5;margin-bottom:20px;">공통 전제조건: <b style="color:var(--ink);">2023년 12월 31일 이전</b>에 사실상 완공된 주거용 건물</p>
+
+      <!-- 주택 유형별 기준 -->
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+        <div style="background:var(--bg2);border-radius:8px;padding:16px 18px;border-left:4px solid var(--navy);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-size:16px;font-weight:700;color:var(--navy);">다세대주택 (빌라)</div>
+            <div style="font-size:13px;font-weight:700;color:var(--red);">세대당 85㎡ 이하</div>
+          </div>
+          <div style="font-size:14px;color:var(--ink3);">각 세대별 전용면적 기준 / 초과 세대는 제외</div>
+        </div>
+        <div style="background:var(--bg2);border-radius:8px;padding:16px 18px;border-left:4px solid var(--navy);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-size:16px;font-weight:700;color:var(--navy);">일반 단독주택</div>
+            <div style="font-size:13px;font-weight:700;color:var(--red);">연면적 165㎡ 이하</div>
+          </div>
+          <div style="font-size:14px;color:var(--ink3);">165~330㎡는 지자체 조례로 별도 결정</div>
+        </div>
+        <div style="background:var(--bg2);border-radius:8px;padding:16px 18px;border-left:4px solid var(--navy);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-size:16px;font-weight:700;color:var(--navy);">다가구주택</div>
+            <div style="font-size:13px;font-weight:700;color:var(--red);">연면적 660㎡ 이하</div>
+          </div>
+          <div style="font-size:14px;color:var(--ink3);">약 200평 기준 / 초과 시 해당 없음</div>
+        </div>
+        <div style="background:#f0f4fa;border-radius:8px;padding:16px 18px;border-left:4px solid var(--gold);">
+          <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;">근린생활시설 → 주택 전용</div>
+          <div style="font-size:14px;color:var(--ink2);line-height:1.5;">허가는 상가로 받았지만 실제 주거로 사용 중인 경우.<br><b style="color:var(--navy);">단, 2023년 12월 31일 이전부터 주거 사용해야 함.</b></div>
+        </div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">면적 초과 여부는 건축물대장으로 확인 가능합니다.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 05 · 이행강제금이란 (문제 제기 → teaser)
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">04</div>
+      <div style="display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:18px;border-radius:999px;">지금 당신의 상황</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px;">
+        <span style="font-size:72px;font-weight:900;color:var(--red);line-height:.95;letter-spacing:-3px;">매년</span>
+      </div>
+      <h2 style="font-size:28px;font-weight:900;color:var(--navy);line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">방치할수록<br>손실은 쌓입니다</h2>
+      <p style="font-size:17px;color:var(--ink2);line-height:1.6;word-break:keep-all;margin-bottom:20px;">
+        이행강제금은 <span style="font-weight:700;color:var(--ink);">매년 1~2회 반복 부과</span>됩니다. 팔 때도 빌릴 때도 발목을 잡고, 상속까지 넘어가면 <span style="font-weight:700;color:var(--red);">자녀에게 그대로 승계</span>됩니다.
+      </p>
+
+      <!-- 문제 3가지 -->
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 16px;background:#fef5f5;border-radius:8px;">
+          <div style="font-size:22px;line-height:1;flex-shrink:0;">💸</div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:3px;">금전 손실이 계속 납니다</div>
+            <div style="font-size:15px;color:var(--ink3);line-height:1.5;">매년 납부해도 위반 상태는 해소되지 않습니다. 내는 만큼 손해입니다.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 16px;background:#fef5f5;border-radius:8px;">
+          <div style="font-size:22px;line-height:1;flex-shrink:0;">🏦</div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:3px;">대출·매매에서 계속 막힙니다</div>
+            <div style="font-size:15px;color:var(--ink3);line-height:1.5;">담보가치 산정에서 제외되거나, 매수인이 기피하는 매물이 됩니다.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 16px;background:#fef5f5;border-radius:8px;">
+          <div style="font-size:22px;line-height:1;flex-shrink:0;">👨‍👩‍👧</div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:3px;">상속하면 자녀도 물려받습니다</div>
+            <div style="font-size:15px;color:var(--ink3);line-height:1.5;">위반 건축물 상태 그대로 이전되며, 이행강제금 납부 의무도 함께 넘어갑니다.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- teaser -->
+      <div style="background:var(--navy);border-radius:8px;padding:16px 20px;">
+        <div style="font-size:15px;font-weight:700;color:var(--gold2);margin-bottom:6px;">출구는 있습니다</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.88);line-height:1.6;">상황마다 접근 방법이 다릅니다.<br>어떤 전략이 맞는지는 <span style="color:var(--gold2);font-weight:700;">상담을 통해 함께 찾아드립니다.</span></div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">지금 내는 이행강제금, 더 이상 안 내도 되는 방법이 있습니다.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 06 · 신고 절차 (문제 제기 → teaser)
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">05</div>
+      <div style="display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:18px;border-radius:999px;">신고의 함정</div>
+      <h2 style="font-size:28px;font-weight:900;color:var(--navy);line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">혼자 신고하면<br>이런 일이 생깁니다</h2>
+      <p style="font-size:17px;color:var(--ink2);line-height:1.6;word-break:keep-all;margin-bottom:20px;">
+        신고 절차 자체는 간단해 보이지만, <span style="font-weight:700;color:var(--red);">준비 없이 접수하면 오히려 불리해지는 상황</span>이 발생합니다.
+      </p>
+
+      <!-- 함정 리스트 -->
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border:1.5px solid var(--bd);border-radius:8px;background:#fff;">
+          <div style="font-size:20px;line-height:1;flex-shrink:0;margin-top:2px;">⚠️</div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:3px;">이행강제금 납부 이력 없는데 신고부터?</div>
+            <div style="font-size:15px;color:var(--ink3);line-height:1.5;">관청에 접수하는 순간 위반 사실이 확인되고, 미납 이행강제금이 일괄 부과될 수 있습니다.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border:1.5px solid var(--bd);border-radius:8px;background:#fff;">
+          <div style="font-size:20px;line-height:1;flex-shrink:0;margin-top:2px;">⚠️</div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:3px;">위반 사항이 하나가 아닐 수 있습니다</div>
+            <div style="font-size:15px;color:var(--ink3);line-height:1.5;">증축·용도변경·무허가 부분이 중복될 경우, 각각 별도 과태료 대상이 됩니다.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border:1.5px solid var(--bd);border-radius:8px;background:#fff;">
+          <div style="font-size:20px;line-height:1;flex-shrink:0;margin-top:2px;">⚠️</div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:3px;">심의 탈락 시 재신고 기회가 사라집니다</div>
+            <div style="font-size:15px;color:var(--ink3);line-height:1.5;">건축위원회 심의에서 반려되면 18개월 기간 내 재도전이 어려울 수 있습니다.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- teaser -->
+      <div style="background:var(--navy);border-radius:8px;padding:16px 20px;">
+        <div style="font-size:15px;font-weight:700;color:var(--gold2);margin-bottom:6px;">순서와 방법이 있습니다</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.88);line-height:1.6;">어떤 순서로 무엇을 먼저 확인해야 하는지,<br><span style="color:var(--gold2);font-weight:700;">상담을 통해 맞춤 전략을 안내해 드립니다.</span></div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">접수 전에 한 번만 확인해도, 결과가 달라집니다.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 07 · 과태료 (문제 제기 → teaser)
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">06</div>
+      <div style="display:inline-block;background:var(--navy);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:18px;border-radius:999px;">비용의 함정</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px;">
+        <span style="font-size:72px;font-weight:900;color:var(--navy);line-height:.9;letter-spacing:-4px;">얼마?</span>
+      </div>
+      <h2 style="font-size:28px;font-weight:900;color:var(--navy);line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">과태료, 생각보다<br>복잡합니다</h2>
+      <p style="font-size:17px;color:var(--ink2);line-height:1.6;word-break:keep-all;margin-bottom:20px;">
+        합법화 과정에서 내야 하는 과태료는 <span style="font-weight:700;color:var(--red);">일률적으로 정해진 금액이 없습니다.</span> 위반 유형·납부 이력·추가 위반 여부에 따라 크게 달라집니다.
+      </p>
+
+      <!-- 달라지는 변수들 -->
+      <div style="display:flex;flex-direction:column;gap:0;border:1.5px solid var(--bd);border-radius:8px;overflow:hidden;margin-bottom:20px;">
+        <div style="padding:14px 18px;border-bottom:1px solid var(--bd);background:#fff;">
+          <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;">이행강제금 납부 이력이 있나요?</div>
+          <div style="font-size:14px;color:var(--ink3);">있으면 공제, 없으면 5회분 전액 — 상황이 다릅니다</div>
+        </div>
+        <div style="padding:14px 18px;border-bottom:1px solid var(--bd);background:#fff;">
+          <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;">위반 항목이 하나뿐인가요?</div>
+          <div style="font-size:14px;color:var(--ink3);">증축·용도변경이 동시에 있으면 항목별 과태료가 추가됩니다</div>
+        </div>
+        <div style="padding:14px 18px;background:#fff;">
+          <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;">시가표준액이 얼마인가요?</div>
+          <div style="font-size:14px;color:var(--ink3);">과태료 산정의 기준값 — 지역·용도·면적마다 다릅니다</div>
+        </div>
+      </div>
+
+      <div style="background:#fef5f5;border-left:4px solid var(--red);border-radius:4px;padding:14px 16px;margin-bottom:20px;">
+        <div style="font-size:15px;color:var(--ink2);line-height:1.6;"><b style="color:var(--red);">"100만 원이면 되지 않나요?"</b><br>직접 계산하면 틀리기 쉽습니다. 과소 납부 시 양성화가 취소될 수 있습니다.</div>
+      </div>
+
+      <!-- teaser -->
+      <div style="background:var(--navy);border-radius:8px;padding:16px 20px;">
+        <div style="font-size:15px;font-weight:700;color:var(--gold2);margin-bottom:6px;">정확한 금액은 확인이 필요합니다</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.88);line-height:1.6;">내 상황에 맞는 과태료를 미리 파악하고,<br><span style="color:var(--gold2);font-weight:700;">최소 비용으로 합법화하는 방법을 함께 찾아드립니다.</span></div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">미리 알면 대비할 수 있고, 놓치면 더 냅니다.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 08 · 어디에 물어봐야 하나 (문제 제기 → teaser)
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 36px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">07</div>
+      <div style="display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:18px;border-radius:999px;">가장 위험한 실수</div>
+      <h2 style="font-size:28px;font-weight:900;color:var(--navy);line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">잘못된 창구에<br>물어보면 역효과입니다</h2>
+      <p style="font-size:17px;color:var(--ink2);line-height:1.6;word-break:keep-all;margin-bottom:20px;">
+        내 건물이 대상인지 확인하고 싶어 시·군·구청에 문의하는 순간, <span style="font-weight:700;color:var(--red);">미처 몰랐던 위반 사실이 공식 확인</span>되어 이행강제금이 즉시 부과될 수 있습니다.
+      </p>
+
+      <!-- 상황 대비 -->
+      <div style="background:#fef5f5;border-radius:8px;padding:18px 20px;border-left:4px solid var(--red);margin-bottom:12px;">
+        <div style="font-size:16px;font-weight:700;color:var(--red);margin-bottom:10px;">이런 분은 특히 조심하세요</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;gap:10px;align-items:flex-start;">
+            <div style="font-size:14px;color:var(--red);flex-shrink:0;margin-top:2px;">•</div>
+            <div style="font-size:15px;color:var(--ink2);line-height:1.5;">이행강제금을 한 번도 납부한 적 없는데 불법 상태인 경우</div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start;">
+            <div style="font-size:14px;color:var(--red);flex-shrink:0;margin-top:2px;">•</div>
+            <div style="font-size:15px;color:var(--ink2);line-height:1.5;">내가 산 집인데 전 소유자가 위반한 건지 모르는 경우</div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start;">
+            <div style="font-size:14px;color:var(--red);flex-shrink:0;margin-top:2px;">•</div>
+            <div style="font-size:15px;color:var(--ink2);line-height:1.5;">위반 여부 자체를 모르고 보유 중인 경우</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg2);border-radius:8px;padding:18px 20px;margin-bottom:20px;">
+        <div style="font-size:15px;color:var(--ink2);line-height:1.6;">관청에 알리기 전에 <b style="color:var(--ink);">내 상황을 먼저 정확히 파악하는 것</b>이 핵심입니다. 문의 창구, 타이밍, 준비 서류가 모두 달라집니다.</div>
+      </div>
+
+      <!-- teaser -->
+      <div style="background:var(--navy);border-radius:8px;padding:16px 20px;">
+        <div style="font-size:15px;font-weight:700;color:var(--gold2);margin-bottom:6px;">올바른 경로가 있습니다</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.88);line-height:1.6;">상황에 맞는 문의 방법과 준비 순서,<br><span style="color:var(--gold2);font-weight:700;">불이익 없이 진행하는 전략을 함께 설계해 드립니다.</span></div>
+      </div>
+
+      <div class="tag-row">
+        <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <span class="tag-txt">먼저 물어보는 것과 준비 후 물어보는 것, 결과가 완전히 다릅니다.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 09 · 체크리스트
+══════════════════════════ -->
+<div class="card" style="background:var(--navy);">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:46px 36px 24px;">
+    <div>
+      <div style="display:inline-block;background:#fff;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--navy);margin-bottom:24px;border-radius:999px;">셀프 체크</div>
+      <h2 style="font-size:36px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1.5px;word-break:keep-all;margin-bottom:8px;">우리 집,<br>해당될 수 있습니다</h2>
+      <div style="height:3px;background:var(--gold2);width:48px;margin:20px 0 22px;"></div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:18px;font-weight:700;color:#fff;">2023년 12월 31일 이전 완공</div>
+            <div style="font-size:15px;color:rgba(255,255,255,.72);margin-top:4px;">준공일 또는 실제 입주 시점 기준 확인</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:18px;font-weight:700;color:#fff;">건축물대장과 실제 현황이 다름</div>
+            <div style="font-size:15px;color:rgba(255,255,255,.72);margin-top:4px;">증축·용도변경·무허가 시설물 포함</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:18px;font-weight:700;color:#fff;">이행강제금 납부 이력 있음</div>
+            <div style="font-size:15px;color:rgba(255,255,255,.72);margin-top:4px;">과거 또는 현재 납부 중 — 즉시 검토 대상</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:18px;font-weight:700;color:#fff;">상가 허가 후 주거로 사용 중</div>
+            <div style="font-size:15px;color:rgba(255,255,255,.72);margin-top:4px;">근린생활시설 → 주택 전용 케이스</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:18px;font-weight:700;color:#fff;">매도·담보 시 제약 경험 있음</div>
+            <div style="font-size:15px;color:rgba(255,255,255,.72);margin-top:4px;">대출 거절·시세 손해 등 실질적 불이익</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:22px 0 4px;">
+      <div style="font-size:17px;font-weight:700;color:#fff;margin-bottom:4px;">하나라도 해당되면</div>
+      <div style="display:flex;align-items:center;margin-bottom:4px;"><div style="flex:1;height:1px;background:var(--gold2);"></div><div style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid var(--gold2);"></div></div>
+      <div style="font-size:17px;font-weight:500;color:rgba(255,255,255,.9);">지금 바로 전문가와 확인해 보세요</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 10 · CTA
+══════════════════════════ -->
+<div class="card" style="background:var(--navy2);">
+  <div class="c-cta-body">
+    <div class="c-cta-eyebrow">CONSULTING FOR YOU</div>
+    <h2 class="c-cta-headline">지금이<br>마지막 기회<br>일 수 있습니다.</h2>
+    <p class="c-cta-sub">
+      12년 만에 열린 기회, <strong>18개월이면 닫힙니다.</strong><br>
+      하지만 무작정 신고부터 하면 오히려 불리해질 수 있습니다.<span style="display:block;margin-top:8px;"></span>
+      내 상황에 맞는 접근법이 무엇인지,<br>
+      어떤 순서로 움직여야 최소 비용으로 합법화할 수 있는지—<span style="display:block;margin-top:8px;"></span>
+      <strong>상담을 통해 함께 전략을 세워드립니다.</strong>
+    </p>
+    <!-- 파트너사 -->
+    <div style="margin-bottom:16px;">
+      <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.5px;margin-bottom:10px;">파트너사</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">⚖️</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.55);">세무법인</div>
+          <div style="font-size:12px;font-weight:700;color:#fff;">세무사 협업</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">🏛️</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.55);">건축사무소</div>
+          <div style="font-size:12px;font-weight:700;color:#fff;">건축사 협업</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">📋</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.55);">법무법인</div>
+          <div style="font-size:12px;font-weight:700;color:#fff;">법무사 협업</div>
+        </div>
+      </div>
+    </div>
+    <!-- 전화 + 블로그 -->
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:8px;">
+      <a href="tel:01091738141" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:var(--navy);">전화 상담</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">평일 09:00~18:00</div>
+        </div>
+      </a>
+      <a href="https://blog.naver.com/bizinsightkorea" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:var(--navy);">네이버 블로그</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">비즈인사이트 bizinsight</div>
+        </div>
+      </a>
+      <a href="http://pf.kakao.com/_SxjFxdn" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#1D3557" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:var(--navy);">카카오 채널</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">24시간 당일 회신</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="c-cta-footer">
+    <p>서울시 강남구 테헤란로 4길 삼성생명금융서비스<br>법인 전문 컨설팅 박기범 전문위원</p>
+  </div>
+</div>
+
+</div><!-- /viewer -->
+</body>
+</html>
