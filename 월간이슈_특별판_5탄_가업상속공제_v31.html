@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>월간이슈 특별판 5탄 · 가업상속공제 2026 세제개편</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --red:#3D6B4F;--red2:#2E5240;--red3:#1E3D2F;--gold:#B8924A;--gold2:#D9B871;
+  --ink:#1A1A18;--ink2:#4A4844;--ink3:#8A8880;--ink4:#C4C1B8;
+  --bg:#FAF7F0;--bg2:#F2EDE3;--bg3:#E8E2D5;--bd:#DED7C8;--bd2:#CCC4B2;
+  --cream:#FBF6EC;
+}
+html,body{width:100%;height:100%;background:var(--bg3);font-family:'Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased;}
+.viewer{width:100%;max-width:430px;margin:0 auto;height:100dvh;overflow-y:scroll;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--cream);}
+.viewer::-webkit-scrollbar{display:none;}
+.card{width:100%;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.stitch{width:calc(100% - 72px);height:1px;background:#000;margin:15px 36px 0;flex-shrink:0;}
+
+/* ── COVER ── */
+.c01{background:#3D6B4F;}
+.c01-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:54px 36px 48px;}
+.c01-rule{width:100%;height:2px;background:#fff;}
+.c01-monthly-wrap{display:flex;flex-direction:column;margin-top:20px;}
+.c01-line{display:flex;font-size:72px;font-weight:900;color:#fff;line-height:1.08;letter-spacing:-2px;}
+.char{width:72px;display:inline-flex;align-items:center;justify-content:center;}
+.c01-monthrow{display:flex;align-items:flex-end;gap:14px;margin-top:2px;}
+.c01-spline{color:var(--gold2);align-items:flex-end;}
+.c01-mon{font-size:44px;font-weight:900;color:var(--gold2);line-height:1;letter-spacing:-2px;margin-bottom:10px;margin-left:4px;}
+.c01-spwrap{display:flex;flex-direction:column;align-items:center;gap:6px;margin-left:12px;margin-bottom:14px;}
+.c01-spdate{font-size:14px;font-weight:500;color:rgba(255,255,255,.9);letter-spacing:.3px;}
+.c01-spbadge{padding:5px 26px 7px;background:var(--gold2);border-radius:999px;font-size:16px;font-weight:800;color:var(--red3);letter-spacing:1px;white-space:nowrap;}
+.c01-rule2{width:100%;height:2px;background:rgba(255,255,255,.85);margin:22px 0 14px;}
+.c01-2026{font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:400;color:rgba(255,255,255,.6);width:100%;display:flex;justify-content:space-between;}
+.c01-hook{font-size:30px;font-weight:900;color:#fff;line-height:1.3;letter-spacing:-1px;word-break:keep-all;margin-top:34px;}
+.c01-hook em{font-style:normal;color:var(--gold2);}
+.c01-badge-row{display:flex;align-items:center;gap:8px;margin-top:20px;flex-wrap:wrap;}
+.c01-badge{padding:4px 16px 6px;border:1.3px solid var(--gold2);border-radius:999px;background:transparent;font-size:13px;font-weight:700;color:var(--gold2);display:inline-flex;align-items:center;}
+
+/* ── ISSUE TAG ── */
+.tag-row{margin-top:32px;display:flex;align-items:center;gap:10px;}
+.tag-dot{width:18px;height:18px;border-radius:50%;border:1px solid #3D6B4F;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tag-txt{font-size:17px;font-weight:400;color:var(--ink2);}
+
+/* ── CTA CARD ── */
+.c08-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:46px 36px 0;gap:0;}
+.c08-eyebrow{font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:500;color:rgba(255,255,255,.65);letter-spacing:2px;margin-bottom:14px;}
+.c08-headline{font-size:50px;font-weight:900;color:#fff;line-height:1.04;letter-spacing:-2px;word-break:keep-all;margin-bottom:28px;}
+.c08-sub{font-size:17px;font-weight:400;color:rgba(255,255,255,.92);line-height:1.7;word-break:keep-all;margin-bottom:32px;}
+.c08-sub strong{font-weight:700;color:var(--gold2);}
+.c08-footer{padding:22px 36px 28px;display:flex;align-items:center;justify-content:flex-start;flex-shrink:0;}
+.c08-footer p{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.5px;text-align:left;line-height:1.4;}
+
+/* ── POPUP OVERLAY ── */
+.popup-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;
+  display:flex;align-items:flex-end;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .25s ease;
+}
+.popup-overlay.active{opacity:1;pointer-events:all;}
+.popup-sheet{
+  width:100%;max-width:430px;background:#fff;
+  border-radius:20px 20px 0 0;
+  max-height:82dvh;overflow-y:auto;
+  transform:translateY(100%);transition:transform .28s cubic-bezier(.32,.72,0,1);
+  padding:0 0 40px;
+}
+.popup-overlay.active .popup-sheet{transform:translateY(0);}
+.popup-handle{width:40px;height:4px;background:var(--bd2);border-radius:99px;margin:14px auto 20px;}
+.popup-title{font-size:18px;font-weight:900;color:var(--ink);padding:0 28px;margin-bottom:6px;letter-spacing:-.5px;word-break:keep-all;}
+.popup-sub{font-size:12px;color:var(--ink3);padding:0 28px;margin-bottom:20px;font-family:'Noto Sans KR',sans-serif;letter-spacing:.05em;}
+.popup-divider{height:1px;background:var(--bg3);margin:0 0 20px;}
+.popup-body{padding:0 28px;}
+.popup-row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--bg2);align-items:flex-start;}
+.popup-row:last-child{border-bottom:none;}
+.popup-label{font-size:11px;font-weight:700;color:#3D6B4F;letter-spacing:.05em;min-width:72px;flex-shrink:0;padding-top:2px;}
+.popup-val{font-size:14px;color:var(--ink2);line-height:1.65;word-break:keep-all;}
+.popup-val strong{color:var(--ink);font-weight:700;}
+.popup-tag{display:inline-block;background:#3D6B4F;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:10px;}
+.popup-tag-gold{display:inline-block;background:var(--gold);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:10px;}
+.popup-note{background:var(--bg2);padding:12px 14px;font-size:12px;color:var(--ink2);line-height:1.65;margin-top:16px;border-radius:6px;}
+.popup-close-btn{position:sticky;top:0;right:0;float:right;background:none;border:none;padding:18px 22px 0;cursor:pointer;color:var(--ink3);font-size:22px;line-height:1;z-index:10;}
+
+/* ── MORE BTN ── */
+.more-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:22px;padding:10px 18px;
+  border:1.5px solid #3D6B4F;border-radius:999px;
+  background:transparent;cursor:pointer;
+  font-size:13px;font-weight:700;color:#3D6B4F;
+  transition:background .15s,color .15s;
+}
+.more-btn:hover{background:#3D6B4F;color:#fff;}
+.more-btn svg{transition:transform .2s;}
+
+/* ── COMPARE TABLE (popup) ── */
+.p-table{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0;}
+.p-table th{background:var(--bg2);font-size:12px;font-weight:700;color:var(--ink3);padding:7px 10px;text-align:left;border-bottom:2px solid #3D6B4F;}
+.p-table td{padding:8px 10px;border-bottom:1px solid var(--bg3);color:var(--ink2);line-height:1.55;vertical-align:top;font-size:12px;}
+.p-table td span{font-size:12px !important;}
+.p-table tr:last-child td{border-bottom:none;}
+.p-table .hl td{background:#F0F7F3;}
+.new-badge{display:inline-block;background:#3D6B4F;color:#fff;font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;margin-left:4px;vertical-align:middle;}
+.chg-badge{display:inline-block;background:var(--gold);color:#fff;font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;margin-left:4px;vertical-align:middle;}
+
+/* ── CHECKLIST ── */
+.p-check{list-style:none;}
+.p-check li{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--bg2);font-size:13px;color:var(--ink2);line-height:1.6;word-break:keep-all;}
+.p-check li:last-child{border-bottom:none;}
+.p-check-box{width:16px;height:16px;border:1.5px solid #3D6B4F;flex-shrink:0;margin-top:3px;}
+</style>
+</head>
+<body>
+<div class="viewer" id="viewer">
+
+<!-- ══════════════════════════
+  CARD 01 · COVER
+══════════════════════════ -->
+<div class="card c01">
+  <div class="c01-body">
+    <div class="c01-rule"></div>
+    <div class="c01-monthly-wrap">
+      <div class="c01-line"><span class="char">월</span><span class="char">간</span><span class="char">이</span><span class="char">슈</span></div>
+      <div style="font-size:72px;font-weight:800;color:#fff;letter-spacing:0px;line-height:1.08;transform:scaleX(1.05);transform-origin:left;display:inline-block;margin-left:3px;">MONEY</div>
+      <div class="c01-line c01-spline">
+        <span class="char">특</span><span class="char">별</span><span class="char">판</span><span class="c01-spwrap"><span class="c01-spdate">2026. 8월</span><span class="c01-spbadge">5탄</span></span>
+      </div>
+    </div>
+    <div class="c01-rule2"></div>
+    <div class="c01-2026"><span>2</span><span>0</span><span>2</span><span>6</span><span>&nbsp;</span><span>m</span><span>o</span><span>n</span><span>t</span><span>h</span><span>l</span><span>y</span><span>&nbsp;</span><span>i</span><span>s</span><span>s</span><span>u</span><span>e</span><span>·</span><span>s</span><span>p</span><span>e</span><span>c</span><span>i</span><span>a</span><span>l</span><span>&nbsp;</span><span>e</span><span>d</span><span>i</span><span>t</span><span>i</span><span>o</span><span>n</span></div>
+    <p class="c01-hook">가업상속공제<br><em>2026년, 완전히 바뀝니다</em></p>
+    <div class="c01-badge-row">
+      <span class="c01-badge">2026 세제개편안</span>
+      <span class="c01-badge">가업상속공제</span>
+    </div>
+    <div style="margin-top:28px;border-top:1px solid rgba(255,255,255,.25);padding-top:20px;">
+      <p style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.8;word-break:keep-all;">본 내용은 2026.8.3. 발표된 세제개편안 기준이며, 아직 <strong style="color:rgba(255,255,255,.9);">국회 심의·의결 전 단계</strong>입니다. 확정 법령 통과 후 변경 사항을 다시 정리해 안내드립니다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  CARD 02 · 무엇이 바뀌나 (총괄)
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch" style="margin-top:75px;"></div>
+  <div style="flex:1;padding:20px 36px 32px;">
+    <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">01</div>
+    <div style="display:inline-block;background:#3D6B4F;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">2026.8.3 발표 확정</div>
+    <h2 style="font-size:28px;font-weight:900;color:#3D6B4F;line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">무엇이,<br>어떻게 바뀌나</h2>
+    <p style="font-size:16px;color:var(--ink2);line-height:1.65;word-break:keep-all;">재정경제부가 8월 3일 「2026 세제개편안」을 확정 발표했습니다. 가업상속공제는 <span style="font-weight:700;color:var(--ink);">4개 축</span>을 중심으로 전면 재설계됩니다.</p>
+
+    <!-- 4대 축 -->
+    <div style="display:flex;flex-direction:column;gap:0;margin-top:22px;">
+      <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--bg3);align-items:flex-start;">
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:#3D6B4F;line-height:1.5;flex-shrink:0;">01</span>
+        <span style="font-size:15px;color:var(--ink2);line-height:1.55;word-break:keep-all;"><b style="color:var(--ink);">가업 재정의</b> — "전문 기술·경영 노하우 보유 기업"으로 법적 정의 신설. 프랜차이즈·부동산·금융소득 위주 기업은 명시적 배제</span>
+      </div>
+      <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--bg3);align-items:flex-start;">
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:#3D6B4F;line-height:1.5;flex-shrink:0;">02</span>
+        <span style="font-size:15px;color:var(--ink2);line-height:1.55;word-break:keep-all;"><b style="color:var(--ink);">대상 업종 축소</b> — 전체 1,205개 업종 중 727개(세세분류)로 제한. 마트·병원·약국·운송업 등 제외</span>
+      </div>
+      <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--bg3);align-items:flex-start;">
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:#3D6B4F;line-height:1.5;flex-shrink:0;">03</span>
+        <span style="font-size:15px;color:var(--ink2);line-height:1.55;word-break:keep-all;"><b style="color:var(--ink);">요건 대폭 강화</b> — 경영기간 10년→30년, 사후관리 5년→10년, 상속인 종사기간 2년→5년</span>
+      </div>
+      <div style="display:flex;gap:14px;padding:14px 0;align-items:flex-start;">
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:#3D6B4F;line-height:1.5;flex-shrink:0;">04</span>
+        <span style="font-size:15px;color:var(--ink2);line-height:1.55;word-break:keep-all;"><b style="color:var(--ink);">제3자 승계 신설</b> — 친족 승계 외 임직원 등에게 매각 시 양도세 20% 감면 등 대안 트랙 마련</span>
+      </div>
+    </div>
+
+    <button class="more-btn" onclick="openPopup('popup-overview')">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      핵심 수치 변화 한눈에 보기
+    </button>
+
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </div>
+      <span class="tag-txt">적용: 2027.7.1. 이후 상속 개시분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  CARD 03 · 가업 정의 + 심사위원회
+══════════════════════════ -->
+<div class="card" style="background:var(--bg2);">
+  <div style="flex:1;padding:20px 36px 32px;">
+    <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">02</div>
+    <div style="display:inline-block;background:var(--ink);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">신설 규정</div>
+
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px;">
+      <span style="font-size:72px;font-weight:900;color:var(--ink);line-height:.9;letter-spacing:-3px;">심사</span>
+    </div>
+
+    <h2 style="font-size:28px;font-weight:900;color:#3D6B4F;line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:14px;">이제 심사를<br>통과해야 합니다</h2>
+    <p style="font-size:15px;color:var(--ink2);line-height:1.65;word-break:keep-all;">가업에 해당하는지 여부를 <span style="font-weight:700;color:var(--ink);">가업상속공제 심사위원회</span>가 심사합니다. 신고 시 자료를 제출하고, 과세관청 조사 후 위원회가 최종 결정합니다.</p>
+
+    <!-- 심사 3단계 -->
+    <div style="display:flex;gap:0;margin-top:22px;border:1px solid var(--bd);overflow:hidden;border-radius:8px;">
+      <div style="flex:1;padding:14px 12px;border-right:1px solid var(--bd);text-align:center;background:#fff;">
+        <div style="font-family:'Noto Sans KR',sans-serif;font-size:22px;font-weight:700;color:var(--bd2);margin-bottom:6px;">01</div>
+        <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:4px;">신고·자료제출</div>
+        <div style="font-size:11px;color:var(--ink3);line-height:1.5;">상속세 신고와 함께 심사자료 제출</div>
+      </div>
+      <div style="flex:1;padding:14px 12px;border-right:1px solid var(--bd);text-align:center;background:#fff;">
+        <div style="font-family:'Noto Sans KR',sans-serif;font-size:22px;font-weight:700;color:var(--bd2);margin-bottom:6px;">02</div>
+        <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:4px;">과세관청 조사</div>
+        <div style="font-size:11px;color:var(--ink3);line-height:1.5;">제출 자료 사전 조사</div>
+      </div>
+      <div style="flex:1;padding:14px 12px;background:#3D6B4F;text-align:center;">
+        <div style="font-family:'Noto Sans KR',sans-serif;font-size:22px;font-weight:700;color:rgba(255,255,255,.4);margin-bottom:6px;">03</div>
+        <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:4px;">위원회 결정</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.8);line-height:1.5;">세액 결정·통지</div>
+      </div>
+    </div>
+
+    <button class="more-btn" onclick="openPopup('popup-committee')">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      심사위원회 구성·심사사항 상세
+    </button>
+
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </div>
+      <span class="tag-txt">위원장: 재정경제부 1차관</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  CARD 04 · 경영기간 요건 강화
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div style="flex:1;padding:20px 36px 32px;">
+    <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">03</div>
+    <div style="display:inline-block;background:#3D6B4F;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">요건 3배 강화</div>
+
+    <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:14px;">
+      <span style="font-size:100px;font-weight:900;color:var(--ink);line-height:.88;letter-spacing:-5px;">30</span>
+      <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--ink3);letter-spacing:2px;">YEARS</span>
+    </div>
+
+    <h2 style="font-size:28px;font-weight:900;color:#3D6B4F;line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:14px;">피상속인 경영기간<br>10년 → 30년</h2>
+    <p style="font-size:15px;color:var(--ink2);line-height:1.65;word-break:keep-all;">단순히 오래 보유한 기업이 아닌, <span style="font-weight:700;color:var(--ink);">30년간 직접 경영한 장수기업</span>에 공제를 집중합니다. 20년 이상이면 부족 기간만큼 사후관리 기간을 연장하는 완충 규정도 있습니다.</p>
+
+    <!-- 요건 비교 -->
+    <div style="display:flex;gap:10px;margin-top:20px;">
+      <div style="flex:1;background:var(--bg2);border-radius:10px;padding:16px 14px;text-align:center;">
+        <div style="font-size:10px;font-weight:700;color:var(--ink);letter-spacing:.1em;margin-bottom:8px;">현행</div>
+        <div style="font-size:36px;font-weight:900;color:var(--ink);letter-spacing:-2px;line-height:1;">10<span style="font-size:16px;font-weight:500;">년</span></div>
+        <div style="font-size:11px;color:var(--ink);margin-top:6px;">경영기간</div>
+      </div>
+      <div style="display:flex;align-items:center;color:#3D6B4F;font-size:20px;font-weight:900;">→</div>
+      <div style="flex:1;background:#3D6B4F;border-radius:10px;padding:16px 14px;text-align:center;">
+        <div style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.1em;margin-bottom:8px;">개정</div>
+        <div style="font-size:36px;font-weight:900;color:#fff;letter-spacing:-2px;line-height:1;">30<span style="font-size:16px;font-weight:500;">년</span></div>
+        <div style="font-size:11px;color:#fff;margin-top:6px;">원칙</div>
+      </div>
+    </div>
+
+    <button class="more-btn" onclick="openPopup('popup-requirements')">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      피상속인·상속인 전체 요건 비교표
+    </button>
+
+    <div style="margin-top:22px;background:#3D6B4F;border-radius:10px;padding:18px 16px;">
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.08em;margin-bottom:8px;">지금 준비해야 하는 대표님</div>
+      <div style="font-size:15px;font-weight:700;color:#fff;line-height:1.5;word-break:keep-all;margin-bottom:10px;">경영기간 20~29년이라면<br>지금이 골든타임입니다</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.7;word-break:keep-all;">30년 요건에 미달하더라도 <strong style="color:var(--gold2);">20년 이상이면 완충 규정</strong>으로 공제가 가능합니다. 단, 이를 위한 승계 구조 설계 — 상속인 조기 입사, 지분 실질화, 업종 적격 확인 — 는 지금 당장 시작해야 2027년 시행 전에 맞출 수 있습니다.</div>
+    </div>
+
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </div>
+      <span class="tag-txt">20~29년은 완충 규정 적용 가능</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  CARD 05 · 공제한도 계산방식
+══════════════════════════ -->
+<div class="card" style="background:var(--bg2);">
+  <div style="flex:1;padding:20px 36px 32px;">
+    <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">04</div>
+    <div style="display:inline-block;background:var(--gold);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">한도 확대 & 계산 변경</div>
+
+    <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:14px;">
+      <span style="font-size:80px;font-weight:900;color:var(--ink);line-height:.9;letter-spacing:-4px;">1,000</span>
+      <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--ink3);letter-spacing:2px;">억원</span>
+    </div>
+
+    <h2 style="font-size:28px;font-weight:900;color:#3D6B4F;line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:14px;">공제한도 최대 1,000억<br>계산방식도 달라진다</h2>
+    <p style="font-size:15px;color:var(--ink2);line-height:1.65;word-break:keep-all;">구간별 정액(300/400/600억) 방식에서 <span style="font-weight:700;color:var(--ink);">경영연수 × 20억원</span> 산식으로 전환됩니다. 단, 최대 1,000억원에 도달하려면 50년 경영이 필요합니다.</p>
+
+    <!-- 계산 예시 -->
+    <div style="background:#fff;border-radius:10px;padding:16px 18px;margin-top:20px;border:1px solid var(--bd);">
+      <div style="font-size:10px;font-weight:700;color:var(--ink3);letter-spacing:.1em;margin-bottom:12px;">계산 예시</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;">
+          <span style="color:var(--ink2);">30년 경영</span>
+          <span style="font-weight:700;color:var(--ink);">600억원 <span style="font-size:11px;color:var(--ink4);">(현행 동일)</span></span>
+        </div>
+        <div style="height:1px;background:var(--bg3);"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;">
+          <span style="color:var(--ink2);">40년 경영</span>
+          <span style="font-weight:700;color:var(--gold);">800억원 <span style="font-size:11px;color:var(--ink4);">↑ 신규</span></span>
+        </div>
+        <div style="height:1px;background:var(--bg3);"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;">
+          <span style="color:var(--ink2);">50년 경영</span>
+          <span style="font-weight:700;color:#3D6B4F;">1,000억원 <span style="font-size:11px;color:var(--ink4);">최대</span></span>
+        </div>
+      </div>
+    </div>
+
+    <button class="more-btn" onclick="openPopup('popup-limit')">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      겸업·토지·업종변경 규정 상세
+    </button>
+
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </div>
+      <span class="tag-txt">증여특례·납부유예도 동일 구조 적용</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  CARD 06 · 사후관리 + 제3자 승계
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div style="flex:1;padding:20px 36px 32px;">
+    <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">05</div>
+    <div style="display:inline-block;background:#3D6B4F;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">사후관리 2배 + 대안 트랙 신설</div>
+
+    <h2 style="font-size:28px;font-weight:900;color:#3D6B4F;line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:14px;">받고 나서도<br>10년을 지켜야</h2>
+    <p style="font-size:15px;color:var(--ink2);line-height:1.65;word-break:keep-all;">사후관리 기간이 <span style="font-weight:700;color:var(--ink);">5년에서 10년</span>으로 두 배 강화됩니다. 위반 시 공제받은 세액 전액이 추징됩니다.</p>
+
+    <!-- 사후관리 위반 항목 -->
+    <div style="display:flex;flex-direction:column;gap:0;margin-top:20px;border:1px solid var(--bd);border-radius:10px;overflow:hidden;">
+      <div style="background:#3D6B4F;padding:10px 16px;">
+        <span style="font-size:11px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:.05em;">10년 내 이것 하면 추징</span>
+      </div>
+      <div style="padding:4px 0;">
+        <div style="display:flex;gap:12px;padding:10px 16px;border-bottom:1px solid var(--bg3);font-size:13px;color:var(--ink2);align-items:center;">
+          <span style="color:#3D6B4F;font-weight:700;flex-shrink:0;">✕</span>가업용 자산 40% 이상 처분
+        </div>
+        <div style="display:flex;gap:12px;padding:10px 16px;border-bottom:1px solid var(--bg3);font-size:13px;color:var(--ink2);align-items:center;">
+          <span style="color:#3D6B4F;font-weight:700;flex-shrink:0;">✕</span>상속인 지분 감소
+        </div>
+        <div style="display:flex;gap:12px;padding:10px 16px;border-bottom:1px solid var(--bg3);font-size:13px;color:var(--ink2);align-items:center;">
+          <span style="color:#3D6B4F;font-weight:700;flex-shrink:0;">✕</span>근로자 수·총급여 상속 전 90% 미달
+        </div>
+        <div style="display:flex;gap:12px;padding:10px 16px;border-bottom:1px solid var(--bg3);font-size:13px;color:var(--ink2);align-items:center;">
+          <span style="color:#3D6B4F;font-weight:700;flex-shrink:0;">✕</span>상속인 가업 미종사
+        </div>
+        <div style="display:flex;gap:12px;padding:10px 16px;font-size:13px;color:var(--ink2);align-items:center;">
+          <span style="color:#3D6B4F;font-weight:700;flex-shrink:0;">✕</span>다른 업종으로 변경
+        </div>
+      </div>
+    </div>
+
+    <!-- 제3자 승계 -->
+    <div style="margin-top:22px;background:var(--bg2);border-radius:10px;padding:18px 16px;border:2.5px solid var(--gold);">
+      <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:8px;">NEW — 제3자 승계 트랙</div>
+      <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px;">자녀에게 못 물려줘도 대안이 있습니다</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.65;">임직원 등 제3자에게 매각 시 <b style="color:var(--ink);">양도세 20% 감면</b>. 적용기간 2028.1.1.~2030.12.31.</div>
+    </div>
+
+    <button class="more-btn" onclick="openPopup('popup-third')">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      제3자 승계 요건·혜택 전체 보기
+    </button>
+
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </div>
+      <span class="tag-txt">제3자 승계는 2028.1.1. 별도 시행</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  CARD 07 · 백년소상공인·명문장수기업 특례
+══════════════════════════ -->
+<div class="card" style="background:var(--bg2);">
+  <div style="flex:1;padding:20px 36px 32px;">
+    <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">06</div>
+    <div style="display:inline-block;background:var(--gold);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">업종 제외여도 길이 있습니다</div>
+
+    <h2 style="font-size:28px;font-weight:900;color:#3D6B4F;line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:14px;">727개 업종 밖이어도<br>인정받는 방법</h2>
+    <p style="font-size:15px;color:var(--ink2);line-height:1.65;word-break:keep-all;">대상 업종 727개에 해당하지 않더라도 아래 인증을 받으면 <span style="font-weight:700;color:var(--ink);">가업으로 간주</span>해 공제를 적용받을 수 있습니다.</p>
+
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:22px;">
+      <div style="background:#fff;border-radius:10px;padding:18px 16px;border:2px solid var(--gold);">
+        <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:6px;">현행 → 개정 확대</div>
+        <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;">백년소상공인 인증</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.6;">기존부터 인정. 업종 요건과 무관하게 가업 인정 간주</div>
+      </div>
+      <div style="background:#fff;border-radius:10px;padding:18px 16px;border:2px solid #3D6B4F;">
+        <div style="display:inline-block;background:#3D6B4F;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:6px;">NEW 신설</div>
+        <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;">명문장수기업 인증</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.6;">이번 개정으로 추가. 백년소상공인과 동일하게 업종 요건 충족 간주</div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;background:var(--cream);border-radius:10px;padding:14px 16px;">
+      <div style="font-size:12px;color:var(--ink2);line-height:1.7;"><strong style="color:#3D6B4F;">실무 포인트</strong> — 현재 업종이 727개 밖이거나 제외업종(병원·마트·창고업 등)에 해당하더라도 두 인증 중 하나를 확보하면 가업상속공제 적용이 가능합니다. 해당 라벨 확보 전략을 지금 검토할 가치가 있습니다.</div>
+    </div>
+
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </div>
+      <span class="tag-txt">적용: 2027.7.1. 이후 상속 개시분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  CARD 08 · 의제배당 과세 합리화
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div style="flex:1;padding:20px 36px 32px;">
+    <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">07</div>
+    <div style="display:inline-block;background:#3D6B4F;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">2027.1.1. 가장 빠른 시행</div>
+
+    <h2 style="font-size:28px;font-weight:900;color:#3D6B4F;line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:14px;">공제받은 주식,<br>나중에 팔 때도 달라진다</h2>
+    <p style="font-size:15px;color:var(--ink2);line-height:1.65;word-break:keep-all;">가업상속공제로 상속세를 면제받은 주식을 나중에 <span style="font-weight:700;color:var(--ink);">소각·감자·해산·합병</span>할 때 의제배당 세금 계산 방식이 바뀝니다.</p>
+
+    <!-- 핵심 개념 -->
+    <div style="display:flex;flex-direction:column;gap:0;margin-top:22px;border:1px solid var(--bd);border-radius:10px;overflow:hidden;">
+      <div style="background:var(--ink);padding:10px 16px;">
+        <span style="font-size:11px;font-weight:700;color:rgba(255,255,255,.9);">취득가액 계산방식 개정 (소득법 §17⑤)</span>
+      </div>
+      <div style="padding:14px 16px;border-bottom:1px solid var(--bg3);">
+        <div style="font-size:11px;font-weight:700;color:var(--ink3);margin-bottom:6px;">개정 전</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.6;">취득가액 불분명 시 <strong>액면가액 또는 출자금액</strong> 적용 → 의제배당 세부담 낮음</div>
+      </div>
+      <div style="padding:14px 16px;background:#F0F7F3;">
+        <div style="font-size:11px;font-weight:700;color:#3D6B4F;margin-bottom:6px;">개정 후</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.6;"><strong>① 피상속인 취득가액 × 공제적용률</strong><br><strong>② 상속재산 취득가액 × (1 − 공제적용률)</strong><br>→ 두 금액의 합계를 취득가액으로 적용</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;background:var(--bg2);border-radius:10px;padding:14px 16px;">
+      <div style="font-size:12px;color:var(--ink2);line-height:1.7;"><strong style="color:#3D6B4F;">실무 의미</strong> — 상속세를 면제받은 만큼 나중에 주식을 처분(소각·감자)할 때 세부담이 커집니다. 가업상속공제는 "지금 세금을 안 내는 것"이지 "영원히 안 내는 것"이 아닙니다. 향후 지분 정리 계획까지 포함한 승계 설계가 필요합니다.</div>
+    </div>
+
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </div>
+      <span class="tag-txt">적용: 2027.1.1. 이후 소각·감자·해산·합병분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  CARD 09 · 개정 전 받는 게 유리한가
+══════════════════════════ -->
+<div class="card" style="background:var(--bg2);">
+  <div style="flex:1;padding:44px 36px 36px;">
+    <div style="display:inline-block;background:#3D6B4F;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:20px;border-radius:999px;">핵심 질문</div>
+    <h2 style="font-size:28px;font-weight:900;color:#3D6B4F;line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">개정 전에<br>받는 게 유리할까요?</h2>
+    <p style="font-size:15px;color:var(--ink2);line-height:1.65;word-break:keep-all;">케이스에 따라 다릅니다. 단, <span style="font-weight:700;color:var(--ink);">지금 서두를 이유가 분명히 있는 경우</span>가 있습니다.</p>
+
+    <!-- 지금 유리한 경우 -->
+    <div style="margin-top:22px;">
+      <div style="font-size:11px;font-weight:700;color:#3D6B4F;letter-spacing:.08em;margin-bottom:10px;">▼ 지금(현행 기준)이 유리한 경우</div>
+      <div style="display:flex;flex-direction:column;gap:0;border:1.5px solid #3D6B4F;border-radius:10px;overflow:hidden;">
+        <div style="display:flex;gap:12px;padding:11px 14px;border-bottom:1px solid var(--bg3);font-size:13px;color:var(--ink2);align-items:flex-start;">
+          <span style="color:#3D6B4F;font-weight:700;flex-shrink:0;">✓</span><span><b style="color:var(--ink);">경영기간 10~29년</b> — 개정 후엔 원칙적으로 요건 미달</span>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;border-bottom:1px solid var(--bg3);font-size:13px;color:var(--ink2);align-items:flex-start;">
+          <span style="color:#3D6B4F;font-weight:700;flex-shrink:0;">✓</span><span><b style="color:var(--ink);">상속인 종사기간 2년 미만</b> — 개정 후 5년 필요</span>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;border-bottom:1px solid var(--bg3);font-size:13px;color:var(--ink2);align-items:flex-start;">
+          <span style="color:#3D6B4F;font-weight:700;flex-shrink:0;">✓</span><span><b style="color:var(--ink);">개정 후 배제업종 해당</b> — 현행엔 가능하지만 개정 후 불가<br><span style="font-size:12px;color:var(--ink3);line-height:1.7;">병원(현행 유일 인정 전문 자격사 업종) · 마트 · 버스·택시 운송업 · 주차장업 · 창고업 · 약국 등</span></span>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;border-bottom:1px solid var(--bg3);font-size:13px;color:var(--ink2);align-items:flex-start;">
+          <span style="color:#3D6B4F;font-weight:700;flex-shrink:0;">✓</span><span><b style="color:var(--ink);">겸업 비중 높음</b> — 개정 후 안분 적용으로 공제액 대폭 감소</span>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;font-size:13px;color:var(--ink2);align-items:flex-start;">
+          <span style="color:#3D6B4F;font-weight:700;flex-shrink:0;">✓</span><span><b style="color:var(--ink);">심사위원회 통과 자신 없음</b> — 현행은 요건 충족 시 자동 적용</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 개정 후 유리한 경우 -->
+    <div style="margin-top:16px;">
+      <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">▼ 개정 후가 유리한 경우</div>
+      <div style="display:flex;flex-direction:column;gap:0;border:1.5px solid var(--gold);border-radius:10px;overflow:hidden;">
+        <div style="display:flex;gap:12px;padding:11px 14px;border-bottom:1px solid var(--bg3);font-size:13px;color:var(--ink2);align-items:flex-start;">
+          <span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span><b style="color:var(--ink);">경영기간 35년 이상</b> — 개정 후 경영연수 × 20억 산식으로 한도 700억↑ 가능</span>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;border-bottom:1px solid var(--bg3);font-size:13px;color:var(--ink2);align-items:flex-start;">
+          <span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span><b style="color:var(--ink);">친족 승계가 어려운 구조</b> — 개정 후 제3자 승계 양도세 감면 트랙 활용 가능</span>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;font-size:13px;color:var(--ink2);align-items:flex-start;">
+          <span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span><b style="color:var(--ink);">백년소상공인·명문장수기업 인증 보유</b> — 업종 무관 가업 인정 가능</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 실무 핵심 -->
+    <div style="margin-top:16px;background:var(--cream);border-radius:10px;padding:16px;">
+      <div style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:8px;">실무 핵심 — 증여 특례 트랙</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.7;word-break:keep-all;"><strong style="color:var(--ink);">2027.7.1. 이전에 증여를 실행</strong>하면 현행 요건(경영기간 10년, 사후관리 5년)이 그대로 적용됩니다. 상속 시점을 조정할 수는 없지만, 증여는 지금 당장 설계가 가능합니다.</div>
+    </div>
+
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </div>
+      <span class="tag-txt">증여 실행 데드라인 2027.6.30.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  CARD 10 · 셀프 체크리스트
+══════════════════════════ -->
+<div class="card" style="background:#3D6B4F;">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:46px 36px 24px;">
+    <div>
+      <div style="display:inline-block;background:#fff;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#3D6B4F;margin-bottom:24px;border-radius:999px;">셀프 체크</div>
+      <h2 style="font-size:34px;font-weight:900;color:#fff;line-height:1.15;letter-spacing:-1.5px;word-break:keep-all;margin-bottom:8px;">우리 회사도<br>해당되나요?</h2>
+      <div style="height:3px;background:var(--gold2);width:48px;margin:20px 0 22px;"></div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">피상속인이 20년 이상 경영 중이다</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:4px;">30년 미달 시 완충 규정 적용 여부 확인 필요</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">우리 업종이 727개 안에 드는지 모른다</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:4px;">세세분류 기준 확인 필수 — 마트·병원·약국 제외</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">상속인(자녀)이 아직 입사 전이다</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:4px;">5년 종사 요건 — 조기 입사 설계가 핵심</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">본업 외 사업(겸업)이 있다</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:4px;">주업종 매출비율만 공제 — 법인 분리 검토 필요</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">친족 승계가 어려운 상황이다</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:4px;">제3자 트랙(2028~) 요건 사전 검토 가능</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-top:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">차명주식이 있다</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:4px;">30년 실질보유 요건 — 차명주식 조기 정리 필수</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-top:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">사업장 부속 토지가 넓다</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:4px;">수도권 2배·그 외 3배·㎡당 1,000만원 한도 초과 여부 확인</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-top:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#fff;">심사 불통과 시 대비책이 없다</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:4px;">일반 상속세 재원 마련 플랜 B를 지금 수립해야</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:22px 0 4px;">
+      <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">하나라도 해당되면</div>
+      <div style="display:flex;align-items:center;margin-bottom:4px;"><div style="flex:1;height:1px;background:var(--gold2);"></div><div style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid var(--gold2);"></div></div>
+      <div style="font-size:16px;font-weight:500;color:rgba(255,255,255,.9);">지금 구조를 점검하셔야 합니다</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  CARD 11 · 시행 타임라인
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div style="flex:1;padding:44px 36px 40px;">
+    <div style="font-size:11px;color:rgba(0,0,0,.4);letter-spacing:.15em;margin-bottom:24px;">IMPLEMENTATION TIMELINE</div>
+    <h2 style="font-size:26px;font-weight:900;color:var(--ink);line-height:1.3;letter-spacing:-.5px;word-break:keep-all;margin-bottom:32px;">2027.7.1.까지<br>준비할 시간이 있습니다</h2>
+
+    <!-- 타임라인 -->
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.1);align-items:flex-start;">
+        <div style="min-width:80px;font-size:12px;font-weight:700;color:var(--ink);">2026.8.3.</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.55;">세제개편안 발표 — 현재 국회 심의 전 단계</div>
+      </div>
+      <div style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.1);align-items:flex-start;">
+        <div style="min-width:80px;font-size:12px;font-weight:700;color:var(--ink);">2026 하반기</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.55;">국회 심의·의결 — 세부 내용 변경 가능성 있음</div>
+      </div>
+      <div style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.1);align-items:flex-start;">
+        <div style="min-width:80px;font-size:12px;font-weight:700;color:var(--ink);">2027.1.1.</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.55;">의제배당 과세 합리화 시행</div>
+      </div>
+      <div style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.1);align-items:flex-start;background:rgba(0,0,0,.08);margin:0 -36px;padding-left:36px;padding-right:36px;">
+        <div style="min-width:80px;font-size:12px;font-weight:700;color:#3D6B4F;">2027.7.1.</div>
+        <div style="font-size:13px;color:var(--ink);line-height:1.55;font-weight:700;">핵심 개정 대부분 시행<br><span style="font-size:11px;font-weight:400;color:var(--ink2);">가업 정의·심의위원회·요건 강화·사후관리 10년 등</span></div>
+      </div>
+      <div style="display:flex;gap:16px;padding:16px 0;align-items:flex-start;">
+        <div style="min-width:80px;font-size:12px;font-weight:700;color:var(--ink);">2028.1.1.</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.55;">제3자 승계 지원제도 시행 (~2030.12.31.)</div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;background:rgba(0,0,0,.08);border-radius:10px;padding:14px 16px;">
+      <div style="font-size:12px;color:#3D6B4F;line-height:1.7;">※ 본 개정안은 국회 통과 전 단계입니다. 근거 법령: 상증법 §18의2, §72의2 · 조특법 §30의6~8 · 소득세법 §17⑤</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  CARD 12 · CTA
+══════════════════════════ -->
+<div class="card" style="background:#2E5240;">
+  <div class="c08-body">
+    <div class="c08-eyebrow">CONSULTING FOR YOU</div>
+    <h2 class="c08-headline">무엇이든<br>물어보세요.</h2>
+    <p class="c08-sub">
+      가업승계는 <strong>시간이 곧 절세</strong>입니다.<br>
+      2027년 7월 이전까지 설계해야 할 것들이<br>생각보다 훨씬 많습니다.<span style="display:block;margin-top:8px;"></span>
+      업종 적격 여부, 상속인 조기 입사 계획,<br>
+      겸업 구조 분리, 심사 대비 자료 준비까지 —<br>
+      <strong>지금 함께 보면, 달라집니다.</strong>
+    </p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:8px;">
+      <a href="tel:01091738141" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid #3D6B4F;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:#3D6B4F;">전화 상담</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">평일 09:00~18:00</div>
+        </div>
+      </a>
+      <a href="https://blog.naver.com/bizinsightkorea" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid #3D6B4F;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:#3D6B4F;">네이버 블로그</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">비즈인사이트 bizinsight</div>
+        </div>
+      </a>
+      <a href="http://pf.kakao.com/_SxjFxdn" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid #3D6B4F;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#3D6B4F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:#3D6B4F;">카카오 채널</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">24시간 당일 회신</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="c08-footer">
+    <p>서울시 강남구 테헤란로 4길 삼성생명금융서비스<br>법인 전문 컨설팅 박기범 전문위원</p>
+  </div>
+</div>
+
+</div><!-- /viewer -->
+
+<!-- ══════════════════════════════════════
+  POPUPS
+══════════════════════════════════════ -->
+
+<!-- POPUP 1: 핵심 수치 변화 총괄 -->
+<div class="popup-overlay" id="popup-overview" onclick="closePopupOutside(event,'popup-overview')">
+  <div class="popup-sheet">
+    <button class="popup-close-btn" onclick="closePopup('popup-overview')">×</button>
+    <div class="popup-handle"></div>
+    <div class="popup-title">핵심 수치 변화 한눈에</div>
+    <div class="popup-sub">2026 세제개편안 · 가업상속공제 총괄</div>
+    <div class="popup-divider"></div>
+    <div class="popup-body">
+      <table class="p-table">
+        <tr><th>항목</th><th>현행</th><th>개정안</th></tr>
+        <tr><td>경영기간 요건</td><td>10년</td><td><strong>30년</strong> <span class="chg-badge">↑3배</span></td></tr>
+        <tr><td>공제 한도</td><td>최대 600억</td><td><strong>최대 1,000억</strong> <span class="chg-badge">↑</span></td></tr>
+        <tr><td>한도 계산</td><td>구간별 정액</td><td><strong>연수 × 20억</strong> <span class="chg-badge">변경</span></td></tr>
+        <tr><td>사후관리 기간</td><td>5년</td><td><strong>10년</strong> <span class="chg-badge">↑2배</span></td></tr>
+        <tr><td>상속인 종사 기간</td><td>2년</td><td><strong>5년</strong> <span class="chg-badge">↑</span></td></tr>
+        <tr><td>대상 업종</td><td>대분류 16개</td><td><strong>세세분류 727개</strong> <span class="chg-badge">축소</span></td></tr>
+        <tr><td>심사위원회</td><td>없음</td><td><strong>신설</strong> <span class="new-badge">NEW</span></td></tr>
+        <tr><td>겸업 안분</td><td>전체 공제</td><td><strong>주업종만 공제</strong> <span class="chg-badge">변경</span></td></tr>
+        <tr><td>제3자 승계</td><td>없음</td><td><strong>양도세 20% 감면</strong> <span class="new-badge">NEW</span></td></tr>
+        <tr><td>증여 경영기간</td><td>10년</td><td><strong>20년</strong> <span class="chg-badge">↑2배</span></td></tr>
+      </table>
+      <div class="popup-note">적용 시기: 2027.7.1. 이후 상속 개시분 (제3자 승계는 2028.1.1. 별도 시행). 국회 심의 전 단계로 세부 내용 변경 가능.</div>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP 2: 심사위원회 상세 -->
+<div class="popup-overlay" id="popup-committee" onclick="closePopupOutside(event,'popup-committee')">
+  <div class="popup-sheet">
+    <button class="popup-close-btn" onclick="closePopup('popup-committee')">×</button>
+    <div class="popup-handle"></div>
+    <div class="popup-title">심사위원회 구성 및 심사사항</div>
+    <div class="popup-sub">상증법 §18의2⑫, 상증령 §15</div>
+    <div class="popup-divider"></div>
+    <div class="popup-body">
+      <span class="popup-tag">구성</span>
+      <div class="popup-row" style="border-top:1px solid var(--bg2);">
+        <span class="popup-label">위원장</span>
+        <span class="popup-val">재정경제부 1차관</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">구성</span>
+        <span class="popup-val">정부 및 <strong>민간위원 과반</strong>으로 구성</span>
+      </div>
+
+      <div style="margin-top:20px;"></div>
+      <span class="popup-tag">심사사항</span>
+      <div class="popup-row" style="border-top:1px solid var(--bg2);">
+        <span class="popup-label">①</span>
+        <span class="popup-val">'가업'에 해당하는지 여부 — 전문 기술·경영 노하우 보유 여부 심사</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">②</span>
+        <span class="popup-val">경영기간·사후관리기간 중 <strong>업종 변경 허용 여부</strong></span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">③</span>
+        <span class="popup-val">공제대상 업종 조정 여부</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">④</span>
+        <span class="popup-val">그 밖에 가업상속공제 관련 사항</span>
+      </div>
+
+      <div class="popup-note">심사 불통과 시 일반 상속세가 부과됩니다. 심사 대비 자료(승계자 본업 이해도, 산업 기여, 고용창출 효과 등 PT 자료) 사전 준비가 필수입니다.</div>
+
+      <div style="margin-top:16px;background:#F0F7F3;border-radius:6px;padding:14px 16px;">
+        <div style="font-size:12px;font-weight:700;color:#3D6B4F;margin-bottom:8px;">앞으로 달라지는 것</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.75;word-break:keep-all;">요건만 갖추면 자동으로 받던 시대는 끝났습니다. 이제는 <strong style="color:var(--ink);">"우리가 진짜 가업임을 증명"</strong>해야 합니다. 어떤 서류를 어떻게 준비하고, 심사위원들을 어떻게 설득할 것인지 — 이 과정을 얼마나 치밀하게 설계하느냐가 공제 수혜 여부를 가르게 됩니다. 컨설팅의 핵심이 요건 충족에서 <strong style="color:var(--ink);">심사 대비 전략</strong>으로 이동하고 있습니다.</div>
+      </div>
+
+      <div style="margin-top:24px;"></div>
+      <span class="popup-tag">'가업' 인정 요건 — 5가지 유형 중 하나 해당 시</span>
+      <div class="popup-row" style="border-top:1px solid var(--bg2);">
+        <span class="popup-label">①</span>
+        <span class="popup-val">「특허법」에 따른 <strong>특허권</strong></span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">②</span>
+        <span class="popup-val">「부정경쟁방지법」에 따른 <strong>영업비밀</strong> — 공공연히 알려지지 않고 독립된 경제적 가치를 가지며 비밀로 관리된 기술상·경영상 정보</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">③</span>
+        <span class="popup-val">「산업기술보호법」에 따른 <strong>산업기술</strong> — 행정기관장이 지정·고시한 국가핵심기술·첨단기술 등</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">④</span>
+        <span class="popup-val">「숙련기술장려법」에 따른 <strong>숙련기술</strong> — 지속적 경험·학습으로 얻어지는 기술</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">⑤</span>
+        <span class="popup-val">①~④와 <strong>유사한 수준</strong>의 전문 기술 또는 경영상 노하우</span>
+      </div>
+
+      <div style="margin-top:20px;"></div>
+      <span class="popup-tag" style="background:var(--ink);">명시적 배제 사유</span>
+      <div class="popup-row" style="border-top:1px solid var(--bg2);">
+        <span class="popup-label">배제 ①</span>
+        <span class="popup-val">타인으로부터 제공받은 기술·노하우로 사업하는 경우 <strong>(프랜차이즈 등)</strong></span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">배제 ②</span>
+        <span class="popup-val">부동산을 통한 소득·이자·배당소득이 <strong>주된 소득</strong>인 경우</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP 3: 피상속인·상속인 요건 전체 비교 -->
+<div class="popup-overlay" id="popup-requirements" onclick="closePopupOutside(event,'popup-requirements')">
+  <div class="popup-sheet">
+    <button class="popup-close-btn" onclick="closePopup('popup-requirements')">×</button>
+    <div class="popup-handle"></div>
+    <div class="popup-title">피상속인·상속인 요건 전체 비교</div>
+    <div class="popup-sub">상증법 §18의2①, 상증령 §15⑥</div>
+    <div class="popup-divider"></div>
+    <div class="popup-body">
+      <table class="p-table">
+        <tr><th>요건</th><th>현행</th><th>개정안</th></tr>
+        <tr class="hl"><td><strong>계속경영 기간</strong></td><td>10년 이상</td><td><strong>30년 이상</strong><br><span style="color:#888;">20년↑이면<br>부족분만큼<br>사후관리 연장</span></td></tr>
+        <tr><td>최대주주<br>지분 보유</td><td>40%(상장 20%)<br>이상<br>10년 이상 보유</td><td>지분율 동일<br><strong>30년 이상 보유</strong><br><span style="color:#888;">20년↑이면<br>20년 이상으로 적용</span></td></tr>
+        <tr><td>대표이사 재직</td><td>영위기간 50% 이상<br>또는<br>소급 10년 중 5년↑</td><td>영위기간 50% 이상<br>또는<br>소급 <strong>30년 중 15년↑</strong></td></tr>
+        <tr class="hl"><td><strong>상속인<br>가업 종사</strong></td><td>상속 前 2년↑</td><td><strong>상속 前 5년↑</strong></td></tr>
+        <tr><td>상속인<br>연령·임원취임</td><td colspan="2">18세 이상, 신고기한까지 임원취임, 신고기한부터 2년 내 대표취임 — <strong>변경 없음</strong></td></tr>
+      </table>
+      <div class="popup-note"><strong>완충 규정 (20~29년 경영 기업)</strong><br>피상속인이 20년 이상이면, 부족 기간(30년−사업영위기간)만큼 상속인 사후관리 기간을 추가 연장하는 방식으로 공제를 받을 수 있습니다.</div>
+
+      <div style="margin-top:20px;"></div>
+      <span class="popup-tag-gold">실무 핵심 — 상속 vs 증여 경영기간 차이</span>
+      <div class="popup-row" style="border-top:1px solid var(--bg2);">
+        <span class="popup-label">상속</span>
+        <span class="popup-val">피상속인 경영기간 <strong>30년 이상</strong> 원칙</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">증여</span>
+        <span class="popup-val">부모(증여자) 경영기간 <strong>20년 이상</strong> — 상속보다 10년 완화</span>
+      </div>
+      <div class="popup-note">경영기간이 20~29년인 기업이라면 <strong>상속보다 증여 특례 트랙</strong>이 현실적인 대안입니다. 또한 증여는 수증자(자녀)가 증여 후 입사해도 요건 충족이 가능한 반면, 상속은 사전 5년 종사가 필수라는 점도 중요한 차이입니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP 4: 겸업·토지·업종변경 상세 -->
+<div class="popup-overlay" id="popup-limit" onclick="closePopupOutside(event,'popup-limit')">
+  <div class="popup-sheet">
+    <button class="popup-close-btn" onclick="closePopup('popup-limit')">×</button>
+    <div class="popup-handle"></div>
+    <div class="popup-title">겸업·토지·업종변경 규정</div>
+    <div class="popup-sub">상증령 §15 / 상증법 §18의2②</div>
+    <div class="popup-divider"></div>
+    <div class="popup-body">
+      <span class="popup-tag">겸업 안분 신설</span>
+      <div class="popup-row" style="border-top:1px solid var(--bg2);">
+        <span class="popup-label">현행</span>
+        <span class="popup-val">주업종이 공제업종이면 부업종이 비공제업종이어도 <strong>전체 사업용 자산 공제</strong></span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">개정</span>
+        <span class="popup-val"><strong>주업종 매출비율만큼만 공제</strong>. 구분경리 의무 신설. 법인 분리 설립 검토 필요</span>
+      </div>
+
+      <div style="margin-top:20px;"></div>
+      <span class="popup-tag">공제 토지 범위 축소</span>
+      <div class="popup-row" style="border-top:1px solid var(--bg2);">
+        <span class="popup-label">현행 배율</span>
+        <span class="popup-val">건축물 바닥면적의 3~7배 (상업 3배, 공업 4배, 도시외 7배)</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">개정 배율</span>
+        <span class="popup-val">수도권(인구감소지역 제외) <strong>2배</strong>, 그 외 <strong>3배</strong></span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">한도 신설</span>
+        <span class="popup-val"><strong>㎡당 1,000만원</strong> 한도 (현행 없음 → 신설)</span>
+      </div>
+
+      <div style="margin-top:20px;"></div>
+      <span class="popup-tag">업종 변경</span>
+      <div class="popup-row" style="border-top:1px solid var(--bg2);">
+        <span class="popup-label">현행</span>
+        <span class="popup-val">대분류 내 변경 시 심사 없이 허용</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">개정</span>
+        <span class="popup-val">심사위원회 심사를 거쳐 불가피하다고 인정 시 허용 (대분류 외도 가능). 기술 활용 가능성·고용인력 승계 가능성 종합 고려</span>
+      </div>
+
+      <div class="popup-note">겸업 매출비율 리스크가 있다면 법인 분리 설립을 지금 검토하는 것이 유리합니다. 시행 이후에는 분리 자체가 세무 이슈가 될 수 있습니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP 5: 제3자 승계 전체 -->
+<div class="popup-overlay" id="popup-third" onclick="closePopupOutside(event,'popup-third')">
+  <div class="popup-sheet">
+    <button class="popup-close-btn" onclick="closePopup('popup-third')">×</button>
+    <div class="popup-handle"></div>
+    <div class="popup-title">제3자 사업승계 지원제도</div>
+    <div class="popup-sub">조특법 §30의8 신설 · 2028.1.1. 시행</div>
+    <div class="popup-divider"></div>
+    <div class="popup-body">
+      <span class="popup-tag-gold">매도자 — 양도소득세 감면</span>
+      <div class="popup-row" style="border-top:1px solid var(--bg2);">
+        <span class="popup-label">매도자 요건</span>
+        <span class="popup-val">피승계기업을 <strong>20년 이상</strong> 계속경영한 <strong>60세 이상</strong> 최대주주</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">매수자 요건</span>
+        <span class="popup-val">① 동일 업종(동일 대분류) <strong>10년↑</strong> 계속경영한 개인·기업<br>② 피승계기업에서 <strong>5년↑</strong> 근무한 임직원 中 택1</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">피승계기업</span>
+        <span class="popup-val">727개 업종 주된 사업, 중소·중견기업(3년 평균 매출액 5천억 미만)</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">감면율</span>
+        <span class="popup-val"><strong>양도소득세 20% 감면</strong></span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">한도</span>
+        <span class="popup-val">경영연수 × 연 5,000만원 (양도소득세 감면 종합한도와 별도 적용)</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">추징</span>
+        <span class="popup-val">양도 후 <strong>5년 내 재양수</strong> 시 감면세액 + 이자상당액 추징</span>
+      </div>
+
+      <div style="margin-top:20px;"></div>
+      <span class="popup-tag-gold">매수자 — 소득세·법인세 감면</span>
+      <div class="popup-row" style="border-top:1px solid var(--bg2);">
+        <span class="popup-label">감면율·기간</span>
+        <span class="popup-val">승계받은 사업장 소득세·법인세 <strong>10% 감면 · 5년간</strong></span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">한도</span>
+        <span class="popup-val">연간 <strong>5억원</strong> 한도. 구분경리 필수</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">적용기간</span>
+        <span class="popup-val"><strong>2028.1.1. ~ 2030.12.31.</strong></span>
+      </div>
+
+      <div style="margin-top:20px;"></div>
+      <span class="popup-tag" style="background:var(--ink);">매수자 사후관리 — 5년 내 해당 시 추징</span>
+      <div class="popup-row" style="border-top:1px solid var(--bg2);">
+        <span class="popup-label">①</span>
+        <span class="popup-val">매수자의 주식·출자지분 감소</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">②</span>
+        <span class="popup-val">승계받은 사업용 자산의 <strong>40% 이상</strong> 처분</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">③</span>
+        <span class="popup-val">승계받은 사업장 정규직 근로자 수·총급여액이 <strong>10% 이상</strong> 감소</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">④</span>
+        <span class="popup-val">승계받은 사업장을 <strong>1년 이상</strong> 휴업·폐업</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">⑤</span>
+        <span class="popup-val">승계받은 사업을 <strong>매도자가 재취득</strong> (재양수)</span>
+      </div>
+
+      <div class="popup-note"><strong>전문가 지적</strong> — 현행 10% 감면은 창업 수준(50~100%)과 비교해 유인 효과가 미흡하다는 비판이 있어 국회 심의 과정에서 확대될 가능성이 있습니다.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openPopup(id){
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closePopup(id){
+  document.getElementById(id).classList.remove('active');
+  document.body.style.overflow='';
+}
+function closePopupOutside(e,id){
+  if(e.target===document.getElementById(id)) closePopup(id);
+}
+</script>
+</body>
+</html>
