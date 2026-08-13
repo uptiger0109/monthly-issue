@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>월간이슈 특별판 6탄 · 위험성평가</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  /* 특별판 6탄 톤 — 딥네이비 메인 + 앰버 악센트 (ISO 3864 지시색·주의색 기준) */
+  --red:#1B3A5C;--red2:#14304C;--red3:#0E2338;--gold:#D97706;--gold2:#F0A93E;
+  --cyan:#00AAFF;
+  --ink:#1A1A18;--ink2:#4A4844;--ink3:#8A8880;--ink4:#C4C1B8;
+  --bg:#FAF7F0;--bg2:#F2EDE3;--bg3:#E8E2D5;--bd:#DED7C8;--bd2:#CCC4B2;
+  --cream:#FBF6EC;
+}
+html,body{width:100%;height:100%;background:var(--bg3);font-family:'Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased;}
+.viewer{width:100%;max-width:430px;margin:0 auto;height:100dvh;overflow-y:scroll;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--cream);}
+.viewer::-webkit-scrollbar{display:none;}
+.card{width:100%;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+
+/* ── STITCH ── */
+.stitch{width:calc(100% - 72px);height:1px;background:#000;margin:15px 36px 0;flex-shrink:0;}
+
+/* ── COVER (특별판 — 딥레드) ── */
+.c01{background:var(--red);}
+.c01-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:54px 36px 48px;}
+.c01-rule{width:100%;height:2px;background:#fff;}
+.c01-monthly-wrap{display:flex;flex-direction:column;margin-top:20px;}
+.c01-line{display:flex;font-size:72px;font-weight:900;color:#fff;line-height:1.08;letter-spacing:-2px;font-family:'Noto Sans KR',sans-serif;}
+.char{width:72px;display:inline-flex;align-items:center;justify-content:center;}
+.c01-monthrow{display:flex;align-items:flex-end;gap:14px;margin-top:2px;}
+.c01-spline{color:var(--gold2);align-items:flex-end;}
+.c01-mon{font-size:44px;font-weight:900;color:var(--gold2);line-height:1;letter-spacing:-2px;margin-bottom:10px;margin-left:4px;}
+.c01-spwrap{display:flex;flex-direction:column;align-items:center;gap:6px;margin-left:12px;margin-bottom:14px;}
+.c01-spdate{font-size:14px;font-weight:500;color:rgba(255,255,255,.9);letter-spacing:.3px;}
+.c01-spbadge{padding:5px 26px 7px;background:var(--gold2);border-radius:999px;font-size:16px;font-weight:800;color:var(--red3);letter-spacing:1px;white-space:nowrap;}
+.c01-rule2{width:100%;height:2px;background:rgba(255,255,255,.85);margin:22px 0 14px;}
+.c01-2026{font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:400;color:rgba(255,255,255,.6);width:100%;letter-spacing:1px;}
+.c01-hook{font-size:31px;font-weight:900;color:#fff;line-height:1.3;letter-spacing:-1px;word-break:keep-all;margin-top:34px;}
+.c01-hook em{font-style:normal;color:var(--gold2);}
+.c01-badge-row{display:flex;align-items:center;gap:8px;margin-top:20px;flex-wrap:wrap;}
+.c01-badge{padding:4px 16px 6px;border:1.3px solid var(--gold2);border-radius:999px;background:transparent;font-size:14px;font-weight:700;color:var(--gold2);display:inline-flex;align-items:center;}
+
+/* ── ISSUE TAG ── */
+.tag-row{margin-top:38px;display:flex;align-items:center;gap:10px;}
+.tag-dot{width:18px;height:18px;border-radius:50%;border:1px solid var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tag-txt{font-size:18px;font-weight:400;color:var(--ink2);}
+
+/* ── CTA CARD ── */
+.c08-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:46px 36px 0;gap:0;}
+.c08-eyebrow{font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:500;color:rgba(255,255,255,.65);letter-spacing:2px;margin-bottom:14px;}
+.c08-headline{font-size:50px;font-weight:900;color:#fff;line-height:1.04;letter-spacing:-2px;word-break:keep-all;margin-bottom:28px;}
+.c08-sub{font-size:18px;font-weight:400;color:rgba(255,255,255,.92);line-height:1.7;word-break:keep-all;margin-bottom:32px;}
+.c08-sub strong{font-weight:700;color:var(--gold2);}
+.c08-footer{padding:22px 36px 28px;display:flex;align-items:center;justify-content:flex-start;flex-shrink:0;}
+.c08-footer p{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.5px;text-align:left;line-height:1.4;}
+
+/* ── 자세히 보기 트리거 ── */
+.detail-btn{display:inline-flex;align-items:center;gap:6px;margin-top:20px;padding:10px 18px;background:transparent;border:2.4px solid var(--gold);border-radius:999px;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--red);cursor:pointer;}
+.detail-btn svg{flex-shrink:0;}
+
+/* ── 바텀시트 팝업 ── */
+.sheet-overlay{position:fixed;inset:0;background:rgba(20,16,12,.55);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s ease;display:flex;justify-content:center;align-items:flex-end;}
+.sheet-overlay.open{opacity:1;pointer-events:auto;}
+.sheet{width:100%;max-width:430px;max-height:86vh;background:var(--cream);border-radius:20px 20px 0 0;transform:translateY(100%);transition:transform .3s cubic-bezier(.22,.68,0,1);display:flex;flex-direction:column;overflow:hidden;}
+.sheet-overlay.open .sheet{transform:translateY(0);}
+.sheet-handle{width:40px;height:4px;background:var(--bd2);border-radius:99px;margin:12px auto 0;flex-shrink:0;}
+.sheet-head{padding:18px 28px 16px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:1px solid var(--bd);flex-shrink:0;}
+.sheet-head-eyebrow{font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--red);margin-bottom:6px;}
+.sheet-head-title{font-size:22px;font-weight:900;color:var(--ink);line-height:1.3;letter-spacing:-.5px;word-break:keep-all;}
+.sheet-close{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;cursor:pointer;margin-top:2px;}
+.sheet-body{padding:22px 28px 40px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+.sheet-block{margin-bottom:22px;}
+.sheet-block:last-child{margin-bottom:0;}
+.sheet-block-label{font-size:12px;font-weight:700;letter-spacing:.8px;color:var(--red);margin-bottom:8px;}
+.sheet-block-title{font-size:17px;font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:8px;word-break:keep-all;}
+.sheet-block-body{font-size:15px;color:var(--ink2);line-height:1.65;word-break:keep-all;}
+.sheet-block-body b{color:var(--ink);font-weight:700;}
+.sheet-case{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:16px 18px;margin-top:10px;}
+.sheet-case-tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:999px;margin-bottom:8px;}
+.sheet-case-tag.before{background:var(--bg2);color:var(--ink3);}
+.sheet-case-tag.after{background:#FFF0EE;color:var(--red);}
+.sheet-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px;}
+.sheet-table th{background:var(--bg2);color:var(--ink3);font-size:11px;font-weight:700;letter-spacing:.3px;padding:8px 10px;text-align:left;border-bottom:2px solid var(--bd2);}
+.sheet-table td{padding:9px 10px;border-bottom:1px solid var(--bd);color:var(--ink2);line-height:1.45;vertical-align:middle;}
+.sheet-table tr:last-child td{border-bottom:none;}
+.sheet-note{font-size:12.5px;color:var(--ink3);line-height:1.6;margin-top:10px;border-left:2px solid var(--bd2);padding-left:10px;}
+.sheet-steps{display:flex;flex-direction:column;gap:12px;margin-top:10px;}
+.sheet-step{display:flex;gap:12px;align-items:flex-start;}
+.sheet-step-num{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+</style>
+</head>
+<body>
+<div class="viewer" id="viewer">
+
+<!-- ══════════════════════════
+  CARD 01 · COVER
+══════════════════════════ -->
+<div class="card c01">
+  <div class="c01-body">
+    <div class="c01-rule"></div>
+    <div class="c01-monthly-wrap">
+      <div class="c01-line"><span class="char">월</span><span class="char">간</span><span class="char">이</span><span class="char">슈</span></div>
+      <div style="font-size:72px;font-weight:800;color:#fff;font-family:'Noto Sans KR',sans-serif;letter-spacing:0px;line-height:1.08;transform:scaleX(1.05);transform-origin:left;display:inline-block;margin-left:3px;">MONEY</div>
+      <div class="c01-line c01-spline">
+        <span class="char">특</span><span class="char">별</span><span class="char">판</span><span class="c01-spwrap"><span class="c01-spdate">2026. 8월</span><span class="c01-spbadge">6탄</span></span>
+      </div>
+    </div>
+    <div class="c01-rule2"></div>
+    <div class="c01-2026">2026 monthly issue · special edition</div>
+    <p class="c01-hook">위험성평가,<br><em>알고 있다는 착각,<br>팩트로 확인합니다</em></p>
+    <div class="c01-badge-row">
+      <span class="c01-badge">위험성평가</span>
+      <span class="c01-badge">중대재해처벌법</span>
+      <span class="c01-badge">과태료 1,800만원</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 02 · 이슈 01 — 형식 vs 실질
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch" style="margin-top:75px;"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 26px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">01</div>
+      <div style="display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">판단 기준 팩트체크</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;">90%</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--ink3);letter-spacing:1px;">부실 위험성평가 비중</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:var(--red);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">법원이 보는 기준이<br>바뀌었습니다</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.55;word-break:keep-all;">중대재해처벌법 유죄 확정 44건 중 약 90%가 위험성평가가 부실했던 사건이었습니다. <span style="font-weight:700;color:var(--ink);">법원은 이제 서류의 존재가 아니라, 위험요인을 실제로 발굴하고 개선조치를 이행했는지를 봅니다.</span> "작년 것에 날짜만 바꾼" 방식은 형식적 실시로 분류되고, 오히려 "알고도 방치했다"는 가중처벌 증거로 쓰일 수 있습니다.</p>
+
+      <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:18px;margin-top:22px;">
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">·</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;">실제로 <b style="color:var(--ink);font-weight:700;">위험성평가 "우수사업장"으로 인정까지 받았던 곳</b>에서 대형 화재·폭발 사고가 발생했습니다. 조사 결과 근로자 참여 없이 담당자 혼자 서류만 만드는 형식적 운영이었다는 사실이 드러났습니다.</span>
+        </div>
+      </div>
+      <button class="detail-btn" onclick="openSheet('sheet01')">실제 사례로 자세히 보기
+        <svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M6 2V10M2 6H10" stroke="#D97706" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M1 5L4 8L9 2" stroke="#D97706" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="tag-txt">법원 판단 기준</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD · 이슈 02 — 산재 vs 중대재해, 연결고리는 위험성평가
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 26px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">02</div>
+      <div style="display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">개념 정리</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:78px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-3px;">2단계</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--ink3);letter-spacing:1px;">인과관계로 연결</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:var(--red);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">따로 관리한다는 착각,<br>사실은 하나로 연결됩니다</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.55;word-break:keep-all;">산업재해와 중대재해, 산업안전보건법과 중대재해처벌법 — <span style="font-weight:700;color:var(--ink);">서로 다른 법이라 별개로 관리해도 된다고 생각하기 쉽지만, 실제로는 위험성평가 하나가 둘을 잇는 연결고리</span>입니다.</p>
+
+      <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:18px;margin-top:22px;">
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">01</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;"><b style="color:var(--ink);font-weight:700;">산업재해</b>는 부상·질병을 포함하는 넓은 개념(산안법 관할, 과태료), <b style="color:var(--ink);font-weight:700;">중대재해</b>는 그중 사망 등 재해 정도가 심한 경우(중대재해처벌법 관할, 대표이사 형사책임)</span>
+        </div>
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">02</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;">위험성평가 미이행은 <b style="color:var(--ink);font-weight:700;">산안법상 과태료 사유이면서, 동시에 중대재해처벌법상 안전보건관리체계 미구축의 증거</b>로도 함께 쓰입니다</span>
+        </div>
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">03</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;">사고와 직접 관련이 멀어 보이는 위험성평가 미비도, <b style="color:var(--ink);font-weight:700;">2단계 인과관계</b>를 거쳐 대표이사의 형사책임으로 이어질 수 있습니다</span>
+        </div>
+      </div>
+      <button class="detail-btn" onclick="openSheet('sheetConcept')">판례로 연결 구조 확인하기
+        <svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M6 2V10M2 6H10" stroke="#D97706" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot" style="position:relative;top:-12px;">
+        <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M1 5L4 8L9 2" stroke="#D97706" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="tag-txt">산안법 × 중대재해처벌법<br>— 연결고리: 위험성평가</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 03 · 이슈 02 — 과태료 3단계
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 26px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">03</div>
+      <div style="display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">2026 신설 조항</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;">1,800</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--ink3);letter-spacing:1px;position:relative;top:-20px;">만원,<br>합산 시 최대</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:var(--red);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">각각 따로 쌓이는<br>세 개의 과태료</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.55;word-break:keep-all;">"평가는 했으니 괜찮겠지"가 가장 위험한 생각입니다. <span style="font-weight:700;color:var(--ink);">실시·참여·기록 — 서로 다른 조항 세 가지가 각각 별도로 확인 대상</span>이기 때문입니다.</p>
+
+      <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:18px;margin-top:22px;">
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">01</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;"><b style="color:var(--ink);font-weight:700;">위험성평가 미실시</b> — 최대 1,000만원</span>
+        </div>
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">02</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;"><b style="color:var(--ink);font-weight:700;">근로자(대표) 참여·결과 공유 누락</b> — 최대 500만원</span>
+        </div>
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">03</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;"><b style="color:var(--ink);font-weight:700;">기록 3년 미보존</b> — 최대 300만원</span>
+        </div>
+      </div>
+      <p style="font-size:14px;color:var(--ink3);line-height:1.5;word-break:keep-all;">※ 근로자 참여 의무화·대표 참여 보장·설명회 등 공유 의무는 모두 동일 조항(제175조 제5항 제1호)에 속해 있어, 이 항목 전체에 500만원 한도가 하나만 적용됩니다. 과태료 시행은 2027~2028년 사업장 규모별 단계 적용, 실시 의무 자체는 2026.6.1 즉시 시행입니다.</p>
+      <button class="detail-btn" onclick="openSheet('sheet02')">근거 조문·상세 기준 보기
+        <svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M6 2V10M2 6H10" stroke="#D97706" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M1 5L4 8L9 2" stroke="#D97706" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="tag-txt">산업안전보건법 개정</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 04 · 이슈 03 — 유예라는 착각
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 26px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">04</div>
+      <div style="display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">가장 흔한 오해</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:64px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-3px;">2026.6.1</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--ink3);letter-spacing:1px;position:relative;top:-20px;">실시의무<br>즉시 시행</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:var(--red);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">"50인 미만이니<br>시간 있다"는 오해</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.55;word-break:keep-all;">유예되는 건 <span style="font-weight:700;color:var(--ink);">과태료 부과 시점</span>뿐입니다. 위험성평가 <span style="font-weight:700;color:var(--ink);">실시 의무 자체는 규모와 무관하게 이미 즉시 적용</span> 중입니다.</p>
+
+      <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:18px;margin-top:22px;">
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">·</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;"><b style="color:var(--ink);font-weight:700;">유예되는 것</b> — 과태료 부과 시점만 (50인 이상 2027.1.1 / 50인 미만 2028.1.1)</span>
+        </div>
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">·</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;"><b style="color:var(--ink);font-weight:700;">유예되지 않는 것</b> — 위험성평가 실시 의무는 2026.6.1부터 즉시 적용</span>
+        </div>
+      </div>
+      <p style="font-size:16px;color:var(--ink2);line-height:1.55;word-break:keep-all;">지금 감독에서 미비가 적발되면 시정조치가 내려지고, 이 기록은 나중에 중대재해가 발생했을 때 <span style="font-weight:700;color:var(--ink);">"이미 지적받고도 방치했다"는 가중처벌 근거</span>로 그대로 쓰입니다.</p>
+      <button class="detail-btn" onclick="openSheet('sheet03')">감독 시 7가지 확인 항목 보기
+        <svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M6 2V10M2 6H10" stroke="#D97706" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M1 5L4 8L9 2" stroke="#D97706" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="tag-txt">실시의무 즉시 적용</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 05 · 이슈 04 — 5대 의무 중 핵심
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 26px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">05</div>
+      <div style="display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">경영책임자 5대 의무</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;">3/5</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--ink3);letter-spacing:1px;">동시에 채워지는 의무</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:var(--red);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">위험성평가 하나로<br>세 가지 의무가 끝난다</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.55;word-break:keep-all;">중대재해처벌법이 요구하는 경영책임자 5대 의무 중, <span style="font-weight:700;color:var(--ink);">①안전보건관리체계 구축 ②재발방지대책 ⑤안전보건교육</span> 세 가지가 위험성평가로 동시에 채워집니다.</p>
+
+      <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:18px;margin-top:22px;">
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">·</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;">위험성평가는 산업안전보건법의 절차이면서, 동시에 중대재해처벌법이 요구하는 <b style="color:var(--ink);font-weight:700;">안전보건관리체계의 핵심 증거</b>입니다.</span>
+        </div>
+      </div>
+      <p style="font-size:14px;color:var(--ink3);line-height:1.5;word-break:keep-all;">※ 5대 의무 전체: ①안전보건관리체계 구축 ②재발방지대책 수립·이행 ③개선·시정명령 이행 ④관계 법령 준수 ⑤안전보건교육 실시 — 이 중 ③④는 위험성평가와 별개로 이행해야 합니다.</p>
+      <button class="detail-btn" onclick="openSheet('sheet04')">왜 지금 이렇게 강화됐는지 보기
+        <svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M6 2V10M2 6H10" stroke="#D97706" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M1 5L4 8L9 2" stroke="#D97706" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="tag-txt">중대재해처벌법 연계</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 06 · 이슈 05 — 감춰지지 않는다
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 26px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">06</div>
+      <div style="display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">2026.8.1 시행</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;">500</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--ink3);letter-spacing:1px;">명 이상, 즉시 공시 대상</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:var(--red);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">산재 현황이<br>공개 정보가 됩니다</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.55;word-break:keep-all;">안전보건 현황 공시제도가 새로 생겼습니다. <span style="font-weight:700;color:var(--ink);">근로자 500명 이상은 즉시, 300명 이상은 2027년 8월부터</span> 매년 산재 발생 현황과 재발방지대책을 지정 홈페이지에 의무 공시해야 합니다.</p>
+
+      <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:18px;margin-top:22px;">
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">·</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;"><b style="color:var(--ink);font-weight:700;">재해조사 범위 확대</b> — 사망사고뿐 아니라 화재·폭발 부상까지 포함, 조사의견서 자체가 공개될 수 있습니다.</span>
+        </div>
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">·</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;"><b style="color:var(--ink);font-weight:700;">안전일터 신고포상금</b> — 직원이 위반사항을 사진·영상으로 신고하면 건당 최대 500만원, 연간 최대 1,500만원 지급 (2026년 하반기 도입)</span>
+        </div>
+      </div>
+      <p style="font-size:16px;color:var(--ink2);line-height:1.55;word-break:keep-all;">계열사·거래처가 있는 법인이라면 이는 <span style="font-weight:700;color:var(--ink);">평판·투자 리스크로 직결</span>됩니다.</p>
+      <button class="detail-btn" onclick="openSheet('sheet05')">정부 투입 규모·신고포상금 구조 보기
+        <svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M6 2V10M2 6H10" stroke="#D97706" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M1 5L4 8L9 2" stroke="#D97706" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="tag-txt">외부 공개 확대</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 07 · 이슈 06 — 출구 티저: 인정받으면 유예
+══════════════════════════ -->
+<div class="card" style="background:var(--cream);">
+  <div class="stitch"></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 26px;">
+    <div>
+      <div style="font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;">07</div>
+      <div style="display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">실행 전략</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;">3년</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--ink3);letter-spacing:1px;">감독 유예</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:var(--red);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">인정사업장이 되면<br>감독을 3년 쉽니다</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.55;word-break:keep-all;">안전보건공단 심사를 통과해 <span style="font-weight:700;color:var(--ink);">위험성평가 인정사업장</span>이 되면 유효기간 3년간 안전보건 감독을 유예받고, 정부 포상·표창 우선 추천 혜택도 주어집니다.</p>
+
+      <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:18px;margin-top:22px;">
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">·</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;">근로자 100명 미만(건설 120억 미만)은 항목별 70점 이상·종합 90점 이상이면 인정, 유효기간 3년</span>
+        </div>
+        <div style="display:flex;gap:11px;align-items:flex-start;">
+          <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">·</span>
+          <span style="font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;">근로자 50명 미만은 안전보건공단 무료 컨설팅 신청 가능</span>
+        </div>
+      </div>
+      <p style="font-size:16px;color:var(--ink2);line-height:1.55;word-break:keep-all;">단, 인정 기간 중 중대재해가 발생하면 즉시 취소됩니다. <span style="font-weight:700;color:var(--ink);">감독을 피하는 수단이 아니라, 이미 제대로 운영되고 있음을 공인받는 절차</span>에 가깝습니다.</p>
+      <button class="detail-btn" onclick="openSheet('sheet06')">3개월 실행 로드맵 보기
+        <svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M6 2V10M2 6H10" stroke="#D97706" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot">
+        <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M1 5L4 8L9 2" stroke="#D97706" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="tag-txt">안전보건공단 인정제도</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD · 체크리스트 (특별판 — red 배경)
+══════════════════════════ -->
+<div class="card" style="background:var(--red);">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:46px 36px 24px;">
+    <div>
+      <div style="display:inline-block;background:#fff;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--red);margin-bottom:24px;border-radius:999px;">셀프 체크</div>
+      <h2 style="font-size:36px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1.5px;word-break:keep-all;margin-bottom:8px;">우리 회사,<br>지금 준비돼 있나요?</h2>
+      <div style="height:3px;background:var(--gold2);width:48px;margin:20px 0 22px;"></div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:19px;font-weight:700;color:#fff;">담당자·역할이 명확한가</div>
+            <div style="font-size:16px;color:rgba(255,255,255,.78);margin-top:4px;">위험성평가 담당자가 지정되어 있고 역할이 분명해야 합니다</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:19px;font-weight:700;color:#fff;">최근 1년 내 정기평가를 했는가</div>
+            <div style="font-size:16px;color:rgba(255,255,255,.78);margin-top:4px;">최초·정기·수시 평가 중 최근 실시 기록이 있어야 합니다</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:19px;font-weight:700;color:#fff;">근로자대표 참여·공유를 했는가</div>
+            <div style="font-size:16px;color:rgba(255,255,255,.78);margin-top:4px;">참여 확인 절차와 결과 공유(TBM 등) 기록이 모두 필요합니다</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:19px;font-weight:700;color:#fff;">기록을 3년간 보존하고 있는가</div>
+            <div style="font-size:16px;color:rgba(255,255,255,.78);margin-top:4px;">있었다는 사실만으로는 부족하고, 지금 찾을 수 있어야 합니다</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div>
+            <div style="font-size:19px;font-weight:700;color:#fff;">사고 대비 자문·보험 체계가 있는가</div>
+            <div style="font-size:16px;color:rgba(255,255,255,.78);margin-top:4px;">자문 노무사·변호사 연락체계, 배상책임보험 등 재정적 대비도 포함됩니다</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:22px 0 4px;">
+      <div style="font-size:17px;font-weight:700;color:#fff;margin-bottom:1px;">3개 이상 체크되지 않았다면</div>
+      <div style="display:flex;align-items:center;margin-bottom:1px;"><div style="flex:1;height:1px;background:var(--gold2);"></div><div style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid var(--gold2);"></div></div>
+      <div style="font-size:17px;font-weight:500;color:rgba(255,255,255,.9);">지금이 가장 낮은 비용으로 채울 수 있는 시점입니다</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD · CTA (특별판 — red2 배경)
+══════════════════════════ -->
+<div class="card" style="background:var(--red2);">
+  <div class="c08-body">
+    <div class="c08-eyebrow">CONSULTING FOR YOU</div>
+    <h2 class="c08-headline">무엇이든<br>물어보세요.</h2>
+    <p class="c08-sub">
+      위험성평가는 서류 한 장이 아니라 <strong>사고 발생 시 경영책임자를 지키는 유일한 방어 기록</strong>입니다.<br>
+      업종·인원·현장 구조에 따라 <strong>필요한 항목과 우선순위가 전부 다릅니다.</strong><span style="display:block;margin-top:8px;"></span>
+      지금 준비된 상태인지, 배상책임보험 등 재정적 대비까지 함께 <strong>가볍게 여쭤보셔도 됩니다.</strong>
+    </p>
+    <!-- 파트너사 -->
+    <div style="margin-bottom:16px;">
+      <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.5px;margin-bottom:10px;">파트너사</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">⚖️</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.55);">세무법인</div>
+          <div style="font-size:12px;font-weight:700;color:#fff;">세무사 협업</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">📊</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.55);">회계법인</div>
+          <div style="font-size:12px;font-weight:700;color:#fff;">회계사 협업</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">💡</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.55);">특허법인</div>
+          <div style="font-size:12px;font-weight:700;color:#fff;">변리사 협업</div>
+        </div>
+      </div>
+    </div>
+    <!-- 전화 + 블로그 + 카카오 -->
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:8px;">
+      <a href="tel:01091738141" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#D97706" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#D97706" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:var(--red);">전화 상담</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">평일 09:00~18:00</div>
+        </div>
+      </a>
+      <a href="https://blog.naver.com/bizinsightkorea" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#D97706" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#D97706" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:var(--red);">네이버 블로그</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">비즈인사이트 bizinsight</div>
+        </div>
+      </a>
+      <a href="http://pf.kakao.com/_SxjFxdn" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#D97706" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#D97706" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:var(--red);">카카오 채널</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">24시간 당일 회신</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="c08-footer">
+    <p>서울시 강남구 테헤란로 4길 삼성생명금융서비스<br>법인 전문 컨설팅 박기범 전문위원</p>
+  </div>
+</div>
+
+</div><!-- /viewer -->
+
+<!-- ══════════════════════════
+  바텀시트 팝업 01 — 실제 사고 사례
+══════════════════════════ -->
+<div class="sheet-overlay" id="sheet01">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head">
+      <div>
+        <div class="sheet-head-eyebrow">CASE STUDY</div>
+        <div class="sheet-head-title">같은 서류,<br>다른 판단 — 왜일까요</div>
+      </div>
+      <div class="sheet-close" onclick="closeSheet('sheet01')">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div class="sheet-body">
+      <div class="sheet-block">
+        <div class="sheet-block-label">CASE 01</div>
+        <div class="sheet-block-title">"우수사업장"에서 난 화재·폭발</div>
+        <div class="sheet-block-body">2024년 발생한 대형 화재·폭발 사고로 다수의 사망자가 발생했습니다. 해당 사업장은 <b>위험성평가 "우수사업장"으로 인정까지 받은 곳</b>이었습니다. 그러나 조사 결과, 실제로는 근로자 참여 없이 담당자 혼자 서류만 만드는 형식적 운영에 불과했다는 사실이 드러났습니다. 이 사고가 국회 차원의 개정 논의를 본격화시킨 결정적 계기가 됐습니다.</div>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">CASE 02</div>
+        <div class="sheet-block-title">제철소 결속기 사고 — 사고 전·후 기준의 차이</div>
+        <div class="sheet-block-body">제강사 정정라인의 결속기 4개 중 1개가 작동하지 않아, 근로자가 상태를 확인하러 다가갔다가 사고를 당했습니다.</div>
+        <div class="sheet-case">
+          <span class="sheet-case-tag before">사고 전</span>
+          <div class="sheet-block-body">해당 공정에는 별도의 안전조치가 전혀 없었습니다. 수십 년간 사고가 없었기 때문에, 사고 전에 조치를 요구했다면 오히려 "왜 그렇게까지 하냐"는 말을 들었을 상황이었습니다.</div>
+        </div>
+        <div class="sheet-case">
+          <span class="sheet-case-tag after">사고 후</span>
+          <div class="sheet-block-body">결속기마다 센서가 전부 장착되고, 출입문이 3개로 나뉘었습니다. 경광등이 4개로 늘고 상태 표시등까지 생겼습니다. 사고 이후에야 당연한 기준이 된 것입니다.</div>
+        </div>
+        <div class="sheet-note">위험성평가의 감소대책은 지금 기준으로 과해 보이더라도, "사고가 났다고 가정했을 때의 기준"으로 설계해야 합니다.</div>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">법원 판단 기준</div>
+        <div class="sheet-block-title">충실히 이행한 경우 vs 형식적으로 실시한 경우</div>
+        <table class="sheet-table">
+          <tr><th>구분</th><th>판단</th></tr>
+          <tr><td style="white-space:nowrap;">✓<br><span style="word-break:keep-all;white-space:nowrap;">충실 이행</span></td><td>위험요인을 사전 파악하고 개선대책을 수립·이행하며 교육·기록으로 체계적으로 관리 → 형사책임 판단에 유리하게 작용</td></tr>
+          <tr><td style="white-space:nowrap;">✗<br><span style="word-break:keep-all;white-space:nowrap;">형식적 실시</span></td><td>현장과 맞지 않는 평가, 동일 위험의 반복 방치, 개선조치 미이행 → 안전보건관리체계 미구축의 증거로 가중처벌 사유</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  바텀시트 팝업 02 — 근거 조문·상세 기준
+══════════════════════════ -->
+<div class="sheet-overlay" id="sheet02">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head">
+      <div>
+        <div class="sheet-head-eyebrow">LEGAL BASIS</div>
+        <div class="sheet-head-title">과태료의 법적 근거,<br>조문으로 확인하기</div>
+      </div>
+      <div class="sheet-close" onclick="closeSheet('sheet02')">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div class="sheet-body">
+      <div class="sheet-block">
+        <div class="sheet-block-label">근거 체계</div>
+        <div class="sheet-block-body">2026년 2월 19일 공포된 개정 산업안전보건법(법률 제21374호), 2026년 6월 1일 시행 기준입니다. <b>제36조</b>가 위험성평가의 실시·참여·기록 의무를 규정하고, <b>제175조</b>가 그 위반 시 과태료를 규정합니다.</div>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">과태료 근거 조항</div>
+        <table class="sheet-table">
+          <tr><th>위반 내용</th><th>근거 조항</th><th>최대 과태료</th></tr>
+          <tr><td>위험성평가<br>미실시</td><td>제175조<br>제4항 제2의2호</td><td style="white-space:nowrap;">1,000만원</td></tr>
+          <tr><td>근로자 참여<br>의무화 위반</td><td rowspan="3">제175조<br>제5항 제1호<br><span style="font-size:11.5px;color:var(--ink3);">(동일 조항)</span></td><td rowspan="3" style="white-space:nowrap;">500만원<br><span style="font-size:11px;color:var(--ink3);font-weight:400;">(통합 상한)</span></td></tr>
+          <tr><td>근로자대표<br>참여 보장 위반</td></tr>
+          <tr><td>설명회 등<br>공유의무 위반</td></tr>
+          <tr><td>기록·보존<br>의무 위반</td><td>제175조<br>제6항 제2의2호</td><td>300만원</td></tr>
+        </table>
+        <div class="sheet-note">근로자 참여·대표 참여보장·설명회 공유 세 가지는 모두 <b>같은 조항(제175조 제5항 제1호)</b>에 속해 있어, 어느 쪽을 위반하든(또는 여러 개를 함께 위반해도) 이 항목 전체에 <b>500만원 한도</b>가 하나만 적용됩니다. 서로 다른 조항인 미실시(1,000)·참여관련(500)·기록보존(300) 세 가지를 더하면 <b>최대 1,800만원</b>입니다. 과태료 시행은 50인 이상 2027.1.1, 50인 미만 2028.1.1부터 단계 적용되며, 위험성평가 실시 의무 자체는 2026.6.1부터 즉시 적용됩니다.</div>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">가장 많이 놓치는 지점</div>
+        <div class="sheet-block-body">"위험성평가를 하긴 했다"는 것만으로는 부족합니다. 담당자 혼자 사무실에서 서류를 만들고 서명만 받는 방식은 이제 <b>그 자체가 과태료 대상</b>입니다. 실제 작업 근로자를 참여시켰는지, 결과를 알렸는지까지 함께 확인됩니다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  바텀시트 팝업 03 — 감독 시 확인 항목
+══════════════════════════ -->
+<div class="sheet-overlay" id="sheet03">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head">
+      <div>
+        <div class="sheet-head-eyebrow">INSPECTION</div>
+        <div class="sheet-head-title">감독이 오면<br>이 7가지를 봅니다</div>
+      </div>
+      <div class="sheet-close" onclick="closeSheet('sheet03')">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div class="sheet-body">
+      <div class="sheet-block">
+        <div class="sheet-block-body">고용노동부 근로감독이나 안전보건공단 방문점검 시, 감독관은 대체로 정해진 7가지 항목을 순서대로 확인합니다. 미리 준비해두면 감독 당일 당황할 일이 크게 줄어듭니다.</div>
+        <table class="sheet-table">
+          <tr><th>#</th><th>확인 항목</th><th>세부 내용</th></tr>
+          <tr><td>1</td><td>위험성평가 기록</td><td>최근 정기·수시평가 결과서, 3년치 보존 여부</td></tr>
+          <tr><td>2</td><td>근로자 참여 증적</td><td>TBM 기록, 근로자대표 서명·의견 반영 흔적</td></tr>
+          <tr><td>3</td><td>안전보건관리체계</td><td>조직도, 예산 집행 내역, 안전보건 목표·방침</td></tr>
+          <tr><td>4</td><td>안전보건교육 이력</td><td>교육일지, 참석자 명단, 법정 시간 준수 여부</td></tr>
+          <tr><td>5</td><td>감소대책 이행 여부</td><td>결정한 대책이 실제 현장에 반영됐는지 (사진·설비 확인)</td></tr>
+          <tr><td>6</td><td>신고·소통 채널</td><td>사내 신고·소통 채널 운영 여부</td></tr>
+          <tr><td>7</td><td>과거 이력</td><td>과거 시정명령·과태료 이력과 재발 방지 여부</td></tr>
+        </table>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">준비의 핵심</div>
+        <div class="sheet-block-title">서류와 현장의 일치</div>
+        <div class="sheet-block-body">서류상으로만 완벽하고 현장이 다르면 오히려 <b>"알고도 방치했다"는 불리한 증거</b>가 됩니다. 감독 전에는 서류를 새로 만드는 것보다, 현장과 서류가 실제로 일치하는지부터 점검하는 것이 우선입니다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  바텀시트 팝업 04 — 왜 지금 강화됐는가
+══════════════════════════ -->
+<div class="sheet-overlay" id="sheet04">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head">
+      <div>
+        <div class="sheet-head-eyebrow">BACKGROUND</div>
+        <div class="sheet-head-title">10년째 있던 제도가<br>왜 갑자기 바뀌었나</div>
+      </div>
+      <div class="sheet-close" onclick="closeSheet('sheet04')">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div class="sheet-body">
+      <div class="sheet-block">
+        <div class="sheet-block-body">위험성평가는 2013년부터 법제화되어 10년 넘게 운영됐습니다. 그동안은 실시율도 낮고, 실시하더라도 형식적으로 흘러가도 별다른 제재가 없었던 제도였습니다.</div>
+        <table class="sheet-table">
+          <tr><th>지표</th><th>수치</th></tr>
+          <tr><td>중대재해처벌법 유죄 확정 사건 수</td><td>44건</td></tr>
+          <tr><td>그중 위험성평가가 부실했던 사건 비중</td><td>약 90%</td></tr>
+        </table>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">결정적 계기</div>
+        <div class="sheet-block-body">2024년 발생한 대형 화재·폭발 사고로 다수의 사망자가 발생했습니다. 해당 사업장은 위험성평가 "우수사업장"으로 인정까지 받은 곳이었습니다. 실제로는 근로자 참여 없이 담당자 혼자 서류만 만드는 형식적 운영에 불과했다는 사실이 드러나면서, 국회 차원의 개정 논의가 본격화됐습니다.</div>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">위험성평가의 이중 성격</div>
+        <div class="sheet-block-body">산업안전보건법의 절차이면서, 동시에 중대재해처벌법이 요구하는 <b>안전보건관리체계의 핵심 증거</b>입니다. 미이행 시 과태료 최대 1,800만원과, 사고 시 형사처벌 리스크가 동시에 열려 있는 상태가 됩니다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  바텀시트 팝업 05 — 정부 투입 규모·신고포상금
+══════════════════════════ -->
+<div class="sheet-overlay" id="sheet05">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head">
+      <div>
+        <div class="sheet-head-eyebrow">GOVERNMENT MOVE</div>
+        <div class="sheet-head-title">감독은 이제<br>밖에서만 오지 않습니다</div>
+      </div>
+      <div class="sheet-close" onclick="closeSheet('sheet05')">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div class="sheet-body">
+      <div class="sheet-block">
+        <div class="sheet-block-label">정부 투입 규모</div>
+        <table class="sheet-table">
+          <tr><th>항목</th><th>규모</th></tr>
+          <tr><td style="white-space:nowrap;">산재예방 국가예산</td><td>5.8조원</td></tr>
+          <tr><td>안전지킴이<br>(드론팀 합동순찰)</td><td>1,000명 · 연간 28만 회 목표</td></tr>
+          <tr><td>AI 감시</td><td>고위험 사업장 선별·안전모 미착용 감지, 정부 지원사업으로 현장 도입 중</td></tr>
+        </table>
+        <div class="sheet-note">사람이 일일이 다니며 확인하던 방식에서, 기술로 상시 감시하는 방식으로 이미 바뀌었습니다. "우리 사업장은 작아서 눈에 안 띈다"는 가정이 더 이상 통하지 않습니다.</div>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">명예산업안전감독관</div>
+        <div class="sheet-block-body">사업장 소속 직원 중에서 위촉되어 현장 점검 권한을 갖는 제도입니다. 감독이 외부에서만 오는 것이 아니라, <b>내부에서도 공식적으로 감시자가 생기는 구조</b>입니다.</div>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">안전일터 신고포상금 (2026년 하반기 도입)</div>
+        <div class="sheet-block-body">직원이 현장의 위법 사항을 사진·영상으로 촬영해 고용노동부 포털에 신고하면 포상금이 지급됩니다.</div>
+        <table class="sheet-table">
+          <tr><th>구분</th><th>금액</th></tr>
+          <tr><td style="white-space:nowrap;">신고 건당 최대</td><td>500만원<br>(위반 정도별 50만~500만원 중 최대치)</td></tr>
+          <tr><td style="white-space:nowrap;">1인당 연간 최대</td><td>1,500만원</td></tr>
+        </table>
+        <div class="sheet-note">다른 신고포상금 제도(공정위·권익위, 최대 30억원)에 비하면 소액이지만, 지금까지 위반을 알아도 신고하지 않던 직원에게 처음으로 신고할 경제적 이유가 생깁니다. 다만 법률적 근거가 예산 편성보다 늦게 마련돼, 신고자 보호와 관련해 실무상 혼선이 있을 수 있다는 지적도 있습니다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  바텀시트 팝업 06 — 3개월 실행 로드맵
+══════════════════════════ -->
+<div class="sheet-overlay" id="sheet06">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head">
+      <div>
+        <div class="sheet-head-eyebrow">ACTION PLAN</div>
+        <div class="sheet-head-title">3개월이면<br>충분히 시작됩니다</div>
+      </div>
+      <div class="sheet-close" onclick="closeSheet('sheet06')">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div class="sheet-body">
+      <div class="sheet-block">
+        <div class="sheet-block-body">아직 위험성평가 체계가 없다면, 3개월 로드맵으로 접근하는 것을 권합니다. 처음부터 완벽한 시스템을 만들려다 아무것도 시작하지 못하는 경우가 가장 많습니다.</div>
+        <div class="sheet-steps">
+          <div class="sheet-step">
+            <div class="sheet-step-num">1</div>
+            <div><div class="sheet-block-title" style="font-size:15px;margin-bottom:2px;">1개월차 · 기반 구축</div><div class="sheet-block-body">담당자 지정, 근로자대표 확인, 평가 대상·범위 확정, 기존 자료 취합</div></div>
+          </div>
+          <div class="sheet-step">
+            <div class="sheet-step-num">2</div>
+            <div><div class="sheet-block-title" style="font-size:15px;margin-bottom:2px;">2개월차 · 1차 평가 실시</div><div class="sheet-block-body">현장 순회·청취조사, 위험성 결정 및 감소대책 수립, 1차 기록 작성</div></div>
+          </div>
+          <div class="sheet-step">
+            <div class="sheet-step-num">3</div>
+            <div><div class="sheet-block-title" style="font-size:15px;margin-bottom:2px;">3개월차 · 공유·정착</div><div class="sheet-block-body">TBM으로 결과 공유, 정기평가 주기 확정, 수시평가 트리거 사내 공지</div></div>
+          </div>
+        </div>
+        <div class="sheet-note">1차 평가가 다소 부족해도 괜찮습니다. 일단 시작해서 매 회차 보완해가는 것이, 완벽한 계획만 세우다 미루는 것보다 훨씬 안전합니다.</div>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">KRAS(안전보건공단 무료 시스템) 장단점</div>
+        <table class="sheet-table">
+          <tr><th>장점</th><th></th></tr>
+          <tr><td colspan="2">무료 · PC/모바일 겸용 · 업종별 사례집 참고 · 인정심사(3년 감독유예) 연계 · 공식 이력으로 신뢰도 확보</td></tr>
+          <tr><th>단점</th><th></th></tr>
+          <tr><td colspan="2">정형화된 양식(회사 고유 양식 변경 어려움) · 신규 학습 필요 · 여러 서식 통합 관리는 엑셀보다 제약</td></tr>
+        </table>
+        <div class="sheet-note">처음 시작하거나 여러 현장·담당자를 통합 관리하고 싶다면 KRAS가 유리하고, 이미 안정적으로 운영 중인 엑셀 체계가 있다면 굳이 바꿀 필요는 없습니다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+  바텀시트 팝업 · 산안법-중대재해처벌법 연결 판례
+══════════════════════════ -->
+<div class="sheet-overlay" id="sheetConcept">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head">
+      <div>
+        <div class="sheet-head-eyebrow">HOW IT CONNECTS</div>
+        <div class="sheet-head-title">별개의 법이<br>하나로 이어지는 구조</div>
+      </div>
+      <div class="sheet-close" onclick="closeSheet('sheetConcept')">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div class="sheet-body">
+      <div class="sheet-block">
+        <div class="sheet-block-label">두 법의 역할 차이</div>
+        <table class="sheet-table">
+          <tr><th>구분</th><th>산업안전보건법</th><th>중대재해처벌법</th></tr>
+          <tr><td>대상</td><td>산업재해 전반 (부상·질병 포함)</td><td>중대재해 (사망 등 심각한 재해)</td></tr>
+          <tr><td>책임 주체</td><td>사업주·법인</td><td>경영책임자(대표이사) 개인</td></tr>
+          <tr><td>제재</td><td>과태료·벌금</td><td>징역형 포함 형사처벌</td></tr>
+          <tr><td>위험성평가의 위치</td><td>실시의무 자체(제36조)</td><td>안전보건관리체계 구축의 핵심 증거</td></tr>
+        </table>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">연결고리 — 2단계 인과관계</div>
+        <div class="sheet-block-title">중대재해처벌법 제1호 판결의 논리</div>
+        <div class="sheet-block-body">2023년 4월 6일 의정부지방법원 고양지원의 중대재해처벌법 제1호 판결 이후, 사고와 직접 관련이 멀어 보이는 안전보건관리체계 구축의무 위반이 발견되더라도 다음 논리로 유죄가 인정될 수 있습니다.</div>
+        <div class="sheet-steps">
+          <div class="sheet-step">
+            <div class="sheet-step-num">1</div>
+            <div><div class="sheet-block-title" style="font-size:15px;margin-bottom:2px;">안전보건관리체계 미구축</div><div class="sheet-block-body">위험성평가 등 산안법상 절차를 제대로 이행하지 않음</div></div>
+          </div>
+          <div class="sheet-step">
+            <div class="sheet-step-num">2</div>
+            <div><div class="sheet-block-title" style="font-size:15px;margin-bottom:2px;">산안법상 안전조치 미이행</div><div class="sheet-block-body">그 결과 현장의 구체적인 안전·보건조치가 이루어지지 않음</div></div>
+          </div>
+          <div class="sheet-step">
+            <div class="sheet-step-num">3</div>
+            <div><div class="sheet-block-title" style="font-size:15px;margin-bottom:2px;">중대재해 발생 → 형사책임</div><div class="sheet-block-body">이 2단계 인과관계가 인정되면 경영책임자의 중대재해처벌법 위반죄로 기소·처벌</div></div>
+          </div>
+        </div>
+        <div class="sheet-note">즉 위험성평가 미비는 그 자체로는 "행정 절차 위반"(과태료)이지만, 사고가 나면 이 사슬의 첫 고리가 되어 형사책임까지 이어집니다.</div>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">통계로 보는 현실</div>
+        <div class="sheet-block-body">현재까지 중대재해처벌법 적용대상이 아니라는 형식적 이유로 무죄판결이 난 1건을 제외하면, 기소되어 무죄가 나온 사례가 없습니다. 안전보건관리체계가 구축되지 않은 법인은 중대재해 발생 시 대표자가 처벌될 가능성이 매우 높다는 뜻입니다.</div>
+      </div>
+      <div class="sheet-block">
+        <div class="sheet-block-label">2026년 최신 판결 — 균형 잡힌 시사점</div>
+        <div class="sheet-block-title">형식보다 실질, 그리고 인과관계 입증이 함께 필요</div>
+        <div class="sheet-block-body">2026년 1월 28일 대구지방법원 영덕지원 판결은 두 가지를 함께 확인했습니다.</div>
+        <div style="display:flex;flex-direction:column;gap:11px;margin-top:10px;">
+          <div style="display:flex;gap:11px;align-items:flex-start;">
+            <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">·</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.5;word-break:keep-all;">문서상 일부 미흡함이 있더라도, 실제 현장에서 안전보건관리체계가 작동하고 있었다면 <b style="color:var(--ink);font-weight:700;">중요한 방어요소</b>가 될 수 있습니다</span>
+          </div>
+          <div style="display:flex;gap:11px;align-items:flex-start;">
+            <span style="flex-shrink:0;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;">·</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.5;word-break:keep-all;">중대재해가 발생했다고 곧바로 형사책임이 인정되는 것은 아니며, <b style="color:var(--ink);font-weight:700;">구체적 의무 위반과 그것이 사고 원인이 되었는지가 함께 입증</b>되어야 합니다</span>
+          </div>
+        </div>
+        <div class="sheet-note">서류를 완벽하게 갖추는 것보다, 위험성평가가 실제 현장 운영에 반영되고 있는지가 형사책임 판단의 핵심이라는 뜻입니다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openSheet(id){
+  var el = document.getElementById(id);
+  if(!el) return;
+  el.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeSheet(id){
+  var el = document.getElementById(id);
+  if(!el) return;
+  el.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.sheet-overlay').forEach(function(overlay){
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+  });
+});
+</script>
+</body>
+</html>
