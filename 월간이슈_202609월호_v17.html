@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>월간이슈 2026 9월</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --y:#FFFF00;--lime:#CCFF66;--cyan:#00AAFF;--mint:#00FFEE;
+  --ink:#1A1A18;--ink2:#4A4844;--ink3:#8A8880;--ink4:#C4C1B8;
+  --bg:#F5F4F0;--bg2:#EEECE8;--bg3:#E4E2DC;--bd:#D8D5CE;--bd2:#C8C5BC;
+}
+html,body{width:100%;height:100%;background:var(--bg3);font-family:'Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased;}
+.viewer{width:100%;max-width:430px;margin:0 auto;height:100dvh;overflow-y:scroll;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:#fff;}
+.viewer::-webkit-scrollbar{display:none;}
+.card{width:100%;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+
+/* ── STITCH ── */
+.stitch{width:calc(100% - 72px);height:2px;background:#000;margin:15px 36px 0;flex-shrink:0;}
+
+/* ── TOPBAR ── */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:0 36px 20px;flex-shrink:0;}
+.tb-left{font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:500;letter-spacing:1px;text-transform:uppercase;}
+.tb-right{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:400;letter-spacing:2px;opacity:.5;}
+
+/* ── COVER ── */
+.c01{background:#fff;}
+.c01-body{flex:1;display:flex;flex-direction:column;padding:0;position:relative;z-index:2;}
+.c01-top-section{background:var(--y);padding:70px 36px 53px;flex-shrink:0;}
+.c01-bottom-section{flex:1;background:#fff;padding:28px 36px 30px;display:flex;flex-direction:column;justify-content:flex-start;gap:20px;}
+.c01-monthly-wrap{display:flex;flex-direction:column;}
+.c01-line{display:flex;font-size:72px;font-weight:900;color:var(--ink);line-height:1.08;letter-spacing:-2px;font-family:'Noto Sans KR',sans-serif;}
+.char{width:72px;display:inline-flex;align-items:center;justify-content:center;}
+.c01-ybar{width:100%;height:4px;background:var(--ink);opacity:1;margin:14px 0 12px;position:relative;}
+.c01-ybar::before{content:'';position:absolute;left:0;top:0;width:80px;height:4px;background:var(--ink);opacity:1;}
+.c01-date{display:flex;flex-direction:column;gap:0;}
+.c01-2026{font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:500;color:var(--ink);opacity:.6;display:flex;justify-content:space-between;align-items:center;width:100%;letter-spacing:0;}
+.c01-hook{font-size:32px;font-weight:900;color:var(--ink);line-height:1.2;letter-spacing:-1px;word-break:keep-all;margin-top:42px;}
+.c01-hook em{font-style:normal;border-bottom:3px solid var(--ink);}
+.c01-badge-row{display:flex;align-items:center;gap:8px;margin-top:16px;flex-wrap:wrap;}
+.c01-badge{padding:0 14px 3px;height:30px;border:3px solid #00AAFF;border-radius:999px;background:rgba(255,255,255,0.6);font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:500;letter-spacing:.5px;color:var(--ink);display:inline-flex;align-items:center;}
+.c01-sub-block{padding-bottom:0;}
+
+/* ── CTA CARD ── */
+.c06-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:35px 36px 0;gap:0;}
+.c06-eyebrow{font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:500;color:var(--ink);opacity:.6;margin-bottom:9px;padding-left:3px;display:flex;justify-content:space-between;width:calc(100% - 3px);max-width:176px;}
+.c06-headline{font-size:52px;font-weight:900;color:var(--ink);line-height:1.02;letter-spacing:-2px;word-break:keep-all;margin-bottom:32px;}
+.c06-sub{font-size:18px;font-weight:400;color:var(--ink);line-height:1.7;word-break:keep-all;margin-bottom:32px;padding-left:3px;}
+.c06-sub strong{opacity:1;font-weight:700;}
+.cta-cards{display:flex;flex-direction:column;gap:10px;}
+.cta-card{background:var(--ink);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;}
+.cta-card.alt{background:transparent;border:1.5px solid var(--ink);}
+.cc-title{font-size:14px;font-weight:700;line-height:1.3;word-break:keep-all;}
+.cta-card .cc-title{color:var(--y);}
+.cta-card.alt .cc-title{color:var(--ink);}
+.cc-sub{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.5px;margin-top:3px;}
+.cta-card .cc-sub{color:rgba(255,255,0,.4);}
+.cta-card.alt .cc-sub{color:rgba(26,26,24,.4);}
+.cc-arr{width:30px;height:30px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.arr-r-y{width:9px;height:9px;border-right:1.5px solid var(--y);border-top:1.5px solid var(--y);transform:rotate(45deg) translateX(-1px);}
+.arr-r-k{width:9px;height:9px;border-right:1.5px solid var(--ink);border-top:1.5px solid var(--ink);transform:rotate(45deg) translateX(-1px);}
+.c06-footer{padding:20px 36px 26px;display:flex;align-items:center;justify-content:flex-start;flex-shrink:0;}
+.c06-footer p{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#00AAFF;opacity:1;letter-spacing:.5px;text-align:left;line-height:1.2;}
+
+/* ── MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(26,26,24,.55);z-index:999;align-items:flex-end;justify-content:center;}
+.modal-overlay.active{display:flex;}
+.modal-box{width:100%;max-width:430px;max-height:82vh;overflow-y:auto;background:#fff;border-radius:20px 20px 0 0;padding:28px 28px 32px;position:relative;animation:modalUp .25s ease-out;}
+@keyframes modalUp{from{transform:translateY(24px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.modal-close{position:absolute;top:20px;right:22px;width:28px;height:28px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.modal-badge{display:inline-block;background:#00AAFF;padding:4px 12px;font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:14px;border-radius:999px;}
+.modal-title{font-size:24px;font-weight:900;color:var(--ink);line-height:1.3;letter-spacing:-.5px;word-break:keep-all;margin-bottom:18px;padding-right:20px;}
+.modal-section{margin-bottom:18px;}
+.modal-label{font-size:12px;font-weight:700;color:var(--ink3);letter-spacing:.5px;margin-bottom:8px;}
+.modal-body-text{font-size:15px;color:var(--ink2);line-height:1.7;word-break:keep-all;}
+.modal-body-text b{color:var(--ink);font-weight:700;}
+.modal-list{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
+.modal-list-item{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--ink2);line-height:1.55;word-break:keep-all;}
+.modal-list-item span.num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1.2px;}
+.modal-note{margin-top:16px;background:var(--bg2);border-radius:8px;padding:12px 14px;font-size:12.5px;color:var(--ink3);line-height:1.6;word-break:keep-all;}
+.modal-cta{margin-top:22px;text-decoration:none;display:block;}
+.modal-cta-box{background:var(--ink);border-radius:40px;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;}
+.modal-cta-box span{font-size:15px;font-weight:700;color:var(--y);}
+.modal-cta-arr{width:9px;height:9px;border-right:1.5px solid var(--y);border-top:1.5px solid var(--y);transform:rotate(45deg);flex-shrink:0;}
+</style>
+</head>
+<body>
+<div class="viewer" id="viewer">
+
+<!-- ══════════════════════════
+  CARD 01 · COVER
+══════════════════════════ -->
+<div class="card c01">
+  <div class="c01-body">
+    <div class="c01-top-section">
+      <div style="position:relative;">
+        <div style="width:100%;height:1.5px;background:var(--ink);margin:0 0 14px 0;"></div>
+        <div class="c01-monthly-wrap">
+          <div class="c01-line"><span class="char">월</span><span class="char">간</span><span class="char">이</span><span class="char">슈</span></div>
+          <div style="font-size:72px;font-weight:800;color:var(--ink);font-family:'Noto Sans KR',sans-serif;letter-spacing:-2px;line-height:1.08;transform:scaleX(1.05);transform-origin:left;display:inline-block;margin-left:3px;">MONEY</div>
+          <div class="c01-line" style="color:#00AAFF;letter-spacing:-2px;"><span class="char" style="font-size:82px;width:58px;">9</span><span class="char" style="width:58px;">월</span></div>
+        </div>
+      </div>
+      <div class="c01-ybar"></div>
+      <div class="c01-date">
+        <div class="c01-2026">
+          <span>2</span><span>0</span><span>2</span><span>6</span><span> </span><span>m</span><span>o</span><span>n</span><span>t</span><span>h</span><span>l</span><span>y</span><span> </span><span>i</span><span>s</span><span>s</span><span>u</span><span>e</span>
+        </div>
+      </div>
+      <p class="c01-hook">이번 달,<br><em>챙겨야 할 변화가 한꺼번에 몰렸습니다.</em></p>
+      <div class="c01-badge-row">
+        <span class="c01-badge">노무</span>
+        <span class="c01-badge">세무</span>
+        <span class="c01-badge">재무</span>
+        <span class="c01-badge">경영</span>
+      </div>
+    </div>
+    <div class="c01-bottom-section">
+      <div class="c01-sub-block"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 02 · 이슈 01 — 도급 임금비용 구분지급 의무
+══════════════════════════ -->
+<div class="card" style="background:#fff;">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 24px;">
+    <div>
+      <div style="font-family:'Noto Sans KR',sans-serif;font-size:29px;font-weight:700;color:#DEDAD4;margin-bottom:10px;padding-left:4px;">01</div>
+      <div style="display:inline-block;background:#00AAFF;padding:4px 12px;font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">2027.1.1 시행 확정</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;font-family:'Noto Sans KR',sans-serif;">27.1.1</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--ink3);letter-spacing:1px;">시행일</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:#00AAFF;line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">건설·조선업 도급계약,<br>임금비용 따로 떼어 지급합니다</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.5;word-break:keep-all;">근로기준법 개정(법률 제21533호, 2026.4.7 공포)으로 <span style="font-weight:700;color:var(--ink);">임금비용 구분지급 의무</span>가 신설됐습니다. 건설·조선업의 일정 규모 이상·30일 초과 도급사업이 대상이며, 도급금액 중 수급인 근로자에게 지급할 임금비용을 구분해 매월 지급하고 실제 지급 여부까지 확인해야 합니다.</p>
+
+      <div style="margin-top:24px;border-top:1px solid var(--bd);padding-top:20px;">
+        <p style="font-size:17px;font-weight:700;color:var(--ink);line-height:1.5;word-break:keep-all;margin-bottom:14px;">우리 회사는 해당될까요?</p>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">건설·조선업에서 하도급 계약을 맺고 있다면 우선 점검이 필요합니다</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">구체적인 적용 업종·금액 기준은 8.20~9.29 입법예고 중인 시행령에서 확정됩니다</span>
+          </div>
+        </div>
+        <div style="height:1px;background:var(--bd);margin-bottom:16px;"></div>
+        <div style="padding:16px 0;margin-bottom:0;">
+          <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:1px;margin-bottom:6px;">공포~시행 준비기간</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;">
+            <span style="font-size:56px;font-weight:900;color:#00AAFF;line-height:1;letter-spacing:-2px;font-family:'Noto Sans KR',sans-serif;">9</span>
+            <span style="font-size:20px;font-weight:700;color:#00AAFF;">개월</span>
+          </div>
+          <div style="font-size:14px;color:var(--ink);line-height:1.6;word-break:keep-all;background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);display:inline;padding:0 2px;">공포(4.7) 후 약 9개월 뒤 시행 — 시행 이후 새로 체결하는 도급계약부터 적용됩니다</div>
+        </div>
+        <div onclick="openModal('modal01')" style="cursor:pointer;background:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border:2px solid #FF0088;border-radius:40px;">
+          <span style="font-size:15px;font-weight:700;color:#FF0088;word-break:keep-all;">우리 도급계약, 적용 대상인지 확인하기</span>
+          <div style="width:9px;height:9px;border-right:1.5px solid #FF0088;border-top:1.5px solid #FF0088;transform:rotate(45deg);flex-shrink:0;margin-left:12px;"></div>
+        </div>
+      </div>
+      <div style="margin-top:20px;display:flex;align-items:center;gap:10px;">
+        <div style="width:18px;height:18px;border-radius:50%;border:1px solid #00AAFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:400;color:var(--ink2);">노무</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 03 · 이슈 02 — 포괄임금 오남용 방지 지침
+══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:#fff;">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 24px;">
+    <div>
+      <div style="font-family:'Noto Sans KR',sans-serif;font-size:29px;font-weight:700;color:#DEDAD4;margin-bottom:10px;padding-left:4px;">02</div>
+      <div style="display:inline-block;background:#00AAFF;padding:4px 12px;font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">기획감독 진행 중</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;font-family:'Noto Sans KR',sans-serif;">1,865</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--ink3);letter-spacing:1px;">실근로시간</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:#00AAFF;line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">포괄임금제,<br>법 통과 전에 이미 감독 중입니다</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.5;word-break:keep-all;">한국의 연간 실근로시간은 2024년 기준 1,865시간으로 OECD 평균보다 158시간 깁니다. 고용노동부가 2026년 4월 8일 발표한 '포괄임금 오남용 방지 지도 지침'에 따라 <span style="font-weight:700;color:var(--ink);">기획감독이 실제로 진행되고 있습니다.</span> 법안 통과 여부와 무관하게, 임금대장과 임금명세서에 기본급과 수당을 구분 기재하지 않으면 지적 대상이 됩니다.</p>
+
+      <div style="margin-top:24px;border-top:1px solid var(--bd);padding-top:20px;">
+        <p style="font-size:17px;font-weight:700;color:var(--ink);line-height:1.5;word-break:keep-all;margin-bottom:14px;">이런 회사라면 감독 대상입니다</p>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">정액급제·정액수당제 방식으로 급여를 지급하고 있다면 지적 소지가 있습니다</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">교대제·특별연장근로가 반복되는 사업장은 분기별 기획감독 대상입니다</span>
+          </div>
+        </div>
+        <div style="height:1px;background:var(--bd);margin-bottom:16px;"></div>
+        <div style="padding:16px 0;margin-bottom:0;">
+          <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:1px;margin-bottom:6px;">정부 목표 실근로시간</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;">
+            <span style="font-size:56px;font-weight:900;color:#00AAFF;line-height:1;letter-spacing:-2px;font-family:'Noto Sans KR',sans-serif;">1,700</span>
+            <span style="font-size:20px;font-weight:700;color:#00AAFF;">시간대</span>
+          </div>
+          <div style="font-size:14px;color:var(--ink);line-height:1.6;word-break:keep-all;background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);display:inline;padding:0 2px;">OECD 평균 수준까지 실근로시간을 줄이는 것이 정부 목표입니다</div>
+        </div>
+        <div onclick="openModal('modal02')" style="cursor:pointer;background:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border:2px solid #FF0088;border-radius:40px;">
+          <span style="font-size:15px;font-weight:700;color:#FF0088;word-break:keep-all;">임금명세서 구조, 지금 점검받기</span>
+          <div style="width:9px;height:9px;border-right:1.5px solid #FF0088;border-top:1.5px solid #FF0088;transform:rotate(45deg);flex-shrink:0;margin-left:12px;"></div>
+        </div>
+      </div>
+      <div style="margin-top:20px;display:flex;align-items:center;gap:10px;">
+        <div style="width:18px;height:18px;border-radius:50%;border:1px solid #00AAFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:400;color:var(--ink2);">노무</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 04 · 이슈 03 — 환율 1,300원대 진입
+══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:#fff;">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 24px;">
+    <div>
+      <div style="font-family:'Noto Sans KR',sans-serif;font-size:29px;font-weight:700;color:#DEDAD4;margin-bottom:10px;padding-left:4px;">03</div>
+      <div style="display:inline-block;background:#00AAFF;padding:4px 12px;font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">시장 실측치 (8.26)</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;font-family:'Noto Sans KR',sans-serif;">1,384</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--ink3);letter-spacing:1px;">원/달러</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:#00AAFF;line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">환율, 11개월 만에<br>1,300원대로 내려왔습니다</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.5;word-break:keep-all;">7월까지 1,500원대 고착화가 우려됐던 원/달러 환율이 8월 19일 장중 1,388.5원까지 내려가며 <span style="font-weight:700;color:var(--ink);">11개월 만에 1,300원대에 진입</span>했습니다. 8월 26일에는 1,384원대에서 거래됐습니다.</p>
+
+      <div style="margin-top:24px;border-top:1px solid var(--bd);padding-top:20px;">
+        <p style="font-size:17px;font-weight:700;color:var(--ink);line-height:1.5;word-break:keep-all;margin-bottom:14px;">우리 회사에 미치는 영향</p>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">외화부채를 보유한 법인은 환차익이 발생하는 구간입니다</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">수출 대금의 원화환산 매출은 반대로 줄어들 수 있습니다</span>
+          </div>
+        </div>
+        <div style="height:1px;background:var(--bd);margin-bottom:16px;"></div>
+        <div style="padding:16px 0;margin-bottom:0;">
+          <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:1px;margin-bottom:6px;">4주간 추가 하락폭</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;">
+            <span style="font-size:56px;font-weight:900;color:#00AAFF;line-height:1;letter-spacing:-2px;font-family:'Noto Sans KR',sans-serif;">63</span>
+            <span style="font-size:20px;font-weight:700;color:#00AAFF;">원</span>
+          </div>
+          <div style="font-size:14px;color:var(--ink);line-height:1.6;word-break:keep-all;background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);display:inline;padding:0 2px;">7.29(1,446.7원) → 8.26(1,384원), 한 달 사이 63원 넘게 더 내렸습니다</div>
+        </div>
+        <div onclick="openModal('modal03')" style="cursor:pointer;background:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border:2px solid #FF0088;border-radius:40px;">
+          <span style="font-size:15px;font-weight:700;color:#FF0088;word-break:keep-all;">우리 회사 환리스크, 다시 계산해보기</span>
+          <div style="width:9px;height:9px;border-right:1.5px solid #FF0088;border-top:1.5px solid #FF0088;transform:rotate(45deg);flex-shrink:0;margin-left:12px;"></div>
+        </div>
+      </div>
+      <div style="margin-top:20px;display:flex;align-items:center;gap:10px;">
+        <div style="width:18px;height:18px;border-radius:50%;border:1px solid #00AAFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:400;color:var(--ink2);">재무</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 04 · 이슈 04 — 한국은행 기준금리 2회 연속 인상
+══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:#fff;">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 24px;">
+    <div>
+      <div style="font-family:'Noto Sans KR',sans-serif;font-size:29px;font-weight:700;color:#DEDAD4;margin-bottom:10px;padding-left:4px;">04</div>
+      <div style="display:inline-block;background:#00AAFF;padding:4px 12px;font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">한국은행 결정 (8.27)</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;font-family:'Noto Sans KR',sans-serif;">3.0</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--ink3);letter-spacing:1px;">기준금리</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:#00AAFF;line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">기준금리, 2회 연속<br>인상되어 3.0%가 됐습니다</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.5;word-break:keep-all;">한국은행 금융통화위원회가 8월 27일 기준금리를 2.75%에서 3.0%로 0.25%p 인상했습니다. 7월(2.50→2.75%)에 이어 <span style="font-weight:700;color:var(--ink);">2회 연속 인상</span>으로, 예상보다 강한 성장세와 물가 압력이 인상 결정의 배경입니다.</p>
+
+      <div style="margin-top:24px;border-top:1px solid var(--bd);padding-top:20px;">
+        <p style="font-size:17px;font-weight:700;color:var(--ink);line-height:1.5;word-break:keep-all;margin-bottom:14px;">우리 회사에 미치는 영향</p>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">변동금리 대출·회사채 이자 부담이 늘어날 수 있습니다</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">전문가 다수는 4분기~내년 1분기 추가 인상 가능성도 열어두고 있습니다</span>
+          </div>
+        </div>
+        <div style="height:1px;background:var(--bd);margin-bottom:16px;"></div>
+        <div style="padding:16px 0;margin-bottom:0;">
+          <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:1px;margin-bottom:6px;">전문가 전망 최종 기준금리</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;">
+            <span style="font-size:56px;font-weight:900;color:#00AAFF;line-height:1;letter-spacing:-2px;font-family:'Noto Sans KR',sans-serif;">3.25</span>
+            <span style="font-size:20px;font-weight:700;color:#00AAFF;">~3.5%</span>
+          </div>
+          <div style="font-size:14px;color:var(--ink);line-height:1.6;word-break:keep-all;background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);display:inline;padding:0 2px;">당분간 고금리 기조가 이어질 가능성에 대비한 자금계획이 필요합니다</div>
+        </div>
+        <div onclick="openModal('modal04')" style="cursor:pointer;background:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border:2px solid #FF0088;border-radius:40px;">
+          <span style="font-size:15px;font-weight:700;color:#FF0088;word-break:keep-all;">우리 회사 대출·자금조달, 다시 점검하기</span>
+          <div style="width:9px;height:9px;border-right:1.5px solid #FF0088;border-top:1.5px solid #FF0088;transform:rotate(45deg);flex-shrink:0;margin-left:12px;"></div>
+        </div>
+      </div>
+      <div style="margin-top:20px;display:flex;align-items:center;gap:10px;">
+        <div style="width:18px;height:18px;border-radius:50%;border:1px solid #00AAFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:400;color:var(--ink2);">재무</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 05 · 이슈 05 — 2026 세제개편안 9월 국회 제출
+══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:#fff;">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 24px;">
+    <div>
+      <div style="font-family:'Noto Sans KR',sans-serif;font-size:29px;font-weight:700;color:#DEDAD4;margin-bottom:10px;padding-left:4px;">05</div>
+      <div style="display:inline-block;background:#00AAFF;padding:4px 12px;font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">9월초 국회 제출 예정</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;font-family:'Noto Sans KR',sans-serif;">09</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--ink3);letter-spacing:1px;">정기국회</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:#00AAFF;line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">2026 세제개편안,<br>9월 국회 심의가 시작됩니다</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.5;word-break:keep-all;">정부가 8월 3일 발표한 2026년 세제개편안이 입법예고와 국무회의를 거쳐 9월 초 정기국회에 제출됩니다. 법인 오너가 가장 주목할 대목은 자기주식 과세체계의 자본거래 일원화 — 자사주 취득 시 과세 방식이 <span style="font-weight:700;color:var(--ink);">양도소득에서 배당소득으로</span> 바뀌는 것입니다.</p>
+
+      <!-- OPTIONAL VISUAL BLOCK: 확정 여부 안내 -->
+      <div style="margin-top:16px;background:var(--bg2);border-radius:8px;padding:12px 14px;">
+        <span style="font-size:13px;color:var(--ink3);line-height:1.6;word-break:keep-all;">※ ISA·부동산세제(종부세·양도세)·상장주식 저평가 방지법 등 일부 항목은 발표 후 재검토 중이며, 이 카드가 다루는 자기주식 과세체계는 현재까지 재검토 대상으로 언급되지 않았습니다. 9.1 국무회의를 거쳐 9.3 이전 정기국회 제출 일정은 유지되고 있으나, 국회 심의 과정에서 세부 내용은 조정될 수 있어 최종 확정 시 다시 안내드립니다.</span>
+      </div>
+      <!-- OPTIONAL VISUAL BLOCK END -->
+
+      <div style="margin-top:24px;border-top:1px solid var(--bd);padding-top:20px;">
+        <p style="font-size:17px;font-weight:700;color:var(--ink);line-height:1.5;word-break:keep-all;margin-bottom:14px;">지금 확인해야 할 것</p>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">2026.12.31 이전 취득한 자사주는 경과조치로 종전 규정이 적용됩니다</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">인적용역 원천세율도 3.3%→2.2% 인하가 함께 추진됩니다</span>
+          </div>
+        </div>
+        <div style="height:1px;background:var(--bd);margin-bottom:16px;"></div>
+        <div style="padding:16px 0;margin-bottom:0;">
+          <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:1px;margin-bottom:6px;">국회 통과 시 적용 예정 시기</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;">
+            <span style="font-size:56px;font-weight:900;color:#00AAFF;line-height:1;letter-spacing:-2px;font-family:'Noto Sans KR',sans-serif;">27.1.1</span>
+            <span style="font-size:20px;font-weight:700;color:#00AAFF;">부터</span>
+          </div>
+          <div style="font-size:14px;color:var(--ink);line-height:1.6;word-break:keep-all;background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);display:inline;padding:0 2px;">올해 안에 자사주 취득·처분 계획이 있다면 지금 결정해야 합니다</div>
+        </div>
+        <div onclick="openModal('modal05')" style="cursor:pointer;background:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border:2px solid #FF0088;border-radius:40px;">
+          <span style="font-size:15px;font-weight:700;color:#FF0088;word-break:keep-all;">자사주 계획, 세제개편 반영해서 점검하기</span>
+          <div style="width:9px;height:9px;border-right:1.5px solid #FF0088;border-top:1.5px solid #FF0088;transform:rotate(45deg);flex-shrink:0;margin-left:12px;"></div>
+        </div>
+      </div>
+      <div style="margin-top:20px;display:flex;align-items:center;gap:10px;">
+        <div style="width:18px;height:18px;border-radius:50%;border:1px solid #00AAFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:400;color:var(--ink2);">세무</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 06 · 이슈 06 — 정부 하반기 경제성장전략
+══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:#fff;">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 24px;">
+    <div>
+      <div style="font-family:'Noto Sans KR',sans-serif;font-size:29px;font-weight:700;color:#DEDAD4;margin-bottom:10px;padding-left:4px;">06</div>
+      <div style="display:inline-block;background:#00AAFF;padding:4px 12px;font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">국무회의 확정 (7.14)</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;font-family:'Noto Sans KR',sans-serif;">3·4·5</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--ink3);letter-spacing:1px;">비전</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:#00AAFF;line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">정부의 성장 지도,<br>우리 업종은 어디 있을까요</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.5;word-break:keep-all;">정부는 7월 14일 국무회의에서 하반기 경제성장전략을 확정하며 잠재성장률 3%·수출 4강·국민소득 5만불을 목표로 하는 '3·4·5 비전'을 제시했습니다. 반도체·AI데이터센터·피지컬AI를 3대 메가프로젝트로 삼아 <span style="font-weight:700;color:var(--ink);">국유지 공급과 사용료 최대 100% 감면</span>, 예비타당성조사 신속화로 민간투자를 지원합니다.</p>
+
+      <div style="margin-top:24px;border-top:1px solid var(--bd);padding-top:20px;">
+        <p style="font-size:17px;font-weight:700;color:var(--ink);line-height:1.5;word-break:keep-all;margin-bottom:14px;">우리 업종이 대상인지 확인하세요</p>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">중점지원분야(초격차·신산업)에 예산이 집중 배정됩니다</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">소프트웨어 개발업도 뿌리산업으로 인정, 지방기업은 가점을 받습니다</span>
+          </div>
+        </div>
+        <div style="height:1px;background:var(--bd);margin-bottom:16px;"></div>
+        <div style="padding:16px 0;margin-bottom:0;">
+          <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:1px;margin-bottom:6px;">2026 소상공인 지원예산</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;">
+            <span style="font-size:56px;font-weight:900;color:#00AAFF;line-height:1;letter-spacing:-2px;font-family:'Noto Sans KR',sans-serif;">5.4</span>
+            <span style="font-size:20px;font-weight:700;color:#00AAFF;">조원</span>
+          </div>
+          <div style="font-size:14px;color:var(--ink);line-height:1.6;word-break:keep-all;background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);display:inline;padding:0 2px;">역대 최대 규모 — 경영위기 극복·AI디지털전환·사회안전망 3대 축에 집중됩니다</div>
+        </div>
+        <div onclick="openModal('modal06')" style="cursor:pointer;background:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border:2px solid #FF0088;border-radius:40px;">
+          <span style="font-size:15px;font-weight:700;color:#FF0088;word-break:keep-all;">우리 업종, 정부 지원 대상인지 확인하기</span>
+          <div style="width:9px;height:9px;border-right:1.5px solid #FF0088;border-top:1.5px solid #FF0088;transform:rotate(45deg);flex-shrink:0;margin-left:12px;"></div>
+        </div>
+      </div>
+      <div style="margin-top:20px;display:flex;align-items:center;gap:10px;">
+        <div style="width:18px;height:18px;border-radius:50%;border:1px solid #00AAFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:400;color:var(--ink2);">경영</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD 07 · 이슈 07 — 부가세 조기환급 & 미수령 국세환급금
+══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:#fff;">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 24px;">
+    <div>
+      <div style="font-family:'Noto Sans KR',sans-serif;font-size:29px;font-weight:700;color:#DEDAD4;margin-bottom:10px;padding-left:4px;">07</div>
+      <div style="display:inline-block;background:#00AAFF;padding:4px 12px;font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;">국세청 공식 캠페인</div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+        <span style="font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;font-family:'Noto Sans KR',sans-serif;">3,252</span>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--ink3);letter-spacing:1px;">억원</span>
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:#00AAFF;line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;">전국에 주인 없는 돈,<br>3,252억원 있습니다</h2>
+      <p style="font-size:18px;color:var(--ink2);line-height:1.5;word-break:keep-all;">국세청이 '국세환급금 찾아주기 운동'을 통해 안내하는 내용입니다. 최근 이직·폐업·이사 이력이 있다면 본인도 모르게 <span style="font-weight:700;color:var(--ink);">환급금이 남아 있을 수 있습니다.</span> 설비투자·수출·재무구조개선으로 부가세 환급 대상이라면, 조기환급 신청 시 정기신고보다 최대 45일 빠르게 자금을 받을 수 있습니다.</p>
+
+      <div style="margin-top:24px;border-top:1px solid var(--bd);padding-top:20px;">
+        <p style="font-size:17px;font-weight:700;color:var(--ink);line-height:1.5;word-break:keep-all;margin-bottom:14px;">지금 확인해야 할 이유</p>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">홈택스·손택스 조회는 주민등록번호와 이름만으로 가능 — 법인 대표 개인 명의도 별도 확인 필요</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:#00AAFF;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:15px;color:var(--ink2);line-height:1.6;word-break:keep-all;">미수령 환급금은 소멸시효 5년, 경과 시 국고로 귀속됩니다</span>
+          </div>
+        </div>
+        <div style="height:1px;background:var(--bd);margin-bottom:16px;"></div>
+        <div style="padding:16px 0;margin-bottom:0;">
+          <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:1px;margin-bottom:6px;">조기환급 시 자금 확보 단축</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;">
+            <span style="font-size:56px;font-weight:900;color:#00AAFF;line-height:1;letter-spacing:-2px;font-family:'Noto Sans KR',sans-serif;">45</span>
+            <span style="font-size:20px;font-weight:700;color:#00AAFF;">일</span>
+          </div>
+          <div style="font-size:14px;color:var(--ink);line-height:1.6;word-break:keep-all;background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);display:inline;padding:0 2px;">정기 신고 대비 최대 45일 빠르게 환급금을 받을 수 있습니다</div>
+        </div>
+        <div onclick="openModal('modal07')" style="cursor:pointer;background:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border:2px solid #FF0088;border-radius:40px;">
+          <span style="font-size:15px;font-weight:700;color:#FF0088;word-break:keep-all;">우리 회사·개인 환급금, 지금 조회해보기</span>
+          <div style="width:9px;height:9px;border-right:1.5px solid #FF0088;border-top:1.5px solid #FF0088;transform:rotate(45deg);flex-shrink:0;margin-left:12px;"></div>
+        </div>
+      </div>
+      <div style="margin-top:20px;display:flex;align-items:center;gap:10px;">
+        <div style="width:18px;height:18px;border-radius:50%;border:1px solid #00AAFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:400;color:var(--ink2);">세무</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD · 9월 캘린더
+══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:#fff;">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:40px 36px 32px;">
+    <div style="display:inline-block;background:#00AAFF;padding:4px 12px;font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:20px;border-radius:999px;width:fit-content;">9월 세무·일정 캘린더</div>
+    <h2 style="font-size:32px;font-weight:900;color:var(--ink);line-height:1.1;letter-spacing:-1px;word-break:keep-all;margin-bottom:24px;">이달의<br>주요 일정</h2>
+
+    <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--bd);">
+      <div style="flex-shrink:0;width:44px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#00AAFF;">09.01</div>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:400;color:#1A1A18;background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">화</span>
+      </div>
+      <div style="font-size:14.5px;color:var(--ink2);line-height:1.7;word-break:keep-all;">
+        · <span style="font-weight:700;color:var(--ink);background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">제22대 국회 정기국회 개회</span><br>
+        &nbsp;&nbsp;<span style="font-size:13px;color:var(--ink3);">2026 세제개편안 국회 심의 시작</span>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--bd);">
+      <div style="flex-shrink:0;width:44px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#00AAFF;">09.10</div>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:400;color:#1A1A18;background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">목</span>
+      </div>
+      <div style="font-size:14.5px;color:var(--ink2);line-height:1.7;word-break:keep-all;">
+        · <span style="font-weight:700;color:var(--ink);background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">8월분 원천징수이행상황신고·납부</span><br>
+        &nbsp;&nbsp;<span style="font-size:13px;color:var(--ink3);">국세, 홈택스</span><br>
+        · <span style="font-weight:700;color:var(--ink);background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">8월분 지방소득세(소득분) 특별징수 납부</span><br>
+        &nbsp;&nbsp;<span style="font-size:13px;color:var(--ink3);">지방세, 위택스</span><br>
+        · <span style="font-weight:700;color:var(--ink);background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">4대보험료 납부</span><br>
+        &nbsp;&nbsp;<span style="font-size:13px;color:var(--ink3);">국민연금·건강·고용·산재보험</span>
+      </div>
+    </div>
+
+
+    <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--bd);">
+      <div style="flex-shrink:0;width:44px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#00AAFF;">09.25</div>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:400;color:#1A1A18;background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">금</span>
+      </div>
+      <div style="font-size:14.5px;color:var(--ink2);line-height:1.7;word-break:keep-all;">
+        · <span style="font-weight:700;color:var(--ink);background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">추석 연휴</span><br>
+        &nbsp;&nbsp;<span style="font-size:13px;color:var(--ink3);">9.24(목)~9.26(토), 신고·납부 기한과 겹치지 않는지 미리 확인</span>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:16px;padding:14px 0;">
+      <div style="flex-shrink:0;width:44px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#00AAFF;">09.30</div>
+        <span style="font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:400;color:#1A1A18;background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">수</span>
+      </div>
+      <div style="font-size:14.5px;color:var(--ink2);line-height:1.7;word-break:keep-all;">
+        · <span style="font-weight:700;color:var(--ink);background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">6월말 결산법인 법인세 신고·납부</span><br>
+        &nbsp;&nbsp;<span style="font-size:13px;color:var(--ink3);">2025.7~2026.6월분 (성실신고확인서 제출법인은 제외, 별도 연장 기한 적용)</span><br>
+        · <span style="font-weight:700;color:var(--ink);background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">1월말 결산법인 법인세 중간예납</span><br>
+        &nbsp;&nbsp;<span style="font-size:13px;color:var(--ink3);">2026.2~7월분</span><br>
+        · <span style="font-weight:700;color:var(--ink);background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">간이지급명세서(사업·기타소득)·일용근로소득지급명세서 제출</span><br>
+        &nbsp;&nbsp;<span style="font-size:13px;color:var(--ink3);">2026년 8월 지급분 (상용근로소득 간이지급명세서는 반기별 제출·1/31·7/31, 이번 달 해당 없음)</span><br>
+        · <span style="font-weight:700;color:var(--ink);background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">용역제공자에 관한 과세자료 제출</span><br>
+        &nbsp;&nbsp;<span style="font-size:13px;color:var(--ink3);">2026년 8월 소득발생분</span><br>
+        · <span style="font-weight:700;color:var(--ink);background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">종합부동산세 과세특례신고 · 임대(기타주택) 합산배제신고</span><br>
+        &nbsp;&nbsp;<span style="font-size:13px;color:var(--ink3);">법인·개인 부동산 보유·임대사업자 대상</span><br>
+        · <span style="font-weight:700;color:var(--ink);background:linear-gradient(transparent 30%, rgba(0,170,255,0.35) 30%);padding:0 2px;">재산세(지역자원시설세·지방교육세 포함) 납부</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD · 체크리스트
+══════════════════════════ -->
+<div class="card" style="background:#00AAFF;">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:20px 36px 24px;">
+    <div>
+      <div style="display:inline-block;background:var(--ink);padding:4px 12px;font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:24px;border-radius:999px;">셀프 체크</div>
+      <h2 style="font-size:36px;font-weight:900;color:var(--ink);line-height:1.1;letter-spacing:-1.5px;word-break:keep-all;margin-bottom:8px;">우리 회사<br>해당되나요?</h2>
+      <div style="height:3px;background:var(--ink);width:48px;opacity:.25;margin:20px 0 24px;"></div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(26,26,24,.12);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(26,26,24,.35);flex-shrink:0;align-self:flex-start;margin-top:4px;"></div>
+          <div>
+            <div style="font-size:20px;font-weight:700;color:var(--ink);">건설·조선업 하도급 계약이 있다</div>
+            <div style="font-size:18px;color:var(--ink);margin-top:6px;">2027.1.1부터 임금비용을 구분해 지급해야 할 수 있습니다</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(26,26,24,.12);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(26,26,24,.35);flex-shrink:0;align-self:flex-start;margin-top:4px;"></div>
+          <div>
+            <div style="font-size:20px;font-weight:700;color:var(--ink);">포괄임금제로 급여를 지급 중이다</div>
+            <div style="font-size:18px;color:var(--ink);margin-top:6px;">기획감독 대상이 될 수 있으니 임금명세서부터 점검하세요</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(26,26,24,.12);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(26,26,24,.35);flex-shrink:0;align-self:flex-start;margin-top:4px;"></div>
+          <div>
+            <div style="font-size:20px;font-weight:700;color:var(--ink);">외화부채나 수출 비중이 크다</div>
+            <div style="font-size:18px;color:var(--ink);margin-top:6px;">환율이 한 달 새 60원 넘게 움직였습니다</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(26,26,24,.12);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(26,26,24,.35);flex-shrink:0;align-self:flex-start;margin-top:4px;"></div>
+          <div>
+            <div style="font-size:20px;font-weight:700;color:var(--ink);">올해 안 자사주 계획이 있다</div>
+            <div style="font-size:18px;color:var(--ink);margin-top:6px;">세제개편안 통과 시 과세 방식이 바뀝니다</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(26,26,24,.12);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(26,26,24,.35);flex-shrink:0;align-self:flex-start;margin-top:4px;"></div>
+          <div>
+            <div style="font-size:20px;font-weight:700;color:var(--ink);">우리 업종을 잘 모르겠다</div>
+            <div style="font-size:18px;color:var(--ink);margin-top:6px;">정부 중점지원분야 해당 여부, 확인이 필요합니다</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(26,26,24,.12);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(26,26,24,.35);flex-shrink:0;align-self:flex-start;margin-top:4px;"></div>
+          <div>
+            <div style="font-size:20px;font-weight:700;color:var(--ink);">최근 이직·폐업·이사 이력이 있다</div>
+            <div style="font-size:18px;color:var(--ink);margin-top:6px;">미수령 환급금이 남아있을 수 있습니다, 홈택스에서 5분이면 확인됩니다</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 0;">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(26,26,24,.35);flex-shrink:0;align-self:flex-start;margin-top:4px;"></div>
+          <div>
+            <div style="font-size:20px;font-weight:700;color:var(--ink);">변동금리 대출·회사채가 있다</div>
+            <div style="font-size:18px;color:var(--ink);margin-top:6px;">기준금리 3.0%, 이자비용 재계산이 필요합니다</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:20px 0 24px;">
+      <div style="font-size:17px;font-weight:700;color:var(--ink);margin-bottom:1px;">하나라도 해당되면</div>
+      <div style="display:flex;align-items:center;margin-bottom:1px;"><div style="flex:1;height:1px;background:#000;opacity:1;"></div><div style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid #000;"></div></div>
+      <div style="font-size:17px;font-weight:500;color:var(--ink);">다음 장에서 확인해 보세요</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════
+  CARD · CTA (고정 — 매호 동일)
+══════════════════════════ -->
+<div class="card" style="background:var(--y);">
+  <div class="c06-body">
+    <div class="c06-eyebrow"><span>C</span><span>o</span><span>n</span><span>s</span><span>u</span><span>l</span><span>t</span><span>i</span><span>n</span><span>g</span><span> </span><span>f</span><span>o</span><span>r</span><span> </span><span>Y</span><span>o</span><span>u</span></div>
+    <h2 class="c06-headline">무엇이든<br>물어보세요.</h2>
+    <p class="c06-sub">
+      궁금한 점이 있으시거나<br>
+      우리 회사에 해당되는지 확인하고 싶으시면<br>
+      <strong>편하게 연락 주세요.</strong><br>
+      가볍게 여쭤보셔도 됩니다.<span style="display:block;margin-top:8px;"></span>
+      함께 살펴보는 시간,<br>
+      <strong>생각보다 많은 것이 달라집니다.</strong>
+    </p>
+    <div style="margin-bottom:16px;">
+      <div style="font-size:13px;font-weight:700;color:var(--ink2);letter-spacing:.5px;margin-bottom:10px;">파트너사</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+        <div style="background:rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.06);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">⚖️</div>
+          <div style="font-size:10px;color:var(--ink3);">세무법인</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);">세무사 협업</div>
+        </div>
+        <div style="background:rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.06);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">📊</div>
+          <div style="font-size:10px;color:var(--ink3);">회계법인</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);">회계사 협업</div>
+        </div>
+        <div style="background:rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.06);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">💡</div>
+          <div style="font-size:10px;color:var(--ink3);">특허법인</div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);">변리사 협업</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:8px;">
+      <a href="tel:01091738141" style="text-decoration:none;">
+        <div style="background:#fff;border:3px solid #00AAFF;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid #00AAFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:#00AAFF;">전화 상담</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">평일 09:00~18:00</div>
+        </div>
+      </a>
+      <a href="https://blog.naver.com/bizinsightkorea" style="text-decoration:none;">
+        <div style="background:#fff;border:3px solid #00AAFF;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid #00AAFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:#00AAFF;">네이버 블로그</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">비즈인사이트 bizinsight</div>
+        </div>
+      </a>
+      <a href="http://pf.kakao.com/_SxjFxdn" style="text-decoration:none;">
+        <div style="background:#fff;border:3px solid #00AAFF;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid #00AAFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#00AAFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div style="font-size:15px;font-weight:700;color:#00AAFF;">카카오 채널</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">24시간 당일 회신</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="c06-footer">
+    <p style="line-height:1.2;text-align:left;">서울시 강남구 테헤란로 4길 삼성생명금융서비스<br>법인 전문 컨설팅 박기범 전문위원</p>
+  </div>
+</div>
+
+</div><!-- /viewer -->
+
+<!-- ══════════════════════════
+  MODALS · 이슈별 추가 설명
+══════════════════════════ -->
+
+<!-- MODAL 01 · 도급 임금비용 구분지급 -->
+<div class="modal-overlay" id="modal01" onclick="closeModalBg(event,'modal01')">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModal('modal01')">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="1" y1="1" x2="11" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="1" x2="1" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <div class="modal-badge">노무 · 근로기준법 제44조의4</div>
+    <h3 class="modal-title">도급 임금비용 구분지급,<br>무엇을 준비해야 할까요</h3>
+    <div class="modal-section">
+      <div class="modal-label">적용 대상이 될 가능성이 높은 경우</div>
+      <div class="modal-list">
+        <div class="modal-list-item"><span class="num">1</span>건설업·조선업에서 하도급 구조로 사업을 운영하는 경우</div>
+        <div class="modal-list-item"><span class="num">2</span>도급기간이 30일을 초과하는 반복적·계속적 도급 계약</div>
+        <div class="modal-list-item"><span class="num">3</span>일정 규모 이상(구체적 기준은 시행령에서 확정 예정)의 도급사업</div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-label">지금 점검할 항목</div>
+      <p class="modal-body-text">도급계약서에 <b>임금비용 항목이 별도로 명시</b>되어 있는지, 수급인에게 매월 임금비용을 구분 지급하고 <b>전월 임금 지급 여부까지 확인</b>할 수 있는 절차가 마련돼 있는지 확인이 필요합니다.</p>
+    </div>
+    <div class="modal-note">※ 시행일은 2027.1.1이며, 구체적인 적용 업종·금액 규모·기간 기준을 담은 시행령·시행규칙은 2026.8.20~9.29 입법예고 중입니다. 확정되는 대로 다시 안내드립니다.</div>
+  </div>
+</div>
+
+<!-- MODAL 02 · 포괄임금 오남용 방지 지침 -->
+<div class="modal-overlay" id="modal02" onclick="closeModalBg(event,'modal02')">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModal('modal02')">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="1" y1="1" x2="11" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="1" x2="1" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <div class="modal-badge">노무 · 고용노동부 지도 지침</div>
+    <h3 class="modal-title">포괄임금제,<br>4가지만 점검하면 됩니다</h3>
+    <div class="modal-section">
+      <div class="modal-label">지침 위반 가능성을 판단하는 4가지 기준</div>
+      <div class="modal-list">
+        <div class="modal-list-item"><span class="num">1</span>근로시간 산정이 객관적으로 어려운 직무인가</div>
+        <div class="modal-list-item"><span class="num">2</span>기본급과 수당 항목이 명확히 구분되어 있는가</div>
+        <div class="modal-list-item"><span class="num">3</span>고정OT의 시간 수와 계산 방식이 분명한가</div>
+        <div class="modal-list-item"><span class="num">4</span>실제 초과근로 발생 시 추가 정산이 이루어지는가</div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-label">유의할 점</div>
+      <p class="modal-body-text">포괄임금 약정은 <b>수당 지급 방식을 정한 것일 뿐, 근로시간 규제 자체를 없애주는 장치가 아닙니다.</b> 4가지 중 하나라도 빠지면 분쟁·감독 리스크가 커집니다.</p>
+    </div>
+    <div class="modal-note">※ 법 개정안은 국회 심의 중이나, 지침에 따른 기획감독은 이미 진행되고 있습니다.</div>
+  </div>
+</div>
+
+<!-- MODAL 03 · 환율 -->
+<div class="modal-overlay" id="modal03" onclick="closeModalBg(event,'modal03')">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModal('modal03')">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="1" y1="1" x2="11" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="1" x2="1" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <div class="modal-badge">재무 · 환리스크 관리</div>
+    <h3 class="modal-title">환율 급락기,<br>어떤 법인이 영향받나요</h3>
+    <div class="modal-section">
+      <div class="modal-label">유형별 영향</div>
+      <div class="modal-list">
+        <div class="modal-list-item"><span class="num">1</span>외화부채 보유 법인 — 원화환산 부채 감소, 외화환산이익 발생 가능</div>
+        <div class="modal-list-item"><span class="num">2</span>수출 비중이 큰 법인 — 동일 외화 매출의 원화환산액 감소</div>
+        <div class="modal-list-item"><span class="num">3</span>원자재 수입 비중이 큰 법인 — 매입원가 하락으로 수혜 가능</div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-label">점검 포인트</div>
+      <p class="modal-body-text">외화 자산·부채 포지션을 다시 계산해보고, <b>환헤지 비율·시점</b>을 조정할 필요가 있는지 확인하는 것이 좋습니다.</p>
+    </div>
+    <div class="modal-note">※ 환율은 변동성이 큰 지표입니다. 특정 시점 수치가 향후 방향성을 보장하지 않습니다.</div>
+  </div>
+</div>
+
+<!-- MODAL 05 · 2026 세제개편안 -->
+<div class="modal-overlay" id="modal05" onclick="closeModalBg(event,'modal05')">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModal('modal05')">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="1" y1="1" x2="11" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="1" x2="1" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <div class="modal-badge">세무 · 정부안(국회 제출 예정)</div>
+    <h3 class="modal-title">자기주식 과세체계,<br>무엇이 바뀌나요</h3>
+    <div class="modal-section">
+      <div class="modal-label">핵심 변경 내용</div>
+      <div class="modal-list">
+        <div class="modal-list-item"><span class="num">1</span>자사주 취득 시 — (종전) 실질매매 인정되면 양도소득 과세 가능 → (개편안) 원칙적으로 배당소득 과세</div>
+        <div class="modal-list-item"><span class="num">2</span>자사주 처분 시 — 자본거래로 보아 과세 제외</div>
+        <div class="modal-list-item"><span class="num">3</span>인적용역 원천세율 — 3.3% → 2.2% 인하 추진 (2027.1.1 이후 소득분)</div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-label">경과조치</div>
+      <p class="modal-body-text">2026년 12월 31일 이전 취득한 자사주는 <b>종전 규정이 그대로 적용</b>됩니다. 연내 자사주 취득·처분 계획이 있다면 시점을 다시 검토해볼 필요가 있습니다.</p>
+    </div>
+    <div class="modal-note">※ ISA·부동산세제(종부세·양도세)·상장주식 저평가 방지법 등은 발표 후 재검토 중이나, 자기주식 과세체계는 현재까지 재검토 대상으로 언급되지 않았습니다. 9.1 국무회의·9.3 이전 국회 제출 일정은 유지되고 있으며, 심의 과정에서 세부 내용이 조정될 수 있어 최종 확정 시 다시 안내드립니다.</div>
+  </div>
+</div>
+
+<!-- MODAL 04 · 한국은행 기준금리 2회 연속 인상 -->
+<div class="modal-overlay" id="modal04" onclick="closeModalBg(event,'modal04')">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModal('modal04')">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="1" y1="1" x2="11" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="1" x2="1" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <div class="modal-badge">재무 · 한국은행 금융통화위원회</div>
+    <h3 class="modal-title">기준금리 인상,<br>무엇을 다시 봐야 할까요</h3>
+    <div class="modal-section">
+      <div class="modal-label">인상 배경</div>
+      <div class="modal-list">
+        <div class="modal-list-item"><span class="num">1</span>예상보다 강한 성장세와 근원물가 압력</div>
+        <div class="modal-list-item"><span class="num">2</span>집값 등 금융불균형 위험에 대한 선제 대응</div>
+        <div class="modal-list-item"><span class="num">3</span>환율 안정으로 연속 인상의 부담이 다소 줄어든 여건</div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-label">지금 점검할 항목</div>
+      <p class="modal-body-text">변동금리 대출·회사채 비중이 큰 법인은 <b>이자비용 증가분을 재계산</b>해보고, 고정금리 전환이나 상환 시기 조정이 유리한지 검토할 필요가 있습니다.</p>
+    </div>
+    <div class="modal-note">※ 전문가 다수는 이번 인상과 별개로 4분기~내년 1분기 사이 추가 인상 가능성을 열어두고 있으며, 최종 기준금리는 3.25~3.50% 수준으로 전망하고 있습니다.</div>
+  </div>
+</div>
+
+<!-- MODAL 06 · 정부 하반기 경제성장전략 -->
+<div class="modal-overlay" id="modal06" onclick="closeModalBg(event,'modal06')">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModal('modal06')">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="1" y1="1" x2="11" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="1" x2="1" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <div class="modal-badge">경영 · 정부 확정 정책</div>
+    <h3 class="modal-title">우리 업종은<br>어디에 해당할까요</h3>
+    <div class="modal-section">
+      <div class="modal-label">하반기 경제성장전략 6대 과제</div>
+      <div class="modal-list">
+        <div class="modal-list-item"><span class="num">1</span>거시경제 안정적 운영</div>
+        <div class="modal-list-item"><span class="num">2</span>공급망 및 에너지 자립</div>
+        <div class="modal-list-item"><span class="num">3</span>초격차 성장동력 (반도체·AI데이터센터·피지컬AI)</div>
+        <div class="modal-list-item"><span class="num">4</span>지방주도 성장</div>
+        <div class="modal-list-item"><span class="num">5</span>양극화 완화</div>
+        <div class="modal-list-item"><span class="num">6</span>구조혁신</div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-label">중소기업 실무 연결 포인트</div>
+      <p class="modal-body-text">중점지원분야(초격차·신산업)에 예산이 집중 배정되며, <b>소프트웨어 개발업도 뿌리산업으로 인정</b>, 지방 소재 기업은 지역특화산업 가점을 받을 수 있습니다.</p>
+    </div>
+    <div class="modal-note">※ 2026.7.14 국무회의에서 확정된 정책 방향입니다. 세부 사업별 공고는 관계부처에서 순차 발표됩니다.</div>
+  </div>
+</div>
+
+<!-- MODAL 07 · 부가세 조기환급 & 미수령 국세환급금 -->
+<div class="modal-overlay" id="modal07" onclick="closeModalBg(event,'modal07')">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModal('modal07')">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="1" y1="1" x2="11" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="1" x2="1" y2="11" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <div class="modal-badge">세무 · 국세청 국세환급금 찾아주기 운동</div>
+    <h3 class="modal-title">조기환급과 미수령 환급금,<br>어떻게 다른가요</h3>
+    <div class="modal-section">
+      <div class="modal-label">① 부가세 조기환급 — 대상</div>
+      <div class="modal-list">
+        <div class="modal-list-item"><span class="num">1</span>사업용 설비 등을 신규로 취득한 경우</div>
+        <div class="modal-list-item"><span class="num">2</span>영세율(수출 등)을 적용받는 경우</div>
+        <div class="modal-list-item"><span class="num">3</span>재무구조개선계획을 이행 중인 경우</div>
+      </div>
+      <p class="modal-body-text" style="margin-top:10px;">해당 월의 다음 달 25일까지 조기환급을 신청하면, 신청 마감 후 <b>15일 이내</b>에 환급금이 지급됩니다. 정기(확정) 신고 대비 약 <b>45일 빠른</b> 자금 확보입니다.</p>
+    </div>
+    <div class="modal-section">
+      <div class="modal-label">② 미수령 국세환급금 — 확인이 필요한 경우</div>
+      <div class="modal-list">
+        <div class="modal-list-item"><span class="num">1</span>최근 몇 년 사이 회사를 옮기신 경우</div>
+        <div class="modal-list-item"><span class="num">2</span>하던 사업을 폐업하신 경우</div>
+        <div class="modal-list-item"><span class="num">3</span>이사로 연락처·주소·계좌가 바뀐 경우</div>
+      </div>
+      <p class="modal-body-text" style="margin-top:10px;">홈택스·손택스에서 <b>주민등록번호와 이름만으로</b> 조회 가능합니다. 공인인증서나 회원가입이 없어도 확인할 수 있습니다.</p>
+    </div>
+    <div class="modal-note">※ 법인 명의뿐 아니라 대표님 개인 명의로도 별도 조회가 필요합니다. 소멸시효는 5년, 경과 시 국고로 귀속됩니다.</div>
+  </div>
+</div>
+
+<script>
+function openModal(id){
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  document.getElementById(id).classList.remove('active');
+  document.body.style.overflow='';
+}
+function closeModalBg(e,id){
+  if(e.target.id===id){ closeModal(id); }
+}
+</script>
+
+</body>
+</html>
