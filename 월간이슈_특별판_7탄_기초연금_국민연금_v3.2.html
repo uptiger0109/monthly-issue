@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>월간이슈 특별판 7탄 · 기초연금과 국민연금</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --red:#7E2B53;--red2:#631E40;--red3:#4A1430;--gold:#B8924A;--gold2:#D9B871;
+  --cyan:#00AAFF;
+  --ink:#1A1A18;--ink2:#4A4844;--ink3:#8A8880;--ink4:#C4C1B8;
+  --bg:#FAF7F0;--bg2:#F2EDE3;--bg3:#E8E2D5;--bd:#DED7C8;--bd2:#CCC4B2;
+  --cream:#FBF6EC;
+}
+html,body{width:100%;height:100%;background:var(--bg3);font-family:'Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased;}
+.viewer{width:100%;max-width:430px;margin:0 auto;height:100dvh;overflow-y:scroll;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--cream);}
+.viewer::-webkit-scrollbar{display:none;}
+body.lock .viewer{overflow:hidden;}
+.card{width:100%;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+
+/* ── STITCH ── */
+.stitch{width:calc(100% - 72px);height:1px;background:#000;margin:15px 36px 0;flex-shrink:0;}
+
+/* ── COVER ── */
+.c01{background:var(--red);}
+.c01-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:54px 36px 48px;}
+.c01-rule{width:100%;height:2px;background:#fff;}
+.c01-monthly-wrap{display:flex;flex-direction:column;margin-top:20px;}
+.c01-line{display:flex;font-size:72px;font-weight:900;color:#fff;line-height:1.08;letter-spacing:-2px;}
+.char{width:72px;display:inline-flex;align-items:center;justify-content:center;}
+.c01-spline{color:var(--gold2);align-items:flex-end;}
+.c01-spwrap{display:flex;flex-direction:column;align-items:center;gap:6px;margin-left:12px;margin-bottom:14px;}
+.c01-spdate{font-size:14px;font-weight:500;color:rgba(255,255,255,.9);letter-spacing:.3px;}
+.c01-spbadge{padding:5px 26px 7px;background:var(--gold2);border-radius:999px;font-size:16px;font-weight:800;color:var(--red3);letter-spacing:1px;white-space:nowrap;}
+.c01-rule2{width:100%;height:2px;background:rgba(255,255,255,.85);margin:22px 0 14px;}
+.c01-2026{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:400;color:rgba(255,255,255,.6);width:100%;display:flex;justify-content:space-between;}
+.c01-hook{font-size:31px;font-weight:900;color:#fff;line-height:1.3;letter-spacing:-1px;word-break:keep-all;margin-top:34px;}
+.c01-hook em{font-style:normal;color:var(--gold2);}
+.c01-badge-row{display:flex;align-items:center;gap:8px;margin-top:20px;flex-wrap:wrap;}
+.c01-badge{padding:4px 16px 6px;border:1.3px solid var(--gold2);border-radius:999px;background:transparent;font-size:14px;font-weight:700;color:var(--gold2);display:inline-flex;align-items:center;}
+.c01-guide{margin-top:34px;border-top:1px solid rgba(255,255,255,.3);padding-top:16px;display:flex;align-items:flex-start;gap:10px;}
+.c01-guide .ic{width:24px;height:24px;border-radius:50%;border:1.3px solid var(--gold2);color:var(--gold2);font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.c01-guide .tx{font-size:13.5px;color:rgba(255,255,255,.82);line-height:1.6;word-break:keep-all;}
+.c01-guide .tx b{color:var(--gold2);font-weight:700;}
+
+/* ── CARD PARTS ── */
+.cwrap{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:20px 36px 30px;}
+.cnum{font-size:29px;font-weight:700;color:var(--bd2);margin-bottom:10px;padding-left:4px;font-family:'JetBrains Mono',monospace;}
+.cbadge{display:inline-block;background:var(--red);padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff;margin-bottom:16px;border-radius:999px;}
+.cbadge.gold{background:var(--gold);}
+.cbadge.dark{background:var(--ink);}
+.bigrow{display:flex;align-items:baseline;gap:11px;margin-bottom:12px;flex-wrap:wrap;}
+.big{font-size:100px;font-weight:600;color:var(--ink);line-height:.9;letter-spacing:-4px;}
+.big.m{font-size:76px;letter-spacing:-3px;}
+.big.s{font-size:58px;letter-spacing:-2px;}
+.biglab{font-family:'Noto Sans KR',sans-serif;font-size:17px;font-weight:700;color:var(--ink3);letter-spacing:-.3px;}
+.chead{font-size:30px;font-weight:900;color:var(--red);line-height:1.15;letter-spacing:-1px;word-break:keep-all;margin-bottom:16px;}
+.cbody{font-size:18px;color:var(--ink2);line-height:1.55;word-break:keep-all;}
+.cbody b{font-weight:700;color:var(--ink);}
+.cbody em{font-style:normal;font-weight:700;color:var(--red);}
+
+.numlist{display:flex;flex-direction:column;gap:11px;margin:20px 0 0;}
+.numlist .row{display:flex;gap:11px;align-items:flex-start;}
+.numlist .n{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;color:var(--red);line-height:1.5;}
+.numlist .t{font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;}
+.numlist .t b{color:var(--ink);font-weight:700;}
+
+.barlist{display:flex;flex-direction:column;gap:12px;margin:20px 0 0;}
+.barlist .it{border-left:3px solid var(--bd2);padding:2px 0 2px 14px;}
+.barlist .it.hi{border-left-color:var(--red);}
+.barlist .it .h{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:3px;}
+.barlist .it.hi .h{color:var(--red);}
+.barlist .it .d{font-size:16px;color:var(--ink2);line-height:1.5;word-break:keep-all;}
+
+.stat3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);margin:20px 0 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);}
+.stat3.two{grid-template-columns:repeat(2,1fr);}
+.stat3 .c{background:var(--cream);padding:15px 6px;text-align:center;}
+.stat3 .v{font-size:27px;font-weight:900;color:var(--red);line-height:1;letter-spacing:-1px;}
+.stat3 .v span{font-size:14px;font-weight:700;}
+.stat3 .l{font-size:11px;color:var(--ink3);margin-top:7px;line-height:1.4;word-break:keep-all;}
+
+.quote{border-left:3px solid var(--gold);padding:4px 0 4px 14px;margin:20px 0 0;}
+.quote .q{font-size:16px;color:var(--ink);line-height:1.6;word-break:keep-all;font-weight:500;}
+.quote .s{font-size:12px;color:var(--ink3);margin-top:7px;}
+
+/* ── MORE BUTTON (팝업 트리거) ── */
+.more-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+.more{display:inline-flex;align-items:center;gap:7px;padding:8px 14px 9px;border:1.3px solid var(--red);border-radius:999px;background:transparent;color:var(--red);font-size:13.5px;font-weight:700;font-family:inherit;cursor:pointer;line-height:1.2;word-break:keep-all;text-align:left;transition:.15s;}
+.more:active{background:var(--red);color:#fff;}
+.more .pl{width:15px;height:15px;border-radius:50%;background:var(--red);color:#fff;font-size:11px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1;}
+.more:active .pl{background:#fff;color:var(--red);}
+.more.gold{border-color:var(--gold);color:var(--gold);}
+.more.gold .pl{background:var(--gold);}
+.more.gold:active{background:var(--gold);color:#fff;}
+.more.gold:active .pl{background:#fff;color:var(--gold);}
+
+/* ── TAG ── */
+.tag-row{margin-top:26px;display:flex;align-items:center;gap:10px;}
+.tag-dot{width:18px;height:18px;border-radius:50%;border:1px solid var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tag-txt{font-size:18px;font-weight:400;color:var(--ink2);}
+
+/* ── SHEET (팝업) ── */
+.mask{position:fixed;inset:0;background:rgba(26,26,24,.62);opacity:0;pointer-events:none;transition:opacity .26s ease;z-index:80;}
+.mask.on{opacity:1;pointer-events:auto;}
+.sheet{position:fixed;bottom:0;left:50%;width:100%;max-width:430px;max-height:90dvh;background:var(--cream);z-index:90;border-radius:22px 22px 0 0;
+  transform:translateX(-50%) translateY(102%);transition:transform .34s cubic-bezier(.22,.9,.28,1);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 -10px 40px rgba(0,0,0,.25);}
+.sheet.on{transform:translateX(-50%) translateY(0);}
+.sh-grip{width:38px;height:4px;border-radius:99px;background:var(--bd2);margin:10px auto 0;flex-shrink:0;}
+.sh-head{padding:14px 22px 14px 26px;border-bottom:1.5px solid var(--bd);display:flex;align-items:flex-start;gap:12px;flex-shrink:0;}
+.sh-head .tt{flex:1;min-width:0;}
+.sh-kicker{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1.8px;color:var(--red);text-transform:uppercase;margin-bottom:5px;}
+.sh-title{font-size:20px;font-weight:900;color:var(--ink);line-height:1.28;letter-spacing:-.5px;word-break:keep-all;}
+.sh-close{width:32px;height:32px;border-radius:50%;border:1px solid var(--bd2);background:transparent;color:var(--ink3);font-size:15px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:inherit;line-height:1;}
+.sh-close:active{background:var(--ink);color:#fff;border-color:var(--ink);}
+.sh-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:22px 26px 40px;}
+.sh-body::-webkit-scrollbar{width:0;}
+#ppStore{display:none;}
+
+/* ── POPUP CONTENT ── */
+.pp-sec{margin-bottom:26px;}
+.pp-sec:last-child{margin-bottom:0;}
+.pp-eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.8px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:8px;}
+.pp-h{font-size:18px;font-weight:800;color:var(--ink);line-height:1.35;word-break:keep-all;margin-bottom:10px;}
+.pp-p{font-size:15px;color:var(--ink2);line-height:1.75;word-break:keep-all;margin-bottom:12px;}
+.pp-p:last-child{margin-bottom:0;}
+.pp-p b{color:var(--ink);font-weight:700;}
+.pp-p em{font-style:normal;color:var(--red);font-weight:700;}
+.pp-scroll{overflow-x:auto;margin-bottom:12px;-webkit-overflow-scrolling:touch;}
+.pp-scroll::-webkit-scrollbar{height:0;}
+table.pp-t{width:100%;border-collapse:collapse;font-size:13px;min-width:100%;}
+.pp-t th{background:var(--bg2);color:var(--ink);font-weight:700;padding:9px 8px;text-align:left;border-bottom:1.5px solid var(--bd2);font-size:11.5px;letter-spacing:.2px;white-space:nowrap;}
+.pp-t td{padding:9px 8px;border-bottom:1px solid var(--bd);color:var(--ink2);line-height:1.5;vertical-align:top;word-break:keep-all;}
+.pp-t td b{color:var(--ink);font-weight:700;}
+.pp-t td.r{text-align:right;font-family:'JetBrains Mono',monospace;white-space:nowrap;}
+.pp-t td.c{text-align:center;}
+.pp-t tr.hi td{background:rgba(126,43,83,.07);}
+.pp-t .ok{color:#1B7F5A;font-weight:700;}
+.pp-t .no{color:var(--ink3);font-weight:700;}
+.pp-t .fx{color:var(--red);font-weight:700;}
+
+.pp-formula{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:16px 14px;margin-bottom:14px;text-align:center;font-size:14px;color:var(--ink);line-height:1.95;word-break:keep-all;font-weight:500;}
+.pp-formula .op{color:var(--red);font-weight:800;margin:0 5px;}
+.pp-formula .sm{display:block;font-size:12px;color:var(--ink3);margin-top:8px;font-weight:400;}
+
+.pp-law{border-left:3px solid var(--gold);background:rgba(184,146,74,.09);padding:13px 14px;margin-bottom:12px;border-radius:0 8px 8px 0;}
+.pp-law .lt{font-size:13px;font-weight:800;color:#8E6E2E;margin-bottom:6px;letter-spacing:.2px;word-break:keep-all;}
+.pp-law .lb{font-size:14px;color:var(--ink2);line-height:1.65;word-break:keep-all;}
+.pp-law .lb b{color:var(--ink);font-weight:700;}
+
+.pp-fix{border:1.5px solid var(--red);border-radius:10px;padding:14px;margin-bottom:14px;background:rgba(126,43,83,.05);}
+.pp-fix .ft{font-size:13px;font-weight:800;color:var(--red);letter-spacing:-.2px;margin-bottom:8px;font-family:'Noto Sans KR',sans-serif;}
+.pp-fix .fb{font-size:14.5px;color:var(--ink2);line-height:1.65;word-break:keep-all;}
+.pp-fix .fb b{color:var(--ink);font-weight:700;}
+
+.pp-note{font-size:12.5px;color:var(--ink3);line-height:1.7;word-break:keep-all;border-top:1px solid var(--bd);padding-top:12px;margin-top:14px;}
+.pp-note b{color:var(--ink2);font-weight:700;}
+
+.pp-chk .row{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid var(--bd);}
+.pp-chk .row:last-child{border-bottom:0;}
+.pp-chk .b{width:18px;height:18px;border:1.5px solid var(--bd2);border-radius:3px;flex-shrink:0;margin-top:3px;}
+.pp-chk .x{font-size:14.5px;color:var(--ink2);line-height:1.6;word-break:keep-all;}
+.pp-chk .x b{color:var(--ink);font-weight:700;}
+
+.pp-step{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--bd);}
+.pp-step:last-of-type{border-bottom:0;}
+.pp-step .sn{width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'JetBrains Mono',monospace;}
+.pp-step .st{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:4px;word-break:keep-all;}
+.pp-step .sd{font-size:14px;color:var(--ink2);line-height:1.6;word-break:keep-all;}
+
+.pp-kv{display:flex;flex-direction:column;margin-bottom:12px;border-top:1px solid var(--bd);}
+.pp-kv .r{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--bd);align-items:flex-start;}
+.pp-kv .k{width:104px;flex-shrink:0;font-size:13px;font-weight:700;color:var(--ink);line-height:1.5;word-break:keep-all;}
+.pp-kv .v{flex:1;font-size:14px;color:var(--ink2);line-height:1.6;word-break:keep-all;}
+.pp-kv .v b{color:var(--red);font-weight:700;}
+
+.pp-tri{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);border:1px solid var(--bd);margin-bottom:12px;}
+.pp-tri .c{background:var(--cream);padding:13px 6px;text-align:center;}
+.pp-tri .v{font-size:22px;font-weight:900;color:var(--red);line-height:1;letter-spacing:-.5px;}
+.pp-tri .v.g{color:var(--ink3);}
+.pp-tri .l{font-size:10.5px;color:var(--ink3);margin-top:6px;line-height:1.4;}
+
+.pp-src{font-size:12.5px;color:var(--ink2);line-height:1.8;word-break:keep-all;}
+.pp-src div{padding-left:12px;text-indent:-12px;}
+</style>
+</head>
+<body>
+<div class="viewer" id="viewer">
+
+<!-- ══════════════════════════ CARD 01 · COVER ══════════════════════════ -->
+<div class="card c01">
+  <div class="c01-body">
+    <div class="c01-rule"></div>
+    <div class="c01-monthly-wrap">
+      <div class="c01-line"><span class="char">월</span><span class="char">간</span><span class="char">이</span><span class="char">슈</span></div>
+      <div style="font-size:72px;font-weight:800;color:#fff;letter-spacing:0px;line-height:1.08;transform:scaleX(1.05);transform-origin:left;display:inline-block;margin-left:3px;">MONEY</div>
+      <div class="c01-line c01-spline">
+        <span class="char">특</span><span class="char">별</span><span class="char">판</span><span class="c01-spwrap"><span class="c01-spdate">2026. 9월</span><span class="c01-spbadge">7탄</span></span>
+      </div>
+    </div>
+    <div class="c01-rule2"></div>
+    <div class="c01-2026"><span>2</span><span>0</span><span>2</span><span>6</span><span>&nbsp;</span><span>m</span><span>o</span><span>n</span><span>t</span><span>h</span><span>l</span><span>y</span><span>&nbsp;</span><span>i</span><span>s</span><span>s</span><span>u</span><span>e</span><span>·</span><span>s</span><span>p</span><span>e</span><span>c</span><span>i</span><span>a</span><span>l</span><span>&nbsp;</span><span>e</span><span>d</span><span>i</span><span>t</span><span>i</span><span>o</span><span>n</span></div>
+    <p class="c01-hook">국민연금은 쌓아서 받고,<br><em>기초연금은 알아야 받습니다.</em></p>
+    <div class="c01-badge-row">
+      <span class="c01-badge">기초연금</span>
+      <span class="c01-badge">국민연금</span>
+      <span class="c01-badge">2026 개정</span>
+    </div>
+    <div class="c01-guide">
+      <div class="ic">+</div>
+      <div class="tx">각 장의 <b>＋ 버튼</b>을 누르면 산식·기준표·근거 법령이 담긴 <b>상세 화면</b>이 열립니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 02 · 기초연금은 제도다 ══════════════════════════ -->
+<div class="stitch" style="margin-top:75px;"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">01</div>
+    <div class="cbadge">기초연금 · 2026 기준</div>
+    <div class="bigrow"><span class="big">247</span><span class="biglab">만원 / 단독</span></div>
+    <h2 class="chead">기초연금은 저축이 아니라<br>‘제도’입니다.</h2>
+    <p class="cbody">국민연금은 내가 낸 보험료의 대가입니다. 기초연금은 다릅니다. <b>제도 안에 있으면 받고, 밖에 있으면 못 받습니다.</b> 만 65세 이상 중 <em>소득인정액 하위 70%</em>가 대상이며, 여기서 소득인정액은 통장에 찍히는 현금이 아니라 <b>소득평가액 + 재산의 소득환산액</b>으로 계산되는 행정상의 숫자입니다.</p>
+    <div class="stat3">
+      <div class="c"><div class="v">247<span>만</span></div><div class="l">단독가구<br>월 소득인정액 이하</div></div>
+      <div class="c"><div class="v">395.2<span>만</span></div><div class="l">부부가구<br>월 소득인정액 이하</div></div>
+      <div class="c"><div class="v">70<span>%</span></div><div class="l">만 65세 이상<br>소득 하위</div></div>
+    </div>
+    <p class="cbody" style="margin-top:20px;">기준을 통과하면 받는 금액은 <b>2026년 기준 월 최대 34만9,700원</b>입니다. 다만 <em>공무원·군인·사학연금 수급자와 그 배우자</em>는 대상에서 제외되며, 국민연금을 20~30년 성실히 납부한 분은 그 수령액이 소득인정액에 <b>전액</b> 반영되기 때문에 <b>손에 쥔 현금은 많지 않은데 탈락하는</b> 역설이 생깁니다.</p>
+    <div class="more-row">
+      <button class="more" data-pp="p01"><span class="pl">+</span>소득인정액은 어떻게 계산되나</button>
+      <button class="more" data-pp="p27"><span class="pl">+</span>소득평가액 — 근로소득 공제 구조</button>
+      <button class="more gold" data-pp="p02"><span class="pl">+</span>선정기준액 고시 근거</button>
+      <button class="more gold" data-pp="p28"><span class="pl">+</span>직역연금 수급자는 왜 제외되나</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">기초연금</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 03 · 탈락 4유형 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">02</div>
+    <div class="cbadge">탈락 유형</div>
+    <div class="bigrow"><span class="big">4</span><span class="biglab">가지 / 탈락 유형</span></div>
+    <h2 class="chead">억울하게 탈락하는<br>네 가지 유형</h2>
+    <p class="cbody">공통점은 하나입니다. <b>실제 현금흐름과 행정상 소득인정액의 괴리</b>. 그리고 ‘내 명의’가 아닌 것도 잡힌다는 점입니다.</p>
+    <div class="numlist">
+      <div class="row"><span class="n">01</span><span class="t"><b>국민연금 장기 가입자</b> — 수령액이 공적이전소득으로 전액 반영</span></div>
+      <div class="row"><span class="n">02</span><span class="t"><b>자녀 명의 고가주택 거주</b> — 소득이 0원이어도 무료임차소득 발생</span></div>
+      <div class="row"><span class="n">03</span><span class="t"><b>재산의 소득환산</b> — 고가 자동차·회원권·요트까지 포함</span></div>
+      <div class="row"><span class="n">04</span><span class="t"><b>부부 합산</b> — 혼자 신청해도 단독가구 기준이 아님</span></div>
+    </div>
+    <p class="cbody" style="margin-top:20px;">특히 4번을 놓치는 경우가 많습니다. 연장자인 남편이 먼저 65세가 되어 <b>혼자 신청해도 산정은 부부 소득 합산</b>으로 이루어집니다. 본인은 국민연금뿐이어도 배우자의 소득 활동만으로 탈락할 수 있습니다.</p>
+    <div class="more-row">
+      <button class="more" data-pp="p03"><span class="pl">+</span>네 가지 유형 전체 보기</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">기초연금</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 04 · 얼마를 받는가(실수령 구조) ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">03</div>
+    <div class="cbadge">실수령 구조</div>
+    <div class="bigrow"><span class="big m">34.97</span><span class="biglab">만원 / 기준연금액</span></div>
+    <h2 class="chead">자격을 통과해도<br>다 받는 게 아닙니다.</h2>
+    <p class="cbody">여기까지가 <b>받을 자격이 있는가</b>의 문제였다면, 이제부터는 <em>얼마를 받는가</em>입니다. 선정기준액(247만원)을 통과했다고 최대 금액을 받는 게 아닙니다. 통과 이후에도 <b>별도로 작동하는 감액 장치 세 가지</b>가 있습니다.</p>
+    <div class="stat3">
+      <div class="c"><div class="v">34.97<span>만</span></div><div class="l">단독가구<br>월 최대 수령액</div></div>
+      <div class="c"><div class="v">27.98<span>만</span></div><div class="l">부부 동시 수급<br>1인당(20%↓)</div></div>
+      <div class="c"><div class="v">55.95<span>만</span></div><div class="l">부부 합계<br>수령액</div></div>
+    </div>
+    <div class="numlist">
+      <div class="row"><span class="n">01</span><span class="t"><b>부부감액 — 각 20%</b> — 부부 모두 수급하면 각자 감액. 한 명만 받으면 감액 없음</span></div>
+      <div class="row"><span class="n">02</span><span class="t"><b>국민연금 연계감액</b> — 국민연금이 일정 수준을 넘으면 기초연금이 깎임(다음 장)</span></div>
+      <div class="row"><span class="n">03</span><span class="t"><b>소득역전방지 감액</b> — 소득인정액+기초연금이 선정기준액을 넘는 역전을 막는 조정</span></div>
+    </div>
+    <p class="cbody" style="margin-top:20px;">소득인정액이 <b>247만원 언저리인 경계선 수급자</b>는 자격을 통과해도 실수령액이 크게 줄 수 있습니다. <em>“통과 = 34만9,700원”이 아닙니다.</em></p>
+    <div class="more-row">
+      <button class="more" data-pp="p25"><span class="pl">+</span>부부감액 · 소득역전방지 감액 상세</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">기초연금 · 실수령액</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 05 · 국민연금·기초연금 연계감액 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">04</div>
+    <div class="cbadge dark">국민연금 연계</div>
+    <div class="bigrow"><span class="big m">52.5</span><span class="biglab">만원 / 감액 시작선</span></div>
+    <h2 class="chead">국민연금을 늘리면<br>기초연금이 줄어듭니다.</h2>
+    <p class="cbody">선정기준액을 통과해 수급 자격을 얻어도, <b>국민연금 수령액이 기준연금액의 150%(2026년 52만4,550원)</b>를 넘으면 기초연금이 감액됩니다. 다만 전액 삭감되지는 않고 <em>기준연금액의 50%는 보장</em>됩니다.</p>
+    <div class="stat3">
+      <div class="c"><div class="v">52.5<span>만</span></div><div class="l">감액 시작<br>기준연금액의 150%</div></div>
+      <div class="c"><div class="v">67<span>만</span></div><div class="l">최대 감액<br>도달 기준</div></div>
+      <div class="c"><div class="v">50<span>%</span></div><div class="l">최저 보장<br>약 17만원대</div></div>
+    </div>
+    <div class="barlist">
+      <div class="it hi"><div class="h">추납의 역설</div><div class="d">추후납부·임의계속가입은 <b>국민연금을 늘리는 수단</b>입니다. 늘어난 국민연금이 소득인정액을 밀어올려 기초연금 자체가 탈락하거나, 통과해도 연계감액으로 깎일 수 있습니다.</div></div>
+    </div>
+    <p class="cbody" style="margin-top:20px;">판정은 실제 수령액이 아니라 <b>A급여액(소득재분배급여)</b> 기준이며, 국민연금공단에서 조회할 수 있습니다. <em>국민연금 증가분이 기초연금 감소분보다 큰지 반드시 대조</em>해야 합니다.</p>
+    <div class="more-row">
+      <button class="more gold" data-pp="p26"><span class="pl">+</span>연계감액 판정표 · 추납의 역설 계산</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">국민연금 · 기초연금 연계</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 06 · 무료임차소득 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">05</div>
+    <div class="cbadge">무료임차소득</div>
+    <div class="bigrow"><span class="big m">130</span><span class="biglab">만원 / 월</span></div>
+    <h2 class="chead">자녀 집에 무상으로 살면<br>‘소득’이 생깁니다.</h2>
+    <p class="cbody">집을 정리하고 자녀 명의 주택에 함께 사는 것은 흔한 선택입니다. 그런데 제도는 이를 <b>“주거를 무상으로 제공받아 그만큼의 소득을 얻은 것”</b>으로 봅니다. 자녀 명의 주택의 <em>시가표준액(공시가격) 6억원 이상</em>이면 부과됩니다.</p>
+    <div class="pp-formula" style="margin-top:20px;">
+      시가표준액 <span class="op">×</span> 0.78% <span class="op">÷</span> 12개월
+      <span class="sm">= 월 무료임차소득 · 시세가 아닌 공시가격 기준</span>
+    </div>
+    <p class="cbody">자녀 명의 <b>20억원 주택에 무상 거주하면 월 130만원</b>의 소득이 있는 것으로 계산됩니다. 이것만으로 단독가구 선정기준액(247만원)의 절반이 채워집니다.</p>
+    <div class="barlist">
+      <div class="it"><div class="h">며느리 · 사위 명의</div><div class="d">직계비속이 아니므로 <b>미적용</b></div></div>
+      <div class="it hi"><div class="h">자녀 + 본인 공동명의</div><div class="d">자녀 지분 → 무료임차소득 / 본인 지분 → 재산으로 <b>분리 산정</b></div></div>
+    </div>
+    <div class="more-row">
+      <button class="more" data-pp="p04"><span class="pl">+</span>시가표준액별 산정표</button>
+      <button class="more" data-pp="p05"><span class="pl">+</span>명의별 적용 판정</button>
+      <button class="more gold" data-pp="p06"><span class="pl">+</span>법적 근거 · 0.78%의 정체</button>
+      <button class="more" data-pp="p07"><span class="pl">+</span>무상거주 vs 전세·월세</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">기초연금 · 부동산</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 07 · 재산의 소득환산 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">06</div>
+    <div class="cbadge">재산의 소득환산</div>
+    <div class="bigrow"><span class="big m">4</span><span class="biglab">% / 연 환산율</span></div>
+    <h2 class="chead">요트도, 골프 회원권도<br>‘월 소득’이 됩니다.</h2>
+    <p class="cbody">부동산·금융재산뿐 아니라 <b>고가 자동차, 콘도·골프 회원권, 요트</b>까지 모두 재산에 포함되어 월 소득으로 환산됩니다. 기본재산액을 공제한 잔액에 연 4%를 적용해 12로 나눕니다.</p>
+    <div class="barlist">
+      <div class="it"><div class="h">기본재산액 공제 — 지역별</div><div class="d">대도시 1억 3,500만 / 중소도시 8,500만 / 농어촌 7,250만</div></div>
+      <div class="it"><div class="h">금융재산 공제</div><div class="d">2,000만원 (예·적금, 주식, 펀드, 보험)</div></div>
+      <div class="it hi"><div class="h">고급자동차 · 회원권</div><div class="d">공제도 4% 환산도 없이 <b>가액 전액이 월 소득으로 반영</b></div></div>
+    </div>
+    <p class="cbody" style="margin-top:20px;">자동차는 <b>배기량이 아니라 차량가액 4,000만원 단일 기준</b>으로 고급자동차 여부를 판정합니다. 또한 거주 지역에 따라 공제액이 최대 6,250만원까지 차이 나므로, 경계선에 있다면 지역 구분부터 확인해야 합니다.</p>
+    <div class="more-row">
+      <button class="more" data-pp="p08"><span class="pl">+</span>공제 · 환산 기준 전체표</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">기초연금 · 재산</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 08 · 이력관리제 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">07</div>
+    <div class="cbadge gold">놓치면 손해</div>
+    <div class="bigrow"><span class="big">5</span><span class="biglab">년 / 자동 안내</span></div>
+    <h2 class="chead">탈락해도 끝이 아닙니다.<br>수급희망 이력관리제</h2>
+    <p class="cbody">기초연금을 신청했다가 탈락했거나 받다가 중단된 경우, 이 제도를 함께 신청해 두면 <b>이후 5년 동안 매년 수급 가능 여부를 자동으로 확인해 안내</b>해 줍니다. 비용은 <em>0원</em>입니다.</p>
+    <p class="cbody" style="margin-top:14px;">소득·재산은 매년 변하고 선정기준액도 매년 상향됩니다. <b>올해 탈락한 사람이 내년에 통과하는 일이 실제로 발생</b>합니다. 게다가 <b>2026년 7월 30일부터는 ‘신청간주제’</b>가 시행되어, 수급 가능성이 확인되면 <em>다시 신청하지 않아도 자동으로 지급</em>됩니다. 한 번 떨어졌다고 포기해서 놓치는 경우를 막아 주는 장치입니다.</p>
+    <div class="stat3" style="margin-top:22px;">
+      <div class="c"><div class="v">5<span>년</span></div><div class="l">신청일로부터<br>최대 안내 기간</div></div>
+      <div class="c"><div class="v">0<span>원</span></div><div class="l">별도<br>수수료 없음</div></div>
+      <div class="c"><div class="v" style="font-size:18px;padding:4px 0;">주민센터<br>공단 지사</div><div class="l">신청 창구</div></div>
+    </div>
+    <div class="quote">
+      <div class="q">“한 번 안 되면 ‘아 난 안 되나 보다’ 하고 포기해 버리니까요. 이 부분을 꼭 지자체에 신청하셔서 도움을 받으시면 좋겠습니다.”</div>
+      <div class="s">공적연금 실무 상담 현장에서</div>
+    </div>
+    <div class="more-row">
+      <button class="more" data-pp="p09"><span class="pl">+</span>신청 3단계 절차</button>
+      <button class="more gold" data-pp="p10"><span class="pl">+</span>기초연금 제도는 어디로 가는가</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">기초연금 · 제도</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 09 · 국민연금 급여 종류 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">08</div>
+    <div class="cbadge">국민연금 기초 구조</div>
+    <div class="bigrow"><span class="big">4</span><span class="biglab">가지 / 국민연금 급여 종류</span></div>
+    <h2 class="chead">국민연금 안에도<br>네 가지 급여가 있습니다.</h2>
+    <p class="cbody">앞 장의 기초연금과 헷갈리기 쉬운 게 국민연금입니다. <b>“국민연금 받는다”가 다 같은 급여를 뜻하지 않습니다.</b> 국민연금은 상위 제도이고, 그 안에 네 가지 급여가 따로 있습니다.</p>
+    <div class="numlist">
+      <div class="row"><span class="n">01</span><span class="t"><b>노령연금</b>(국민연금법 제61조)<br>— 가입기간 120개월 이상 + 수급개시연령 도달. 흔히 말하는 ‘국민연금’이 바로 이것</span></div>
+      <div class="row"><span class="n">02</span><span class="t"><b>장애연금</b>(제67조)<br>— 가입 중 발생한 질병·부상으로 장애가 남았을 때</span></div>
+      <div class="row"><span class="n">03</span><span class="t"><b>유족연금</b>(제72조)<br>— 가입자·수급권자가 사망했을 때 유족에게</span></div>
+      <div class="row"><span class="n">04</span><span class="t"><b>반환일시금</b>(제77조)<br>— 120개월 미달 등으로 요건을 못 채웠을 때 납부액+이자를 일시금으로</span></div>
+    </div>
+    <p class="cbody" style="margin-top:20px;">실무에서 가장 자주 다루는 것이 <b>노령연금</b>이며, 이후 장에서 다룰 <em>조기수령·연기연금·감액제도</em>는 모두 이 노령연금 안의 세부 규칙입니다. 기초연금과는 <b>재원과 근거법이 다른 별개 제도</b>이며, 국민연금 수령액이 일정 기준을 넘을 때만 기초연금과 연계감액으로 연결됩니다.</p>
+    <div class="more-row">
+      <button class="more" data-pp="p31"><span class="pl">+</span>급여 종류별 요건 · 근거 법령</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">국민연금 · 기초</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 10 · 2026 국민연금법 4가지 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">09</div>
+    <div class="cbadge dark">2026 개정</div>
+    <div class="bigrow"><span class="big">4</span><span class="biglab">가지 / 2026 개정</span></div>
+    <h2 class="chead">2026년 국민연금법,<br>네 가지가 바뀌었습니다.</h2>
+    <p class="cbody">방향은 한 문장으로 정리됩니다. <b>더 많이 내고, 가입기간은 더 인정받고, 저소득층은 더 두텁게.</b></p>
+    <div class="numlist">
+      <div class="row"><span class="n">01</span><span class="t"><b>감액제도 개편</b><br>— 일해도 519만원까지는 안 깎인다</span></div>
+      <div class="row"><span class="n">02</span><span class="t"><b>보험료율 인상</b><br>— 9% → 13% (2026~2033 단계 인상)</span></div>
+      <div class="row"><span class="n">03</span><span class="t"><b>크레딧 확대</b><br>— 출산 첫째부터 · 군복무 12개월 · 상한 폐지</span></div>
+      <div class="row"><span class="n">04</span><span class="t"><b>저소득 지원 확대</b><br>— 지역가입자 보험료 국가 지원 요건 완화</span></div>
+    </div>
+    <div class="more-row">
+      <button class="more" data-pp="p11"><span class="pl">+</span>네 가지 개정 한눈에 보기</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">국민연금</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 11 · 감액제도 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">10</div>
+    <div class="cbadge">가장 반길 변화</div>
+    <div class="bigrow"><span class="big m">519</span><span class="biglab">만원 / 월</span></div>
+    <h2 class="chead">일하면서 연금 받아도<br>이제 안 깎입니다.</h2>
+    <p class="cbody">노령연금을 받으며 소득 활동을 하면 연금이 깎이는 제도가 있었습니다. 기준은 <b>A값</b> — 전체 가입자의 직전 3년 평균소득월액입니다. 개정으로 <em>A값 초과분에 200만원이 추가 공제</em>됩니다.</p>
+    <div class="stat3" style="margin-top:20px;">
+      <div class="c"><div class="v">319<span>만</span></div><div class="l">2026년 A값</div></div>
+      <div class="c"><div class="v">+200<span>만</span></div><div class="l">추가 공제<br>(신설)</div></div>
+      <div class="c"><div class="v">519<span>만</span></div><div class="l">감액 없는<br>상한</div></div>
+    </div>
+    <p class="cbody" style="margin-top:20px;"><b>월평균소득금액 519만원 미만이면 노령연금을 전액 수령</b>합니다. 연봉으로 대략 6~7천만원 수준이므로 <b>은퇴 후 재취업자 대부분이 감액 없이</b> 연금을 받게 됩니다. 감액 기준은 세전 월급이 아니라 <em>월평균소득금액</em>(근로소득공제·필요경비 차감 후)이라는 점도 중요합니다.</p>
+    <div class="more-row">
+      <button class="more" data-pp="p12"><span class="pl">+</span>감액 판정 구조 · 시뮬레이션</button>
+      <button class="more gold" data-pp="p13"><span class="pl">+</span>시행일 · 소급 적용 정리</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">국민연금 · 재취업</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 12 · 보험료율 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">11</div>
+    <div class="cbadge">보험료율 인상</div>
+    <div class="bigrow"><span class="big m">9→13</span><span class="biglab">%</span></div>
+    <h2 class="chead">27년 만에 움직인<br>보험료율</h2>
+    <p class="cbody">국민연금 보험료율은 오랫동안 9%에 멈춰 있었습니다. <b>2026년부터 매년 0.5%p씩 8년에 걸쳐 13%까지</b> 인상됩니다. 같은 연금액을 받기 위해 더 많은 보험료를 내는 구조 변화이며, 대신 <em>소득대체율은 2026년 가입분부터 43%로 상향</em>됩니다.</p>
+    <div class="barlist">
+      <div class="it"><div class="h">2026년</div><div class="d">9.5% — 첫 인상 적용</div></div>
+      <div class="it"><div class="h">2027~2032년</div><div class="d">매년 +0.5%p 단계 인상</div></div>
+      <div class="it hi"><div class="h">2033년</div><div class="d"><b>13.0% 도달 — 최종</b></div></div>
+    </div>
+    <p class="cbody" style="margin-top:20px;">소득대체율 43%는 <b>2026년 이후 가입 기간에만 적용</b>되며, 기존 수급자에게는 영향이 없습니다.</p>
+    <div class="more-row">
+      <button class="more" data-pp="p14"><span class="pl">+</span>연도별 인상 로드맵</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">국민연금 · 보험료</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 13 · 크레딧 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">12</div>
+    <div class="cbadge">크레딧 확대</div>
+    <div class="bigrow"><span class="big m">12</span><span class="biglab">개월 / 군복무</span></div>
+    <h2 class="chead">가입기간을<br>공짜로 늘려주는 장치</h2>
+    <p class="cbody">크레딧은 보험료를 내지 않아도(또는 일부만 내고도) 가입기간으로 인정해 주는 제도입니다. 2026년 개정으로 <b>세 가지가 크게 확대</b>되었습니다.</p>
+    <div class="barlist">
+      <div class="it hi"><div class="h">출산 크레딧 — 둘째 → 첫째부터</div><div class="d">첫째·둘째 각 12개월, 셋째 이상 18개월. <b>기존 50개월 상한도 폐지</b></div></div>
+      <div class="it hi"><div class="h">군복무 크레딧 — 6개월 → 12개월</div><div class="d">두 배 확대. 2026. 1. 1. 이후 복무를 마친 사람부터 적용</div></div>
+      <div class="it hi"><div class="h">실업 크레딧 — 보험료 75% 국가 지원</div><div class="d">구직급여 수급 기간 중 국민연금 보험료의 75%를 국가가 지원, 본인은 25%만 부담. <b>최대 12개월</b> 가입기간 인정</div></div>
+      <div class="it"><div class="h">저소득 지역가입자 지원</div><div class="d">기존 ‘납부 재개자’만 → <b>납부를 계속하는 사람도 지원 대상</b>에 포함</div></div>
+    </div>
+    <p class="cbody" style="margin-top:20px;">120개월(10년)에 몇 개월이 모자란 분이라면, <b>크레딧이 수급권 자체를 만들어 주는 결정타</b>가 될 수 있습니다.</p>
+    <div class="more-row">
+      <button class="more" data-pp="p15"><span class="pl">+</span>크레딧 상세 · 적용 시점</button>
+      <button class="more" data-pp="p16"><span class="pl">+</span>저소득 지역가입자 지원</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">국민연금 · 크레딧</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 14 · 조기수령 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">13</div>
+    <div class="cbadge">수령 시기</div>
+    <div class="bigrow"><span class="big m">-30</span><span class="biglab">% / 평생 고정</span></div>
+    <h2 class="chead">조기수령은<br>왜 폭증하는가</h2>
+    <p class="cbody">조기노령연금 신청자가 급증하고 있습니다. 손해를 감수하면서까지 먼저 받겠다는 선택 — 이유는 세 가지이고, <b>셋 다 계산의 문제가 아니라 불안의 문제</b>입니다.</p>
+    <div class="numlist">
+      <div class="row"><span class="n">01</span><span class="t"><b>소득 크레바스</b> — 정년 60세, 수급개시 63~65세. 1969년생 이후는 <b>최대 5년의 공백</b></span></div>
+      <div class="row"><span class="n">02</span><span class="t"><b>고갈 불안</b> — 공포를 자극하는 콘텐츠가 집단적으로 확산</span></div>
+      <div class="row"><span class="n">03</span><span class="t"><b>건강 불안</b> — “언제까지 살지 모르니 빨리 받자”</span></div>
+    </div>
+    <p class="cbody" style="margin-top:20px;">조기연금은 <b>1년 앞당길 때마다 연 6%(월 0.5%) 감액</b>되며, 최대 5년이면 <em>30% 감액이 평생 유지</em>됩니다. 반대로 연기연금은 월 0.6%씩 늘어 최대 <b>+36%</b>입니다.</p>
+    <p class="cbody" style="margin-top:14px;">그런데 2026년 감액 완화로 판이 바뀌었습니다. <b>‘일하면서 정상 수령’이 실질적인 네 번째 선택지</b>가 되었습니다.</p>
+    <div class="more-row">
+      <button class="more" data-pp="p17"><span class="pl">+</span>조기 · 정상 · 연기 숫자 비교</button>
+      <button class="more gold" data-pp="p18"><span class="pl">+</span>조기연금 신청 가능 연령</button>
+      <button class="more" data-pp="p19"><span class="pl">+</span>수령 시기 판단 체크리스트</button>
+      <button class="more" data-pp="p30"><span class="pl">+</span>배우자 사망 시 유족연금은?</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">국민연금 · 수령 시기</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 15 · 수령액 늘리기 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">14</div>
+    <div class="cbadge">수령액 증액</div>
+    <div class="bigrow"><span class="big">3</span><span class="biglab">가지 / 증액 경로</span></div>
+    <h2 class="chead">수령액을 늘리는<br>세 가지 방법</h2>
+    <p class="cbody">국민연금은 <b>총 가입기간</b>이 연금액을 결정합니다. 늘리는 방법도 결국 가입기간을 늘리는 세 경로로 정리됩니다.</p>
+    <div class="barlist">
+      <div class="it"><div class="h">01 · 임의가입</div><div class="d">소득이 없어 의무 대상이 아닌 사람이 스스로 가입 — 전업주부·무직자·실직자</div></div>
+      <div class="it"><div class="h">02 · 임의계속가입</div><div class="d">60세 이후에도 계속 납부. <b>신청은 65세 생일 전날까지</b></div></div>
+      <div class="it hi"><div class="h">03 · 추후납부(추납)</div><div class="d">실직·경력단절로 못 낸 <b>과거 기간을 복원</b> — 셋 중 효과가 가장 큼</div></div>
+    </div>
+    <div class="quote">
+      <div class="q">“입사 동기 두 사람 중 한 사람은 계속 다녔고, 한 사람은 일찍 나갔다 돌아왔습니다. 돌아온 사람에게 연봉도 퇴직금도 똑같이 만들어 주겠다는 것 — 추납이 하는 일이 정확히 이겁니다.”</div>
+      <div class="s">추납의 구조를 설명하는 비유</div>
+    </div>
+    <p class="cbody" style="margin-top:20px;">임의가입·임의계속가입은 <b>앞으로의 기간</b>만 늘립니다. 추납은 <em>지나간 기간</em>을 되살립니다. 60세가 가까울수록 추납의 레버리지가 압도적인 이유입니다.</p>
+    <div class="more-row">
+      <button class="more" data-pp="p20"><span class="pl">+</span>추후납부 심화 — 대상 · 효과</button>
+      <button class="more gold" data-pp="p21"><span class="pl">+</span>임의계속가입 65세 상한과 조합 설계</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">국민연금 · 추납</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 16 · 120개월의 벽 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">15</div>
+    <div class="cbadge dark">되돌릴 수 없음</div>
+    <div class="bigrow"><span class="big m">120</span><span class="biglab">개월 / 최소 가입기간</span></div>
+    <h2 class="chead">10년을 못 채우면<br>평생 연금이 사라집니다.</h2>
+    <p class="cbody">120개월을 채우지 못하면 노령연금 수급 자격이 없습니다. 따박따박 들어오는 연금 대신, 60세 도달 시점에 <b>그동안 낸 보험료에 이자를 더한 반환일시금</b>을 받고 종료됩니다.</p>
+    <div class="stat3" style="margin-top:22px;">
+      <div class="c"><div class="v">120<span>개월</span></div><div class="l">노령연금 수급<br>최소 가입기간</div></div>
+      <div class="c"><div class="v">60<span>세</span></div><div class="l">10년 미만 시<br>지급사유 발생</div></div>
+      <div class="c"><div class="v">1<span>회</span></div><div class="l">수령 시<br>수급권 영구 소멸</div></div>
+    </div>
+    <p class="cbody" style="margin-top:22px;">중요한 것은 순서입니다. 반환일시금을 선택하기 전에 <b>추납 가능 기간 · 임의계속가입 여력 · 출산·군복무 크레딧</b>을 먼저 점검해야 합니다. <em>세 가지를 조합하면 120개월을 채울 수 있는 경우가 적지 않고, 채우기만 하면 일시금이 평생 연금으로 바뀝니다.</em></p>
+    <div class="more-row">
+      <button class="more" data-pp="p22"><span class="pl">+</span>반환일시금 지급 요건 · 산정</button>
+      <button class="more" data-pp="p23"><span class="pl">+</span>120개월 채우는 3단계 점검</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">국민연금 · 수급권</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 17 · 팩트체크 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">16</div>
+    <div class="cbadge gold">팩트체크</div>
+    <div class="bigrow"><span class="big">4</span><span class="biglab">가지 / 바로잡을 숫자</span></div>
+    <h2 class="chead">잘못 알려진<br>네 가지 숫자</h2>
+    <p class="cbody">연금 콘텐츠에서 반복적으로 잘못 전달되는 항목이 있습니다. <b>제도의 방향을 뒤집는 오류는 아니지만, 신청 절차에 직접 영향을 주는 수치</b>들입니다.</p>
+    <div class="numlist">
+      <div class="row"><span class="n">01</span><span class="t"><b>감액제도 시행일</b> — “7월 1일”이 아니라 <b>2026. 6. 17.</b> (2026. 1. 1. 소급)</span></div>
+      <div class="row"><span class="n">02</span><span class="t"><b>보험료율 인상</b> — “2028년까지”가 아니라 <b>2033년 13% 도달</b></span></div>
+      <div class="row"><span class="n">03</span><span class="t"><b>조기연금 신청 연령</b> — “55세부터”가 아니라 <b>개시연령의 5년 전</b></span></div>
+      <div class="row"><span class="n">04</span><span class="t"><b>임의계속가입</b> — “67세까지”가 아니라 <b>65세 생일 전날까지</b></span></div>
+    </div>
+    <p class="cbody" style="margin-top:20px;">특히 <em>임의계속가입 65세 상한</em>은 60세 시점 가입기간이 5년 미만인 분의 설계를 완전히 바꾸는 변수입니다. 이 경우 임의계속가입만으로는 120개월을 채울 수 없으므로 <b>추납·크레딧과 반드시 병행 설계</b>해야 합니다.</p>
+    <div class="more-row">
+      <button class="more" data-pp="p24"><span class="pl">+</span>전수 대조표 · 출처</button>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">팩트체크</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 18 · 핵심 수치 한 장 요약 ══════════════════════════ -->
+<div class="stitch"></div>
+<div class="card" style="background:var(--cream);">
+  <div class="cwrap">
+    <div class="cnum">17</div>
+    <div class="cbadge">핵심 수치 요약</div>
+    <div class="bigrow"><span class="big m">519.4</span><span class="biglab">만원 / 노령연금 감액 기준선</span></div>
+    <h2 class="chead">숫자 세 가지만<br>기억하면 됩니다.</h2>
+    <p class="cbody">앞서 다룬 내용을 <b>세 개의 숫자와 일곱 개의 기준</b>으로 압축했습니다. 상담 전 마지막으로 한 번 더 확인하는 용도로 활용하십시오.</p>
+    <div class="stat3">
+      <div class="c"><div class="v">519.4<span>만</span></div><div class="l">노령연금 감액<br>기준선 미만 전액수령</div></div>
+      <div class="c"><div class="v">120<span>월</span></div><div class="l">국민연금<br>최소 가입기간</div></div>
+      <div class="c"><div class="v">119<span>월</span></div><div class="l">추후납부<br>최대 한도</div></div>
+    </div>
+    <div class="numlist">
+      <div class="row"><span class="n">01</span><span class="t"><b>기초연금 선정기준액</b> — 단독 247만 / 부부 395.2만원 · 놓치면 이력관리제 미신청으로 지급 누락</span></div>
+      <div class="row"><span class="n">02</span><span class="t"><b>기초연금 기준연금액</b> — 단독 월 최대 34만 9,700원 · 놓치면 부부 각 20% 감액 미고려</span></div>
+      <div class="row"><span class="n">03</span><span class="t"><b>연계감액 시작선</b> — 국민연금 수령액 52만 4,550원 · 놓치면 추납 후 기초연금 감소분 오산</span></div>
+      <div class="row"><span class="n">04</span><span class="t"><b>무료임차소득</b> — 자녀 주택 시가표준액 6억원 이상 시 발생 · 놓치면 입주 후 탈락</span></div>
+      <div class="row"><span class="n">05</span><span class="t"><b>노령연금 감액</b> — A값+200만원(519만 3,511원) 초과 시 · 놓치면 불필요한 소득 조정</span></div>
+      <div class="row"><span class="n">06</span><span class="t"><b>임의계속가입</b> — 신청 기한 만 65세 생일 전날 · 놓치면 수급권 확보 실패</span></div>
+      <div class="row"><span class="n">07</span><span class="t"><b>추후납부</b> — 가입자 신분일 때만 신청 가능 · 놓치면 신청 자격 자체 상실</span></div>
+    </div>
+    <div class="barlist" style="margin-top:20px;">
+      <div class="it hi"><div class="h">상담에서 반드시 짚어야 할 네 가지</div><div class="d"><b>① 기초연금은 ‘자격’이 아니라 ‘설계’</b> — 재산 구성·명의·신청 시점 조정만으로 결과가 달라집니다. <b>② 감액 기준선 519만 3,511원</b> — 은퇴 후 재취업·자문 소득 대부분이 감액 대상에서 벗어났습니다. <b>③ 120개월은 절대 요건</b> — 미달 시 반환일시금으로 종결되며, 반납으로 되돌릴 수는 있으나 이자 부담이 따릅니다. <b>④ 두 제도는 연결되어 있다</b> — 국민연금을 늘리는 결정은 기초연금 판정과 연계감액에 동시에 영향을 줍니다.</div></div>
+    </div>
+    <div class="tag-row">
+      <div class="tag-dot"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+      <span class="tag-txt">핵심 요약</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 19 · 셀프 체크 ══════════════════════════ -->
+<div class="card" style="background:var(--red);">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:46px 36px 24px;">
+    <div>
+      <div style="display:inline-block;background:#fff;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--red);margin-bottom:24px;border-radius:999px;">셀프 체크</div>
+      <h2 style="font-size:36px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1.5px;word-break:keep-all;margin-bottom:8px;">우리 집도<br>해당되나요?</h2>
+      <div style="height:3px;background:var(--gold2);width:48px;margin:20px 0 22px;"></div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div><div style="font-size:19px;font-weight:700;color:#fff;word-break:keep-all;line-height:1.35;">만 65세가 가까워지는데 아직 신청 전이다</div><div style="font-size:16px;color:rgba(255,255,255,.78);margin-top:5px;word-break:keep-all;line-height:1.5;">기초연금은 도달 1개월 전부터 신청 가능 — 신청하지 않으면 지급되지 않음</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div><div style="font-size:19px;font-weight:700;color:#fff;word-break:keep-all;line-height:1.35;">자녀 명의 주택에 무상으로 거주 중이다</div><div style="font-size:16px;color:rgba(255,255,255,.78);margin-top:5px;word-break:keep-all;line-height:1.5;">공시가격 6억원 이상이면 무료임차소득이 부과됨 — 명의·지분 먼저 확인</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div><div style="font-size:19px;font-weight:700;color:#fff;word-break:keep-all;line-height:1.35;">예전에 탈락한 뒤 그대로 두었다</div><div style="font-size:16px;color:rgba(255,255,255,.78);margin-top:5px;word-break:keep-all;line-height:1.5;">수급희망 이력관리제를 신청해 두면 5년간 자동 안내</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div><div style="font-size:19px;font-weight:700;color:#fff;word-break:keep-all;line-height:1.35;">국민연금 가입기간이 10년에 못 미친다</div><div style="font-size:16px;color:rgba(255,255,255,.78);margin-top:5px;word-break:keep-all;line-height:1.5;">추납·임의계속·크레딧 조합으로 120개월 도달 여부부터 판정</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div><div style="font-size:19px;font-weight:700;color:#fff;word-break:keep-all;line-height:1.35;">실직·경력단절로 못 낸 기간이 있다</div><div style="font-size:16px;color:rgba(255,255,255,.78);margin-top:5px;word-break:keep-all;line-height:1.5;">추납 가능 기간 조회 — 1355 또는 ‘내 곁에 국민연금’ 앱</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:13px 0;">
+          <div style="width:22px;height:22px;border:1.5px solid rgba(255,255,255,.55);flex-shrink:0;margin-top:3px;"></div>
+          <div><div style="font-size:19px;font-weight:700;color:#fff;word-break:keep-all;line-height:1.35;">일할 계획인데 연금이 깎일까 미루고 있다</div><div style="font-size:16px;color:rgba(255,255,255,.78);margin-top:5px;word-break:keep-all;line-height:1.5;">2026년부터 월평균소득금액 519만원 미만이면 감액 없음</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:22px 0 4px;">
+      <div style="font-size:17px;font-weight:700;color:#fff;margin-bottom:1px;">하나라도 해당되면</div>
+      <div style="display:flex;align-items:center;margin-bottom:1px;"><div style="flex:1;height:1px;background:var(--gold2);"></div><div style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid var(--gold2);"></div></div>
+      <div style="font-size:17px;font-weight:500;color:rgba(255,255,255,.9);">다음 장에서 확인해 보세요</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CARD 20 · CTA ══════════════════════════ -->
+<div class="card" style="background:var(--red2);">
+  <div class="c08-body" style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:46px 36px 0;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:rgba(255,255,255,.65);letter-spacing:2px;margin-bottom:14px;">CONSULTING FOR YOU</div>
+    <h2 style="font-size:50px;font-weight:900;color:#fff;line-height:1.04;letter-spacing:-2px;word-break:keep-all;margin-bottom:28px;">무엇이든<br>물어보세요.</h2>
+    <p style="font-size:18px;font-weight:400;color:rgba(255,255,255,.92);line-height:1.7;word-break:keep-all;margin-bottom:32px;">
+      연금은 <strong style="font-weight:700;color:var(--gold2);">신청하지 않으면 아무 일도 일어나지 않습니다.</strong><br>
+      기초연금은 탈락해도 이력관리제가 5년을 따라오고,<br>
+      국민연금은 120개월만 채우면 일시금이 평생 연금으로 바뀝니다.<span style="display:block;margin-top:8px;"></span>
+      우리 집 소득인정액이 어디쯤인지,<br>
+      <strong style="font-weight:700;color:var(--gold2);">추납 가능 기간이 남아 있는지부터 확인해 보세요.</strong>
+    </p>
+    <div style="margin-bottom:16px;">
+      <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.5px;margin-bottom:10px;">파트너사</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">⚖️</div><div style="font-size:10px;color:rgba(255,255,255,.55);">세무법인</div><div style="font-size:12px;font-weight:700;color:#fff;">세무사 협업</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">📊</div><div style="font-size:10px;color:rgba(255,255,255,.55);">회계법인</div><div style="font-size:12px;font-weight:700;color:#fff;">회계사 협업</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;">
+          <div style="font-size:20px;">💡</div><div style="font-size:10px;color:rgba(255,255,255,.55);">특허법인</div><div style="font-size:12px;font-weight:700;color:#fff;">변리사 협업</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:8px;">
+      <a href="tel:01091738141" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div style="font-size:15px;font-weight:700;color:var(--red);">전화 상담</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">평일 09:00~18:00</div>
+        </div>
+      </a>
+      <a href="https://blog.naver.com/bizinsightkorea" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div style="font-size:15px;font-weight:700;color:var(--red);">네이버 블로그</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">비즈인사이트 bizinsight</div>
+        </div>
+      </a>
+      <a href="http://pf.kakao.com/_SxjFxdn" style="text-decoration:none;">
+        <div style="background:#fff;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;">
+          <div style="width:18px;height:18px;border-radius:50%;border:1px solid var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="1" y1="6" x2="10" y2="6" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round"/><polyline points="7,3 10,6 7,9" stroke="#7E2B53" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div style="font-size:15px;font-weight:700;color:var(--red);">카카오 채널</div>
+          <div style="font-size:13px;color:var(--ink3);margin-left:auto;">24시간 당일 회신</div>
+        </div>
+      </a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:14px;margin-top:6px;">
+      <p style="font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.65;word-break:keep-all;">본 자료는 일반적 안내 목적의 정리 자료이며, 개별 상황에 따라 실제 적용은 달라질 수 있습니다. 수치는 2026년 기준 보건복지부·국민연금공단 공식 자료를 기준으로 하며, 실제 신청 전 국민연금공단(1355) 또는 관할 지자체 상담을 권장합니다.</p>
+    </div>
+  </div>
+  <div style="padding:22px 36px 28px;display:flex;align-items:center;justify-content:flex-start;flex-shrink:0;">
+    <p style="font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.5px;text-align:left;line-height:1.4;">서울시 강남구 테헤란로 4길 삼성생명금융서비스<br>법인 전문 컨설팅 박기범 전문위원</p>
+  </div>
+</div>
+
+</div><!-- /viewer -->
+
+<!-- ══════════════════════════ SHEET (팝업) ══════════════════════════ -->
+<div class="mask" id="mask"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true">
+  <div class="sh-grip"></div>
+  <div class="sh-head">
+    <div class="tt">
+      <div class="sh-kicker" id="shKicker"></div>
+      <div class="sh-title" id="shTitle"></div>
+    </div>
+    <button class="sh-close" id="shClose" aria-label="닫기">✕</button>
+  </div>
+  <div class="sh-body" id="shBody"></div>
+</div>
+
+<!-- ══════════════════════════ 팝업 콘텐츠 저장소 ══════════════════════════ -->
+<div id="ppStore">
+
+<!-- p01 -->
+<div id="p01" data-k="Basic Pension · Calculation" data-t="소득인정액은 어떻게 계산되나">
+  <div class="pp-sec">
+    <div class="pp-formula">
+      소득인정액 <span class="op">=</span> 소득평가액 <span class="op">+</span> 재산의 소득환산액
+      <span class="sm">통장 잔액이 아니라 행정상 산출되는 숫자</span>
+    </div>
+    <div class="pp-kv">
+      <div class="r"><div class="k">소득평가액</div><div class="v">근로소득(공제 후) + 사업소득 + 재산소득 + <b>공적이전소득</b> + <b>무료임차소득</b></div></div>
+      <div class="r"><div class="k">재산의<br>소득환산액</div><div class="v">일반재산 · 금융재산 · 자동차 · 회원권 등을 월 소득으로 환산한 금액</div></div>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Why It Matters</div>
+    <div class="pp-h">“국민연금밖에 없는데 왜 못 받지”가 나오는 이유</div>
+    <div class="pp-p">국민연금 수령액은 <b>공적이전소득으로 소득평가액에 전액 반영</b>됩니다. 20~30년 성실 납부로 연금액이 상당한 분은, 여기에 재산의 소득환산액이 조금만 더해져도 선정기준선을 넘어갑니다. <em>국민연금 외에 다른 소득이 없어도 탈락할 수 있는 구조</em>입니다.</div>
+    <div class="pp-note"><b>신청 전에 먼저 해보실 것</b> — ‘복지로’ 모의계산에 소득·재산을 넣어 보면 내 소득인정액이 바로 나옵니다. 탈락하더라도 그 이유가 국민연금 때문인지, 재산 때문인지, 자녀 집에 살고 있어서인지가 여기서 갈립니다. 이유를 알아야 무엇을 손볼지 정할 수 있습니다.</div>
+  </div>
+</div>
+
+<!-- p02 -->
+<div id="p02" data-k="Legal Basis · 선정기준액" data-t="선정기준액의 근거와 성격">
+  <div class="pp-sec">
+    <div class="pp-law">
+      <div class="lt">기초연금법 제3조 · 같은 법 시행령</div>
+      <div class="lb">기초연금은 <b>65세 이상인 사람 중 소득인정액이 보건복지부장관이 정하여 고시하는 금액(선정기준액) 이하</b>인 사람에게 지급합니다. 수급자가 <b>65세 이상 전체의 100분의 70 수준</b>이 되도록 선정기준액을 정하도록 규정하고 있습니다.</div>
+    </div>
+    <div class="pp-law">
+      <div class="lt">보건복지부 고시 · 2026년 기초연금 선정기준액</div>
+      <div class="lb">단독가구 <b>월 247만원</b> / 부부가구 <b>월 395.2만원</b>. 매년 1월 1일부터 12월 31일까지 적용되며, 물가·소득 변동을 반영해 <b>해마다 다시 고시</b>됩니다.</div>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Key Point</div>
+    <div class="pp-h">‘70%’는 인원 비율, ‘247만원’은 그 결과값</div>
+    <div class="pp-p">선정기준액은 먼저 정해 놓은 금액이 아닙니다. <b>65세 이상 인구의 소득·재산 분포를 조사해 하위 70%에 해당하는 지점을 매년 역산</b>한 결과입니다. 그래서 <em>올해 탈락한 사람이 내년에 통과하는 일이 구조적으로 발생</em>합니다.</div>
+    <div class="pp-note"><b>부부감액</b> — 부부가 모두 수급하는 경우 각각 20% 감액됩니다. 이 규정에 대해서는 폐지·완화 논의가 이어지고 있으나 확정된 사항은 없습니다.</div>
+  </div>
+</div>
+
+<!-- p03 -->
+<div id="p03" data-k="Four Rejection Patterns" data-t="억울하게 탈락하는 네 가지 유형">
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Type 01 · 공적이전소득</div>
+    <div class="pp-h">국민연금 장기 가입자</div>
+    <div class="pp-p">20~30년을 성실히 납부해 국민연금액이 상당한 경우입니다. 수령액이 소득인정액에 <b>전액</b> 반영되므로, 단독 247만원 / 부부 395.2만원 기준선을 넘으면 탈락합니다. <em>성실 납부가 오히려 기초연금 탈락 사유가 되는 역설</em>입니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Type 02 · 무료임차소득</div>
+    <div class="pp-h">자녀 명의 고가주택 거주</div>
+    <div class="pp-p">집을 팔아 자녀에게 물려주고 자녀 명의 주택에 함께 사는 경우입니다. 실제 소득이 0원이어도 <b>무료임차소득</b>이 발생한 것으로 간주됩니다. 시가표준액 6억원 초과 시 적용되며, <b>6억 → 월 39만원 / 20억 → 월 130만원</b>입니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Type 03 · 재산의 소득환산액</div>
+    <div class="pp-h">재산이 소득으로 잡히는 경우</div>
+    <div class="pp-p">부동산뿐 아니라 <b>금융재산, 고가 자동차, 각종 회원권, 요트</b>가 모두 재산에 포함되어 월 소득으로 환산됩니다. 특히 <em>1억원대 고가 자동차를 보유하면 환산액이 급증</em>합니다. 콘도·골프 회원권도 가액이 산정됩니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Type 04 · 부부 합산</div>
+    <div class="pp-h">배우자 소득이 합산되는 경우</div>
+    <div class="pp-p">연장자인 남편이 먼저 65세가 되어 <b>혼자 신청해도 산정은 부부 소득 합산</b>으로 이루어집니다. 아내가 아직 소득 활동 중이면 그 소득이 함께 계산됩니다. <em>혼자 신청한다고 단독가구 기준(247만원)이 적용되는 것이 아닙니다.</em></div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Common Ground</div>
+    <div class="pp-h">네 유형의 공통점</div>
+    <div class="pp-kv">
+      <div class="r"><div class="k">현금흐름과의<br>괴리</div><div class="v">실제 손에 쥐는 현금은 적은데 행정상 소득인정액은 높게 계산되는 구조</div></div>
+      <div class="r"><div class="k">‘내 명의’가<br>아니어도</div><div class="v">자녀 명의 주택(무료임차소득), 배우자 소득(부부 합산) — 본인 명의가 아닌 항목도 들어옴</div></div>
+      <div class="r"><div class="k">사전<br>시뮬레이션</div><div class="v">신청 전 복지로 모의계산이 사실상 유일한 대응 수단</div></div>
+      <div class="r"><div class="k">영구 탈락은<br>아님</div><div class="v">재산·소득은 매년 변함 — <b>수급희망 이력관리제</b>가 이 변동을 자동 추적</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- p04 -->
+<div id="p04" data-k="무료임차소득 · 산정표" data-t="시가표준액별 월 무료임차소득">
+  <div class="pp-sec">
+    <div class="pp-formula">
+      시가표준액 <span class="op">×</span> 0.78% <span class="op">÷</span> 12개월
+      <span class="sm">시세가 아닌 공시가격 기준 · 6억원 이상일 때 적용</span>
+    </div>
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <thead><tr><th>시가표준액</th><th style="text-align:right;">월 무료임차소득</th><th style="text-align:right;">단독 247만 대비</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td><b>6억원</b></td><td class="r"><b>39만원</b></td><td class="r">15.8%</td></tr>
+          <tr><td>7억원</td><td class="r">45.5만원</td><td class="r">18.4%</td></tr>
+          <tr><td>8억원</td><td class="r">52만원</td><td class="r">21.1%</td></tr>
+          <tr><td>9억원</td><td class="r">58.5만원</td><td class="r">23.7%</td></tr>
+          <tr><td>10억원</td><td class="r">65만원</td><td class="r">26.3%</td></tr>
+          <tr><td>15억원</td><td class="r">97.5만원</td><td class="r">39.5%</td></tr>
+          <tr class="hi"><td><b>20억원</b></td><td class="r"><b>130만원</b></td><td class="r">52.6%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pp-p">자녀 명의 <b>20억원 주택에 무상 거주하면 월 130만원</b>의 소득이 있는 것으로 계산됩니다. 이것만으로 단독가구 선정기준액의 절반이 채워집니다. 여기에 국민연금 수령액과 본인 재산의 소득환산액이 더해지면 <em>탈락은 사실상 확정</em>입니다.</div>
+    <div class="pp-note"><b>산출 근거</b> — 위 금액은 보건복지부 「기초연금 사업안내」 산식(시가표준액 × 0.78% ÷ 12)에 따른 값이며, 시가표준액에 정비례하는 연속값이므로 표의 구간은 대표값 예시입니다. ‘단독 247만 대비’ 열은 이해를 돕기 위한 자체 산출 지표로 공식 고시 수치가 아닙니다. 부부가구(395.2만원) 기준으로는 비율이 달라지며, 실제 수급 판정은 <b>소득평가액과 재산의 소득환산액 합계</b>로 이루어집니다.</div>
+  </div>
+</div>
+
+<!-- p05 -->
+<div id="p05" data-k="무료임차소득 · 명의 판정" data-t="주택 명의에 따른 적용 판정">
+  <div class="pp-sec">
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <thead><tr><th>주택 명의</th><th class="c">적용</th><th>처리 방식</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td><b>자녀(아들·딸) 단독</b></td><td class="c"><span class="fx">적용</span></td><td>시가표준액 6억원 이상일 때 부과</td></tr>
+          <tr><td>자녀 + 제3자 공동</td><td class="c"><span class="fx">지분만</span></td><td>시가표준액 × 자녀 지분율 × 0.78% ÷ 12</td></tr>
+          <tr><td>자녀 + 신청자 본인</td><td class="c"><span class="fx">분리</span></td><td>자녀 지분 → 무료임차소득 / 본인 지분 → 재산</td></tr>
+          <tr><td>며느리 · 사위 단독</td><td class="c"><span class="no">미적용</span></td><td>자녀의 배우자는 직계비속이 아님</td></tr>
+          <tr><td>형제 · 자매</td><td class="c"><span class="no">미적용</span></td><td>직계비속이 아니므로 대상 제외</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pp-p"><b>결정적 변수는 두 가지</b>입니다. <em>직계비속 여부</em>와 <em>지분율</em>. 6억원 주택에 아들 지분이 50%면 월 약 <b>19만 5천 원</b>이 부과되며, 부모가 나머지 지분을 보유하면 그 지분은 별도로 재산에 잡힙니다.</div>
+    <div class="pp-note">시가표준액은 시세가 아닌 <b>공시가격</b>입니다. 6억원은 주택 한 채 기준이며, 자녀가 여러 채를 보유하더라도 <b>부모가 실제 거주하는 주택만</b> 판정 대상이 됩니다. 명의 이전을 검토할 때는 증여세·취득세와 함께 이 판정 구조를 반드시 같이 계산해야 합니다.</div>
+  </div>
+</div>
+
+<!-- p06 -->
+<div id="p06" data-k="Legal Basis · 무료임차소득" data-t="법적 근거와 0.78%의 정체">
+  <div class="pp-sec">
+    <div class="pp-law">
+      <div class="lt">01 · 기초연금법 시행령 제2조 제2항 — 위임 근거</div>
+      <div class="lb">소득평가액을 산정할 때 <b>자녀 명의의 고가 주택에 무료로 거주하는 경우 그에 상응하는 소득을 포함</b>하도록 하는 위임 규정입니다. 다만 시행령은 “포함한다”는 사실만 정하고 <b>구체적 비율은 정하지 않습니다.</b></div>
+    </div>
+    <div class="pp-law">
+      <div class="lt">02 · 기초연금법 시행규칙 제2조 제2항 — 산식의 실제 근거</div>
+      <div class="lb"><b>시가표준액 × 0.78% ÷ 12개월</b>이라는 산식은 여기, 보건복지부령인 <b>시행규칙</b>에 직접 규정되어 있습니다. 원문은 <em>“1촌 이내의 직계비속이 소유하는 주택의 시가표준액에 10,000분의 78을 곱한 후 12로 나눈 금액”</em>입니다. <b>시가표준액 6억원</b> 기준선만 시행규칙에는 없고 <b>「기초연금 사업안내」 지침</b> 차원에서 운영됩니다.</div>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-fix">
+      <div class="ft">해마다 바뀔 수 있습니다</div>
+      <div class="fb">0.78% 요율은 <b>시행규칙(보건복지부령)</b>, 6억원 기준선은 <b>사업안내 지침</b>에 있습니다. 두 근거 모두 <b>국회 입법 절차 없이 개정</b>될 수 있는 행정 레벨입니다. <b>올해 계산이 맞았더라도 내년에는 다시 확인해 보셔야 합니다.</b></div>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">03 · Nature of the Rate</div>
+    <div class="pp-h">0.78%는 시장 임대료가 아니라 ‘의제 소득률’</div>
+    <div class="pp-p">전월세전환율이나 기대수익률에서 유도했다는 <b>공식 설명은 복지부 자료·고시·사업안내 어디에도 없습니다.</b> 공시가격 대비 연간 임대료 상당액을 의제한 <em>정률</em>로 이해하는 것이 정확합니다.</div>
+    <div class="pp-p">역산하면 시가표준액 6억원 = 연 468만원(월 39만원)을 임대료 상당액으로 본 셈이며, <b>시세가 아닌 공시가격 기준</b>이므로 실제 시장 임대료보다는 낮게 산정됩니다.</div>
+  </div>
+</div>
+
+<!-- p07 -->
+<div id="p07" data-k="Case Comparison" data-t="무상 거주 vs 전세 · 월세">
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Case A · 대가 없음</div>
+    <div class="pp-h">자녀 집에 무상 거주 → 소득평가액</div>
+    <div class="pp-p"><b>무료임차소득</b>으로 처리됩니다. 자녀 명의 주택 시가표준액 × 0.78% ÷ 12개월이 신청자의 <em>소득</em>으로 산정됩니다. 시가표준액 6억원 미만이면 부과되지 않습니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Case B · 대가 지급</div>
+    <div class="pp-h">자녀 집에 전세 · 월세로 거주 → 재산의 소득환산액</div>
+    <div class="pp-p"><b>임차보증금</b>으로 처리됩니다. 신청자가 자녀에게 지급한 <b>보증금 × 0.95</b>가 신청자 본인의 <em>재산</em>으로 잡히고, 기본재산액 공제 후 <b>연 4% ÷ 12</b>로 환산됩니다.</div>
+    <div class="pp-formula">
+      (보증금 × 0.95 − 기본재산액) <span class="op">×</span> 4% <span class="op">÷</span> 12
+      <span class="sm">대도시 전세 2억원 → 재산 1억 9,000만 → 1억 3,500만 공제 후 월 약 18만 3천 원</span>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Key Difference</div>
+    <div class="pp-h">같은 집이라도 산정 ‘항목’ 자체가 달라진다</div>
+    <div class="pp-p">두 경우 모두 신청자가 <b>직계비속인 자녀 명의 주택에 거주하는 상황</b>을 전제로 하며, <em>대가 지급 여부가 갈림길</em>입니다. 무료 거주냐 임차계약이냐에 따라 산정 항목이 <b>소득평가액 ↔ 재산의 소득환산액</b>으로 바뀝니다.</div>
+    <div class="pp-note"><b>반대 방향도 확인</b> — 신청자가 <b>임대인</b>인 경우에는 받은 보증금이 재산에서 <b>부채로 차감</b>되고 월세는 임대소득으로 잡혀, 계산 방향이 정반대가 됩니다.</div>
+  </div>
+</div>
+
+<!-- p08 -->
+<div id="p08" data-k="재산의 소득환산 · 기준표" data-t="공제 · 환산 기준 전체">
+  <div class="pp-sec">
+    <div class="pp-formula">
+      ( 일반재산 − 기본재산액 ) <span class="op">+</span> ( 금융재산 − 2,000만 ) <span class="op">−</span> 부채
+      <span class="op">×</span> 연 4% <span class="op">÷</span> 12개월 <span class="op">+</span> 고급자동차 · 회원권 가액
+      <span class="sm">고급자동차와 회원권은 공제·4% 환산 없이 가액 전액이 월 소득으로 반영</span>
+    </div>
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <thead><tr><th>구분</th><th>공제 · 환산 기준</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td><b>기본재산액 — 대도시</b></td><td>1억 3,500만원 공제</td><td>특별시·광역시·특례시</td></tr>
+          <tr><td><b>기본재산액 — 중소도시</b></td><td>8,500만원 공제</td><td>시 지역</td></tr>
+          <tr><td><b>기본재산액 — 농어촌</b></td><td>7,250만원 공제</td><td>군 지역</td></tr>
+          <tr><td><b>금융재산</b></td><td>2,000만원 공제</td><td>예·적금, 주식, 펀드, 보험</td></tr>
+          <tr><td><b>소득환산율</b></td><td>연 4%</td><td>공제 후 잔액에 적용, 12로 나눠 월 환산</td></tr>
+          <tr class="hi"><td><b>고급자동차 · 회원권</b></td><td><span class="fx">전액 반영</span></td><td>차량가액 4,000만원 이상 시</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-fix">
+      <div class="ft">배기량이 아니라 가액으로 봅니다</div>
+      <div class="fb">고급자동차 판정은 <b>차량가액 4,000만원 단일 기준</b>입니다(2024년부터 배기량 기준 폐지). 배기량이 낮아도 가액이 높으면 고급자동차로 분류될 수 있습니다.</div>
+    </div>
+    <div class="pp-p">거주 지역에 따라 공제액이 <b>최대 6,250만원까지 차이</b> 납니다. <em>주소지 이전만으로 소득인정액이 달라질 수 있는 구조</em>이므로, 경계선에 있는 경우 지역 구분을 먼저 확인해야 합니다.</div>
+    <div class="pp-note"><b>부채 차감</b> — 임대보증금, 금융기관 대출 등 <b>입증 가능한 것만</b> 차감됩니다. 사인 간 차용증만으로는 인정이 어렵습니다.</div>
+  </div>
+</div>
+
+<!-- p09 -->
+<div id="p09" data-k="이력관리제 · 신청 절차" data-t="신청 3단계 — 순서가 중요합니다">
+  <div class="pp-sec">
+    <div class="pp-step"><div class="sn">1</div><div><div class="st">소득인정액 확인</div><div class="sd">‘복지로’ 모의계산으로 본인의 소득인정액을 먼저 산출합니다. <b>탈락 사유가 소득인지, 재산인지, 무료임차소득인지 특정</b>할 수 있습니다.</div></div></div>
+    <div class="pp-step"><div class="sn">2</div><div><div class="st">신청 — 만 65세 도달 1개월 전부터</div><div class="sd">주소지 관할 <b>주민센터, 국민연금공단 지사, 복지로 온라인</b>으로 신청합니다. <em>신청하지 않으면 자격이 있어도 지급되지 않습니다.</em></div></div></div>
+    <div class="pp-step"><div class="sn">3</div><div><div class="st">이력관리제 동시 신청</div><div class="sd">탈락이 예상되더라도 <b>신청 자체를 해 두고 이력관리제를 함께 신청</b>하는 것이 핵심입니다. 이후 5년의 안내가 자동으로 따라옵니다.</div></div></div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-kv">
+      <div class="r"><div class="k">안내 기간</div><div class="v"><b>최대 5년</b> — 신청일로부터</div></div>
+      <div class="r"><div class="k">신청 창구</div><div class="v">주민센터 · 국민연금공단 지사</div></div>
+      <div class="r"><div class="k">비용</div><div class="v"><b>0원</b> — 별도 수수료 없음</div></div>
+      <div class="r"><div class="k">대상</div><div class="v">신청 후 탈락한 경우, 또는 수급 중 중단된 경우</div></div>
+    </div>
+    <div class="pp-note"><b>2026년부터는 재신청도 필요 없어졌습니다</b> — 2026년 7월 30일 시행된 ‘신청간주제’로, 공단이 이력관리 대상자의 소득·재산을 다시 조사해 수급 가능성이 확인되면 <b>별도 재신청 없이 신청한 것으로 간주해 지급</b>합니다(2026년 기준 약 6만7,000명 수혜 예상). “한 번 떨어졌으니 나는 안 되나 보다”가 가장 흔한 손실 원인입니다.</div>
+  </div>
+</div>
+
+<!-- p10 -->
+<div id="p10" data-k="Policy Direction" data-t="기초연금 제도는 어디로 가는가">
+  <div class="pp-sec">
+    <div class="pp-p">전면 폐지론, 50% 축소론이 반복적으로 제기되지만 <b>실현 가능성은 낮다</b>고 보는 것이 일반적입니다. 근거는 인구 구조입니다. <em>65세 이상 인구가 이미 전체의 1/4을 넘어섰고</em>, 이는 곧 투표권의 무게를 의미합니다.</div>
+    <div class="pp-p">대신 방향성은 이미 나와 있습니다. <b>하후상박(下厚上薄)</b> — 소득이 적은 층에는 두텁게, 여유가 있는 층에는 얇게. 이 원칙이 앞으로 더 강화될 가능성이 높습니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">주요 쟁점</div>
+    <div class="pp-kv">
+      <div class="r"><div class="k">지급 대상<br>축소론</div><div class="v">“하위 70%가 아니라 50%로 줄이자” — 재정 부담 완화가 논거이나, 배제되는 층의 반발로 <b>실현 가능성은 낮게 평가</b></div></div>
+      <div class="r"><div class="k">선별 비용<br>문제</div><div class="v">매년 하위 70%를 가려내는 행정 인력 비용이 상당 — <b>선별을 줄이고 금액을 조정</b>하는 방식이 대안으로 거론</div></div>
+      <div class="r"><div class="k">부부감액<br>폐지 논의</div><div class="v">부부 모두 수급 시 각각 20% 감액되는 규정에 대한 폐지·완화 논의 — <b>확정된 사항은 아님</b></div></div>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">For 4050</div>
+    <div class="pp-h">4050 세대가 기억할 것</div>
+    <div class="pp-p">기초연금은 자산이 아니라 <b>제도</b>입니다. 지금 받고 있는 사람도 조건이 바뀌면 못 받게 되고, 지금 못 받는 사람도 조건이 바뀌면 받게 됩니다. <em>“우리 세대는 어차피 못 받는다”는 단정은 제도의 성격을 오해한 것</em>입니다.</div>
+    <div class="pp-p">중요한 것은 <b>수급 시점에 본인의 소득인정액이 어디에 위치할지를 미리 설계하는 일</b>입니다. 명의 구성, 금융재산 배치, 자동차 보유 형태 — 모두 10년 단위로 조정 가능한 변수입니다.</div>
+  </div>
+</div>
+
+<!-- p11 -->
+<div id="p11" data-k="2026 National Pension Reform" data-t="2026년 개정 네 가지 한눈에">
+  <div class="pp-sec">
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <thead><tr><th>구분</th><th>변경 전</th><th>변경 후</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td><b>감액제도</b></td><td>A값 초과 시 감액</td><td><b>A값 + 200만원</b> 추가 공제 → 519만원 미만 전액</td></tr>
+          <tr><td><b>보험료율</b></td><td>9.0%</td><td>2026년 9.5% → <b>2033년 13.0%</b></td></tr>
+          <tr><td><b>소득대체율</b></td><td>41.5%</td><td><b>43%</b> (2026년 가입분부터)</td></tr>
+          <tr><td><b>출산 크레딧</b></td><td>둘째부터 · 상한 50개월</td><td><b>첫째부터 · 상한 폐지</b></td></tr>
+          <tr><td><b>군복무 크레딧</b></td><td>6개월</td><td><b>12개월</b></td></tr>
+          <tr><td><b>저소득 지원</b></td><td>납부 재개자만</td><td><b>납부 계속자도 포함</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">In One Sentence</div>
+    <div class="pp-h">더 많이 내고, 더 오래 인정받고, 저소득층은 더 두텁게</div>
+    <div class="pp-kv">
+      <div class="r"><div class="k">더 많이 낸다</div><div class="v">보험료율 9% → 13% (2026~2033 단계 인상)</div></div>
+      <div class="r"><div class="k">가입기간을 더<br>인정받는다</div><div class="v">출산 첫째부터 · 군복무 12개월 · 상한 폐지</div></div>
+      <div class="r"><div class="k">저소득층은<br>더 두텁게</div><div class="v">지역가입자 보험료 국가 지원 대상·요건 확대</div></div>
+    </div>
+    <div class="pp-note">개정의 무게중심은 <b>‘부담 증가’와 ‘수급권 확대’를 동시에</b> 가져가는 구조입니다. 이미 수급 중인 분에게는 보험료율 인상이 영향을 주지 않고, 감액 완화만 유리하게 적용됩니다.</div>
+  </div>
+</div>
+
+<!-- p12 -->
+<div id="p12" data-k="감액 판정 구조" data-t="얼마를 벌면 얼마가 깎이나">
+  <div class="pp-sec">
+    <div class="pp-formula">
+      감액 기준선 <span class="op">=</span> A값 319만 <span class="op">+</span> 추가공제 200만 <span class="op">=</span> 519만원
+      <span class="sm">월평균소득금액 기준 · 2026년</span>
+    </div>
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <thead><tr><th>월평균소득금액</th><th>판정</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td><b>400만원</b></td><td><span class="ok">감액 없음</span></td><td>519만원 미만이므로 노령연금 전액 수령</td></tr>
+          <tr class="hi"><td><b>519만원</b></td><td><span class="fx">경계선</span></td><td>A값 319만 + 공제 200만 = 감액 시작점</td></tr>
+          <tr><td><b>600만원</b></td><td><span class="fx">초과분만</span></td><td>초과분 81만원에 대해 구간별 감액률 적용</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pp-p">감액은 <b>연금 전액이 아니라 초과 소득 구간에만</b> 적용되며, <em>감액 한도는 노령연금액의 1/2</em>입니다. 또한 감액은 <b>수급개시 후 5년간만</b> 적용되고 이후에는 전액 지급됩니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-fix">
+      <div class="ft">가장 많이 오해하는 지점</div>
+      <div class="fb">감액 기준이 되는 것은 <b>세전 월급이 아니라 ‘월평균소득금액’</b>입니다. 근로소득공제·필요경비를 차감한 후 종사 월수로 나눈 값이므로, <b>실제 월급이 519만원을 넘어도 감액 대상이 아닐 수 있습니다.</b></div>
+    </div>
+    <div class="pp-note">연봉으로 환산하면 대략 <b>6~7천만원 수준</b>이 경계선입니다. 은퇴 후 재취업·촉탁직·프리랜서 소득 대부분이 이 아래에 들어옵니다.</div>
+  </div>
+</div>
+
+<!-- p13 -->
+<div id="p13" data-k="Fact Check · 시행일" data-t="시행일과 소급 적용 정리">
+  <div class="pp-sec">
+    <div class="pp-fix">
+      <div class="ft">자주 잘못 알려진 부분</div>
+      <div class="fb">“2026년 <b>7월 1일</b>부터 시행”으로 전달되는 경우가 많으나, 보건복지부가 공식 발표한 개선된 노령연금 감액제도의 시행일은 <b>2026년 6월 17일</b>입니다.</div>
+    </div>
+    <div class="pp-kv">
+      <div class="r"><div class="k">시행일</div><div class="v"><b>2026. 6. 17.</b></div></div>
+      <div class="r"><div class="k">적용 기준</div><div class="v"><b>2025년 귀속 소득분</b>부터 (2025년 A값 기준 경계선은 508만9,062원)</div></div>
+      <div class="r"><div class="k">환급 현황</div><div class="v"><b>이미 지급 중</b> — 약 10만 명·총 445억원, <b>2026년 7월 말부터 자동 순차 지급</b></div></div>
+      <div class="r"><div class="k">1인당<br>평균 환급액</div><div class="v">약 <b>60만원</b> (12개월분 기준)</div></div>
+      <div class="r"><div class="k">감액 한도</div><div class="v">노령연금액의 <b>1/2</b>까지</div></div>
+      <div class="r"><div class="k">적용 기간</div><div class="v">수급개시 후 <b>5년간만</b> 적용, 이후 전액 지급</div></div>
+    </div>
+    <div class="pp-note"><b>따로 신청하지 않으셔도 됩니다</b> — 대상자라면 <b>이미 2026년 7월 말부터 통장에 자동으로 들어오고 있습니다.</b> 별도 신청 없이 정산·환급되며, 감액에서 벗어난 분은 <b>부양가족연금액</b>도 함께 받게 됩니다. 아직 안 들어왔다면 공단(1355)에 확인해 보셔도 됩니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">근거</div>
+    <div class="pp-law">
+      <div class="lt">보건복지부 보도자료 · 대한민국 정책브리핑</div>
+      <div class="lb">「개선된 노령연금 감액제도 본격 시행」 / 「월소득 519만원 안되면 노령연금 전액 받는다」</div>
+    </div>
+  </div>
+</div>
+
+<!-- p14 -->
+<div id="p14" data-k="보험료율 · 로드맵" data-t="연도별 인상 로드맵">
+  <div class="pp-sec">
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <thead><tr><th>구분</th><th class="c">2025</th><th class="c">2026</th><th class="c">2027</th><th class="c">…</th><th class="c">2033</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td><b>보험료율</b></td><td class="c">9.0%</td><td class="c"><b>9.5%</b></td><td class="c">10.0%</td><td class="c">+0.5%p</td><td class="c"><b>13.0%</b></td></tr>
+          <tr><td><b>소득대체율</b></td><td class="c">41.5%</td><td class="c"><b>43%</b></td><td class="c">43%</td><td class="c">43%</td><td class="c">43%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pp-p">2026년부터 <b>매년 0.5%p씩 8년에 걸쳐</b> 인상되어 <em>2033년에 13.0%</em>에 도달합니다. “2028년까지 13%”로 알려진 경우가 있으나, 확정된 일정은 <b>2033년 도달</b>입니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Who Is Affected</div>
+    <div class="pp-h">누구에게 영향이 있나</div>
+    <div class="pp-kv">
+      <div class="r"><div class="k">직장가입자</div><div class="v">근로자·사업주가 <b>절반씩 부담</b> — 2026년 기준 각 4.75%</div></div>
+      <div class="r"><div class="k">지역가입자</div><div class="v"><b>전액 본인 부담</b> — 인상 체감이 가장 큼. 저소득층은 국가 지원 확대로 일부 상쇄</div></div>
+      <div class="r"><div class="k">임의 ·<br>임의계속가입자</div><div class="v">전액 본인 부담. 다만 <b>가입기간 확보 목적</b>이라면 인상폭보다 기간의 가치가 큼</div></div>
+      <div class="r"><div class="k">기존 수급자</div><div class="v"><b>영향 없음</b> — 이미 수급 중인 연금액은 변하지 않음</div></div>
+    </div>
+    <div class="pp-note">소득대체율 43%는 <b>2026년 이후 가입 기간에만</b> 적용됩니다. 전체 연금액은 기간별 소득대체율을 가중평균해 산정되므로, 기존 가입기간이 긴 분일수록 43% 상향의 체감 효과는 작습니다.</div>
+  </div>
+</div>
+
+<!-- p15 -->
+<div id="p15" data-k="크레딧 · 상세" data-t="출산 · 군복무 크레딧 상세">
+  <div class="pp-sec">
+    <div class="pp-eyebrow">01 · 출산 크레딧</div>
+    <div class="pp-h">둘째부터 → 첫째부터 · 상한 폐지</div>
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <thead><tr><th>자녀</th><th class="c">변경 전</th><th class="c">변경 후</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td><b>첫째</b></td><td class="c"><span class="no">인정 없음</span></td><td class="c"><b>12개월</b></td></tr>
+          <tr><td>둘째</td><td class="c">12개월</td><td class="c">12개월</td></tr>
+          <tr><td>셋째 이상</td><td class="c">18개월</td><td class="c">18개월</td></tr>
+          <tr class="hi"><td><b>총 상한</b></td><td class="c">50개월</td><td class="c"><b>폐지</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pp-p">자녀 수가 많을수록 효과가 커집니다. 상한 폐지로 <b>다자녀 가구의 가입기간 인정 폭이 크게 늘어났습니다.</b></div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">02 · 군복무 크레딧</div>
+    <div class="pp-h">6개월 → 12개월 (두 배)</div>
+    <div class="pp-p">군복무 기간 인정이 <b>6개월에서 12개월로 두 배 확대</b>되었습니다. <em>2026년 1월 1일 이후 복무를 마친 사람부터 적용</em>됩니다.</div>
+    <div class="pp-fix">
+      <div class="ft">적용 시점 주의</div>
+      <div class="fb">이미 복무를 마친 기존 대상자는 <b>종전 기준(6개월)</b>이 적용됩니다. 2026년 이후 전역자와 그 이전 전역자의 인정 개월 수가 다릅니다.</div>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">03 · 실업 크레딧</div>
+    <div class="pp-h">구직급여 수급 기간, 보험료 75% 국가 지원</div>
+    <div class="pp-p">실업으로 소득이 끊긴 기간에도 가입기간이 끊기지 않도록, 구직급여 수급 기간 중 <b>국민연금 보험료의 75%를 국가가 대신 부담</b>합니다. 본인은 25%만 내면 그 달이 가입기간으로 인정됩니다. <em>최대 12개월</em>까지 적용됩니다.</div>
+    <div class="pp-note">출산·군복무 크레딧이 <b>사후에 통째로 인정</b>되는 방식이라면, 실업 크레딧은 <b>매달 일부 보험료를 실제로 납부</b>해야 하는 구조라는 점이 다릅니다. 신청은 고용센터·국민연금공단에서 구직급여 수급과 연계해 진행합니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Why It Matters</div>
+    <div class="pp-h">120개월 미달자에게는 결정타가 될 수 있다</div>
+    <div class="pp-p">출산·군복무 크레딧은 <b>보험료를 내지 않아도 가입기간으로 인정</b>되는 항목입니다. 추납·임의계속가입으로도 몇 개월이 모자란 경우, <em>크레딧이 수급권 자체를 만들어 주는 마지막 조각</em>이 됩니다. 반드시 공단 조회로 본인의 크레딧 인정분을 확인한 뒤 120개월 도달 여부를 계산해야 합니다.</div>
+  </div>
+</div>
+
+<!-- p16 -->
+<div id="p16" data-k="저소득 지역가입자 지원" data-t="지역가입자 보험료 국가 지원">
+  <div class="pp-sec">
+    <div class="pp-p">지역가입자 중 저소득층의 <b>보험료 일부를 국가가 지원</b>하는 제도입니다. 2026년 개정으로 대상과 요건이 함께 넓어졌습니다.</div>
+    <div class="pp-kv">
+      <div class="r"><div class="k">변경 전</div><div class="v">납부예외 상태에서 <b>납부를 재개한 사람</b>만 지원 대상</div></div>
+      <div class="r"><div class="k">변경 후</div><div class="v"><b>납부를 계속하고 있는 사람도</b> 지원 대상에 포함</div></div>
+      <div class="r"><div class="k">대상 범위</div><div class="v">지원 대상 범위 자체도 <b>확대</b></div></div>
+    </div>
+    <div class="pp-p">기존 제도는 <b>“끊었다가 다시 내는 사람”에게만 혜택이 가는 구조</b>여서, 어렵게 계속 납부해 온 사람이 오히려 지원을 받지 못하는 역차별 문제가 있었습니다. 이번 개정은 그 구멍을 메운 것입니다.</div>
+    <div class="pp-note"><b>해당되는지 한 번은 확인해 보세요</b> — 지역가입자는 보험료를 전액 본인이 내기 때문에 9% → 13% 인상이 가장 크게 체감됩니다. 이 지원 대상에 들어가면 오르는 만큼을 일부 덜어낼 수 있습니다. 소득·재산 기준은 해마다 다시 고시되므로, <b>작년에 안 됐더라도 다시 물어볼 만합니다.</b></div>
+  </div>
+</div>
+
+<!-- p17 -->
+<div id="p17" data-k="조기 · 정상 · 연기" data-t="숫자로 비교하는 세 가지 선택">
+  <div class="pp-sec">
+    <div class="pp-tri">
+      <div class="c"><div class="v">-30%</div><div class="l">조기수령<br>최대 5년</div></div>
+      <div class="c"><div class="v g">기준</div><div class="l">정상 수령<br>개시연령</div></div>
+      <div class="c"><div class="v">+36%</div><div class="l">연기연금<br>최대 5년</div></div>
+    </div>
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <thead><tr><th>구분</th><th class="c">조기</th><th class="c">정상</th><th class="c">연기</th></tr></thead>
+        <tbody>
+          <tr><td><b>수령 시점</b></td><td class="c">개시연령<br>최대 5년 전</td><td class="c">출생연도별<br>개시연령</td><td class="c">개시연령<br>최대 5년 후</td></tr>
+          <tr><td><b>조정률 (월)</b></td><td class="c">-0.5%</td><td class="c">—</td><td class="c">+0.6%</td></tr>
+          <tr><td><b>조정률 (연)</b></td><td class="c">-6%</td><td class="c">—</td><td class="c">+7.2%</td></tr>
+          <tr class="hi"><td><b>최대 조정폭</b></td><td class="c"><b>-30%</b></td><td class="c">—</td><td class="c"><b>+36%</b></td></tr>
+          <tr><td><b>월 70만원 기준</b></td><td class="c">약 49만</td><td class="c">70만</td><td class="c">약 95만</td></tr>
+          <tr><td><b>실제 선택 비중</b></td><td class="c"><span class="fx">폭증</span></td><td class="c">가장 많음</td><td class="c"><span class="no">많지 않음</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pp-p">조정률은 <b>평생 고정</b>됩니다. 조기수령은 손익분기점(통상 70대 중후반)을 넘어 장수할수록 누적 손실이 커지고, 연기연금은 그 반대입니다. <em>다만 어느 쪽이 유리한지는 기대여명이 아니라 소득 공백기의 현금흐름이 결정합니다.</em></div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Why Deferral Is Rare</div>
+    <div class="pp-h">연기를 선택하는 사람은 왜 적은가</div>
+    <div class="pp-p">제도적으로는 매월 0.6%씩 늘어나는 명백한 이득이 있습니다. 그럼에도 실제 연기 선택은 많지 않습니다. 원인은 <b>보상 심리</b>입니다. “여태까지 일했는데, 소득이 있든 없든 그냥 받자”는 심리가 그날이 되면 발동합니다.</div>
+    <div class="pp-h" style="margin-top:16px;">연기를 검토할 만한 사람</div>
+    <div class="pp-p">65세 이후에도 소득 활동을 계속하거나 사업을 영위해 <b>당장의 현금흐름에 여유가 있는 경우</b>입니다. 2026년 감액 기준 완화(519만원)로 일하면서 연금을 받아도 깎이지 않게 된 만큼, <em>연기의 실익을 다시 계산해 볼 시점</em>입니다.</div>
+    <div class="pp-note"><b>감액 완화가 바꾼 계산식</b> — 과거에는 “일하면 깎이니 차라리 연기하자”는 논리가 성립했습니다. 2026년부터는 519만원 미만이면 감액이 없으므로, <b>‘일하면서 정상 수령’이 실질적인 네 번째 선택지</b>가 되었습니다.</div>
+  </div>
+</div>
+
+<!-- p18 -->
+<div id="p18" data-k="Fact Check · 조기연금" data-t="조기연금 신청 가능 연령">
+  <div class="pp-sec">
+    <div class="pp-fix">
+      <div class="ft">자주 잘못 알려진 부분</div>
+      <div class="fb">“<b>55세부터</b> 신청 가능”으로 전달되는 경우가 있으나, 조기노령연금은 <b>출생연도별 지급개시연령의 5년 전</b>부터 신청 가능합니다. 지급개시연령이 단계적으로 상향되면서 조기 신청 가능 연령도 함께 올라갔습니다.</div>
+    </div>
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <thead><tr><th>출생연도</th><th class="c">지급개시연령</th><th class="c">조기 신청 가능</th></tr></thead>
+        <tbody>
+          <tr><td>1953~56년생</td><td class="c">61세</td><td class="c"><b>56세</b></td></tr>
+          <tr><td>1957~60년생</td><td class="c">62세</td><td class="c"><b>57세</b></td></tr>
+          <tr><td>1961~64년생</td><td class="c">63세</td><td class="c"><b>58세</b></td></tr>
+          <tr><td>1965~68년생</td><td class="c">64세</td><td class="c"><b>59세</b></td></tr>
+          <tr class="hi"><td><b>1969년생 이후</b></td><td class="c"><b>65세</b></td><td class="c"><b>60세</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pp-note"><b>별도 요건</b> — 가입기간 <b>10년(120개월) 이상</b>이어야 하며, 소득 있는 업무에 종사하지 않아야 합니다. 조기수령 중 소득이 발생하면 지급이 정지될 수 있습니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Income Crevasse</div>
+    <div class="pp-h">1969년생 이후는 최대 5년의 공백</div>
+    <div class="pp-p">정년은 60세인데 수급개시연령은 65세입니다. <b>그 사이 최대 5년의 소득 공백</b>이 발생합니다. 조기수령 폭증의 가장 현실적인 이유이며, <em>이 공백을 메울 퇴직연금·개인연금·금융자산이 있다면 조기수령의 필요성은 크게 줄어듭니다.</em></div>
+  </div>
+</div>
+
+<!-- p19 -->
+<div id="p19" data-k="Checklist" data-t="수령 시기 판단 체크리스트">
+  <div class="pp-sec pp-chk">
+    <div class="row"><div class="b"></div><div class="x">정년 이후 수급개시연령까지의 <b>소득 공백기(크레바스)가 몇 년</b>인지 먼저 계산했는가 — 1969년생 이후는 최대 5년</div></div>
+    <div class="row"><div class="b"></div><div class="x">그 공백기를 메울 <b>퇴직연금·개인연금·금융자산</b>이 있는가. 있다면 조기수령의 필요성은 크게 줄어든다</div></div>
+    <div class="row"><div class="b"></div><div class="x">65세 이후에도 소득 활동을 이어갈 계획인가. <b>월평균소득금액 519만원 미만이면 감액이 없으므로</b> 일하며 정상 수령이 가능하다</div></div>
+    <div class="row"><div class="b"></div><div class="x">조기수령 시 <b>평생 -30%가 고정</b>된다는 점을 <b>배우자 유족연금까지 포함해</b> 계산했는가</div></div>
+    <div class="row"><div class="b"></div><div class="x">건강 상태에 대한 막연한 불안이 아니라 <b>실제 현금흐름 부족</b>이 조기수령의 이유인가</div></div>
+    <div class="row"><div class="b"></div><div class="x">고갈 우려로 인한 결정이라면, 2026년 개편으로 <b>보험료율 인상·국가 지원 확대</b>가 이루어진 사실을 반영했는가</div></div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-note"><b>결국 질문은 하나입니다</b> — 조기·정상·연기의 선택은 기대여명 계산이 아니라 <b>소득 공백기를 무엇으로 메울 수 있는가</b>의 문제입니다. 메울 자산이 있으면 정상 또는 연기, 없으면 조기가 현실적인 답입니다.</div>
+  </div>
+</div>
+
+<!-- p20 -->
+<div id="p20" data-k="추후납부 · 심화" data-t="추납 — 가장 강력한 카드">
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Core Mechanism</div>
+    <div class="pp-h">추납은 ‘가입기간을 되사는’ 제도입니다</div>
+    <div class="pp-p">입사 동기 두 사람이 있습니다. 한 사람은 20~30년을 계속 다녔고, 다른 한 사람은 일찍 퇴사해 다른 일을 하다 돌아왔습니다. 그런데 돌아온 사람에게 <b>“연봉도 똑같이, 퇴직금도 똑같이 만들어 주겠다”</b>고 하는 것 — 추납이 하는 일이 정확히 이것입니다. <em>비어 있던 기간을 가입기간으로 복원</em>해 주기 때문입니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">A · Who</div>
+    <div class="pp-h">추납 대상 기간</div>
+    <div class="pp-p">과거에 보험료를 <b>1회 이상 납부한 이력이 있으면서</b>, 이후 실직·휴직·경력단절 등으로 납부하지 못한 기간이 대상입니다. <em>한 번도 납부한 적이 없다면 추납 대상 기간 자체가 생기지 않습니다.</em></div>
+    <div class="pp-kv">
+      <div class="r"><div class="k">주요 대상</div><div class="v"><b>납부예외 기간</b> · <b>적용제외 기간</b> · 1988년 이후 군복무 기간</div></div>
+      <div class="r"><div class="k">기간 상한</div><div class="v">군복무기간 포함 <b>최대 119개월</b>까지만 신청 가능 (10년 미만 제한)</div></div>
+      <div class="r"><div class="k">확인 방법</div><div class="v">국민연금공단 <b>1355</b> 또는 ‘내 곁에 국민연금’ 앱에서 조회</div></div>
+      <div class="r"><div class="k">납부 방식</div><div class="v">일시납 또는 <b>분할납부</b>(최대 60회) 선택 가능</div></div>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">B · Why</div>
+    <div class="pp-h">왜 효과가 가장 큰가</div>
+    <div class="pp-p">임의가입·임의계속가입은 <b>앞으로의 기간</b>만 늘립니다. 추납은 <b>지나간 기간</b>을 되살립니다. 60세가 가까운 시점에서는 앞으로 늘릴 수 있는 기간이 제한적이므로, <em>과거를 복원하는 추납의 레버리지가 압도적</em>입니다.</div>
+    <div class="pp-kv">
+      <div class="r"><div class="k">수급권 확보</div><div class="v"><b>120개월 미달자</b>의 수급권 확보에 결정적</div></div>
+      <div class="r"><div class="k">연금액 증액</div><div class="v">이미 10년을 채운 사람도 <b>증액 목적</b>으로 활용 가능</div></div>
+    </div>
+    <div class="pp-note"><b>무엇부터 알아보면 되나</b> — 앞으로 더 낼 방법을 찾기 전에, <b>되살릴 수 있는 과거 기간이 얼마나 남아 있는지부터</b> 조회해 보세요. 추납 가능 기간이 있다면 그것이 가장 먼저 꺼내야 할 카드입니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">실행 순서 — 자격을 먼저 만들고 신청합니다</div>
+    <div class="pp-step"><div class="sn">1</div><div><div class="st">가입 이력 조회</div><div class="sd">공단 홈페이지·앱에서 <b>총 가입월수와 납부예외·적용제외 기간</b>을 확인합니다.</div></div></div>
+    <div class="pp-step"><div class="sn">2</div><div><div class="st">추납 가능기간 산정</div><div class="sd">최대 <b>119개월</b> 범위에서 복원 가능한 기간을 확정합니다.</div></div></div>
+    <div class="pp-step"><div class="sn">3</div><div><div class="st">가입자 자격 확보</div><div class="sd"><b>임의가입 또는 임의계속가입</b>으로 신분 요건을 먼저 충족시킵니다. 순서가 결정적입니다.</div></div></div>
+    <div class="pp-step"><div class="sn">4</div><div><div class="st">추납 신청</div><div class="sd">적용제외 기간 추납 시 혼인관계증명서(상세) 등 <b>증빙 서류</b>를 제출합니다.</div></div></div>
+    <div class="pp-step"><div class="sn">5</div><div><div class="st">납부 방식 결정</div><div class="sd">일시납 또는 최대 <b>60회 분할납부</b> 중 자금 사정에 맞춰 선택합니다.</div></div></div>
+    <div class="pp-step"><div class="sn">6</div><div><div class="st">수령액 재확인</div><div class="sd">예상연금월액을 재조회해 <b>증대 효과를 검증</b>합니다.</div></div></div>
+    <div class="pp-fix">
+      <div class="ft">신청 시점이 금액을 결정합니다</div>
+      <div class="fb">추납보험료는 <b>신청 시점의 기준소득월액</b>으로 산정됩니다. 소득이 낮은 시기에 신청할수록 부담이 작아지는 구조이며, <b>임의가입자는 A값(2026년 319만3,511원)이 상한</b>입니다. 보험료율이 2033년까지 13%로 단계 인상되므로, 늦출수록 같은 기간에 대한 부담이 커집니다.</div>
+    </div>
+    <div class="pp-note">추납으로 국민연금이 늘면 <b>기초연금 소득인정액과 연계감액에 동시에 영향</b>을 줍니다(4페이지 참고). 소득인정액이 247만원 경계선에 있는 분은 <em>순증 여부를 먼저 계산</em>해야 합니다.</div>
+  </div>
+</div>
+
+<!-- p21 -->
+<div id="p21" data-k="Fact Check · 임의계속가입" data-t="65세 상한과 세 가지 조합 설계">
+  <div class="pp-sec">
+    <div class="pp-fix">
+      <div class="ft">자주 잘못 알려진 부분</div>
+      <div class="fb">“60세에 3년밖에 못 채웠으면 <b>67세까지도 납입 가능</b>”이라는 설명이 돌지만, 임의계속가입 신청은 <b>65세 생일의 전날까지만</b> 가능하며 <b>65세 이상은 신청할 수 없습니다.</b></div>
+    </div>
+    <div class="pp-p"><b>결정적 함의</b> — 60세 시점 가입기간이 <em>5년 미만</em>이면 임의계속가입만으로는 120개월을 채울 수 없습니다. 반드시 <b>추납·크레딧과 병행 설계</b>해야 합니다.</div>
+    <div class="pp-note">임의계속가입은 <b>사업장임의계속가입자 / 지역임의계속가입자 / 기타임의계속가입자</b> 세 유형으로 구분되며, 60세 이후 사업장 종사 여부와 소득 유무에 따라 적용 유형이 달라집니다. 또한 <b>반환일시금 수령자·노령연금 수급자는 신청할 수 없습니다.</b></div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Case Design</div>
+    <div class="pp-h">세 가지 방법의 조합 설계</div>
+    <div class="pp-step"><div class="sn">1</div><div><div class="st">57세에 처음 취업한 전업주부</div><div class="sd">60세까지 3년 납부 → 임의계속가입으로 65세까지 5년 추가 → <b>합계 8년</b>. <em>120개월 미달</em>이므로 추납 가능 기간을 반드시 확인해 병행해야 수급권이 확보됩니다.</div></div></div>
+    <div class="pp-step"><div class="sn">2</div><div><div class="st">이미 10년을 채운 60세</div><div class="sd">수급권은 확보되어 있으므로 목적은 <b>연금액 증액</b>입니다. 임의계속가입으로 65세까지 납부기간을 늘리고, 추납 가능 기간이 있다면 함께 복원합니다.</div></div></div>
+    <div class="pp-step"><div class="sn">3</div><div><div class="st">소득이 없는 배우자</div><div class="sd">임의가입으로 <b>최소 보험료부터 시작해 가입기간의 베이스</b>를 만듭니다. 금액보다 <em>기간의 누적</em>이 우선입니다.</div></div></div>
+    <div class="pp-note"><b>공통 원칙</b> — 국민연금은 <b>총 가입기간</b>이 연금액을 결정합니다. 세 제도는 모두 같은 목표를 다른 시점에서 공략하는 수단이며 <b>배타적이지 않습니다.</b> 동시에 설계하는 것이 정답입니다.</div>
+  </div>
+</div>
+
+<!-- p22 -->
+<div id="p22" data-k="반환일시금" data-t="지급 요건과 효과">
+  <div class="pp-sec">
+    <div class="pp-eyebrow">01 · 지급 요건</div>
+    <div class="pp-h">가입기간 10년 미만 + 다음 중 하나</div>
+    <div class="pp-p">
+      · <b>60세가 된 경우</b> (단, 특례노령연금 수급권자는 제외)<br>
+      · <b>유족연금에 해당하지 않는 사망</b><br>
+      · <b>국적 상실 또는 국외 이주</b>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">02 · 지급액 산정</div>
+    <div class="pp-h">납부 보험료 + 이자</div>
+    <div class="pp-p">본인이 납부한 연금보험료에 이자를 가산하여 산정합니다. 이자는 보험료를 낸 날이 속하는 달의 <b>다음 달부터 지급사유 발생일이 속하는 달까지</b>의 기간에 대해, 해당 기간의 <b>3년 만기 정기예금 이자율</b>을 적용합니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-fix">
+      <div class="ft">사실상 되돌리기 어렵습니다</div>
+      <div class="fb">60세 도달 사유로 반환일시금을 수령하면 <b>임의계속가입도, 재가입도 신청할 수 없어</b> 평생 연금을 받을 권리가 그 시점에 소멸합니다. <b>‘반납’ 제도(국민연금법 제78조)</b>가 있어 이론적으로 가입기간을 복원할 수 있지만, 신청 자격이 <em>‘반환일시금을 받은 후 다시 가입자 자격을 취득한 사람’</em>으로 한정되어 있어 <b>60세 도달로 받은 경우에는 사실상 되돌릴 방법이 없습니다.</b></div>
+    </div>
+    <div class="pp-h">받기 전에 반드시 확인할 것</div>
+    <div class="pp-p">가입기간이 10년에 미달한다는 이유로 반환일시금을 선택하기 전에, <b>추납 가능 기간 · 임의계속가입 여력 · 출산·군복무 크레딧</b>을 먼저 점검해야 합니다. <em>세 가지를 조합하면 120개월을 채울 수 있는 경우가 적지 않고, 채우기만 하면 일시금이 평생 연금으로 바뀝니다.</em></div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">03 · 반납금 — 되돌릴 수 있는 경로</div>
+    <div class="pp-h">이미 받은 반환일시금도 되돌릴 수 있습니다</div>
+    <div class="pp-p"><b>반환일시금을 받은 뒤 다시 가입자 자격을 취득한 경우</b>, 수령액에 이자를 더해 반납하면 <b>종전 가입기간이 그대로 복원</b>됩니다. 이자는 지급일부터 신청 전월까지의 <b>1년 만기 정기예금이자율</b>을 적용합니다.</div>
+    <div class="pp-kv">
+      <div class="r"><div class="k">분할납부</div><div class="v">복원 대상 가입기간에 따라 <b>1년 미만 3회 · 1~5년 미만 12회 · 5년 이상 24회</b>까지 분할 가능(추가 이자 가산)</div></div>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">PATH · 10년 미달 시 경로 판정</div>
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <tr><th>상황</th><th>선택지</th><th>결과</th><th>판단</th></tr>
+        <tr><td>60세 미만 · 소득 있음</td><td>의무 납부 계속</td><td>가입기간 자연 증가</td><td class="c">기본</td></tr>
+        <tr><td>60세 미만 · 소득 없음</td><td>임의가입 + 추납</td><td>가입기간 복원·확보</td><td class="c"><span class="ok">권장</span></td></tr>
+        <tr><td>60세 도달 · 10년 미달</td><td>임의계속가입</td><td>120개월 충족까지 계속 납부</td><td class="c"><span class="ok">권장</span></td></tr>
+        <tr><td>과거 반환일시금 수령</td><td>재가입 후 반납</td><td>종전 가입기간 복원</td><td class="c"><span class="ok">권장</span></td></tr>
+        <tr><td>60세 도달 · 조치 없음</td><td>반환일시금 수령</td><td>수급권 소멸·평생 연금 상실</td><td class="c"><span class="fx">회피</span></td></tr>
+      </table>
+    </div>
+    <div class="pp-note">임의계속가입은 <b>만 65세 생일 전날까지</b> 신청해야 하며, 60세 도달을 사유로 반환일시금을 이미 수령한 경우에는 신청할 수 없습니다. 다만 재취업 등으로 가입자 자격을 다시 얻으면 <b>반납</b>을 통해 복원이 가능합니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">VS · 반납금 vs 추후납부</div>
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <tr><th>구분</th><th>반납금</th><th>추후납부</th></tr>
+        <tr><td>대상</td><td>이미 수령한 반환일시금</td><td>납부하지 않은 납부예외·적용제외 기간</td></tr>
+        <tr><td>효과</td><td>종전 가입기간 복원</td><td>비어 있던 기간을 가입기간으로 전환</td></tr>
+        <tr><td>금액 산정</td><td>수령액 + 정기예금이자</td><td>신청 시점 기준소득월액 기준</td></tr>
+        <tr><td>분할납부</td><td>최대 24회</td><td>최대 60회</td></tr>
+        <tr><td colspan="3">공통 요건 — 신청 시점에 가입자 자격을 보유할 것</td></tr>
+      </table>
+    </div>
+    <div class="pp-note">두 제도는 배타적이지 않습니다. 반환일시금 수령 이력과 납부예외 기간이 모두 있는 경우 <b>병행 활용</b>이 가능하며, 어느 쪽이든 <em>가입자 자격을 먼저 확보하는 것이 순서</em>입니다.</div>
+  </div>
+</div>
+
+<!-- p23 -->
+<div id="p23" data-k="120개월 · 점검" data-t="120개월을 채우는 3단계 점검">
+  <div class="pp-sec">
+    <div class="pp-step"><div class="sn">1</div><div><div class="st">현재 가입기간 확인</div><div class="sd">국민연금공단(<b>1355</b>) 또는 <b>‘내 곁에 국민연금’ 앱</b>에서 총 납부 개월 수를 확인합니다. <em>남은 개월 수가 설계의 출발점</em>입니다.</div></div></div>
+    <div class="pp-step"><div class="sn">2</div><div><div class="st">추납 가능 기간 조회</div><div class="sd">과거 <b>납부예외·적용제외 기간</b>이 있으면 복원이 가능합니다. 앞으로 늘릴 수 있는 기간보다 <b>되살릴 수 있는 기간이 대개 더 깁니다.</b></div></div></div>
+    <div class="pp-step"><div class="sn">3</div><div><div class="st">임의계속가입 여력 계산</div><div class="sd">60세부터 65세까지 <b>최대 60개월</b>. 여기에 <b>출산·군복무 크레딧</b>을 더해 120개월 도달 여부를 판정합니다.</div></div></div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-formula">
+      현재 가입기간 <span class="op">+</span> 추납 <span class="op">+</span> 임의계속(최대 60개월) <span class="op">+</span> 크레딧
+      <span class="sm">≥ 120개월이면 평생 연금 · 미만이면 반환일시금</span>
+    </div>
+    <div class="pp-note"><b>왜 10년인가</b> — 소득이 있는 기간 내내 20년, 30년을 성실히 납부한 사람과 1년만 낸 사람을 같이 대우할 수 없기 때문에 <b>최소 가입기간 10년(120개월)</b>이라는 제한이 존재합니다. 이 선을 넘느냐 마느냐가 <b>‘평생 월급’과 ‘한 번의 목돈’을 가릅니다.</b></div>
+  </div>
+</div>
+
+<!-- p24 -->
+<div id="p24" data-k="Fact Check · 전수 대조" data-t="공식 기준 전수 대조표">
+  <div class="pp-sec">
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <thead><tr><th>항목</th><th>흔한 설명</th><th>공식 기준</th><th class="c">판정</th></tr></thead>
+        <tbody>
+          <tr><td><b>기초연금<br>선정기준액</b></td><td>단독 247만<br>부부 395만</td><td>단독 247만<br>부부 <b>395.2만</b> (2026)</td><td class="c"><span class="ok">일치</span></td></tr>
+          <tr><td><b>무료임차소득</b></td><td>6억 → 39만<br>20억 → 130만</td><td>동일<br>(시가표준액 × 0.78% ÷ 12)</td><td class="c"><span class="ok">일치</span></td></tr>
+          <tr><td><b>2026년 A값</b></td><td>319만원</td><td>319만원</td><td class="c"><span class="ok">일치</span></td></tr>
+          <tr><td><b>감액 없는<br>소득 상한</b></td><td>519만원<br>(A값 + 200만)</td><td>519만원 미만<br>전액 수령</td><td class="c"><span class="ok">일치</span></td></tr>
+          <tr class="hi"><td><b>감액제도<br>시행일</b></td><td>2026년 7월 1일</td><td><b>2026년 6월 17일</b><br>(2026. 1. 1. 소급)</td><td class="c"><span class="fx">정정</span></td></tr>
+          <tr class="hi"><td><b>보험료율<br>인상 일정</b></td><td>2028년까지 13%</td><td>2026년부터 매년 0.5%p<br><b>8년간 → 2033년 13%</b></td><td class="c"><span class="fx">정정</span></td></tr>
+          <tr class="hi"><td><b>조기연금<br>신청 연령</b></td><td>55세부터</td><td>출생연도별 개시연령의 5년 전<br><b>1969년생 이후 60세</b></td><td class="c"><span class="fx">정정</span></td></tr>
+          <tr class="hi"><td><b>임의계속가입<br>상한</b></td><td>67세까지 납입 가능</td><td><b>65세 생일 전날까지 신청</b><br>65세 이상 신청 불가</td><td class="c"><span class="fx">정정</span></td></tr>
+          <tr><td><b>크레딧 확대</b></td><td>출산 첫째부터<br>군복무 12개월</td><td>동일<br>(상한 50개월 폐지 포함)</td><td class="c"><span class="ok">일치</span></td></tr>
+          <tr><td><b>연기연금<br>가산율</b></td><td>월 0.6% 상승</td><td>월 0.6% · 연 7.2%<br>최대 36%</td><td class="c"><span class="ok">일치</span></td></tr>
+          <tr><td><b>10년(120개월)<br>요건</b></td><td>미달 시 반환일시금</td><td>동일<br>(60세 도달 시 지급사유 발생)</td><td class="c"><span class="ok">일치</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Note</div>
+    <div class="pp-p">정정 항목 4건은 모두 <b>제도의 취지나 방향을 뒤집는 오류는 아닙니다.</b> 시행일·연령 상한 등 <em>실행 시점에 관한 수치</em>이며, 실제 신청 절차에서 직접적인 영향을 주는 부분이므로 공식 기준으로 바로잡았습니다.</div>
+    <div class="pp-p">특히 <b>임의계속가입 65세 상한</b>은 60세 시점 가입기간이 5년 미만인 분의 설계를 완전히 바꾸는 변수입니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">Sources</div>
+    <div class="pp-src">
+      <div>· 보건복지부, 「2026년 노인 단독가구, 소득인정액 월 247만원 이하면 기초연금 받는다」 보도자료</div>
+      <div>· 보건복지부, 「개선된 노령연금 감액제도 본격 시행」 보도자료</div>
+      <div>· 보건복지부, 「기초연금 사업안내」 · 소득인정액 산정 세부기준 고시</div>
+      <div>· 대한민국 정책브리핑, 「월소득 519만원 안되면 노령연금 전액 받는다」</div>
+      <div>· 국민연금공단, 임의계속가입 안내 / 반환일시금 안내 / 노령연금 수급 요건</div>
+      <div>· 기초연금법 · 기초연금법 시행령 · 국민연금법</div>
+    </div>
+  </div>
+</div>
+
+<!-- p25 -->
+<div id="p25" data-k="부부감액 · 소득역전방지" data-t="감액 두 가지, 놓치면 손해">
+  <div class="pp-sec">
+    <div class="pp-eyebrow">01 · 부부감액</div>
+    <div class="pp-h">부부 모두 받으면 각자 20%씩 깎입니다</div>
+    <div class="pp-p">부부가 <b>동시에 기초연금을 수급</b>하면 각자 <b>20%가 감액</b>되어 <b>1인당 27만 9,760원</b>, <b>부부 합계 55만 9,520원</b>이 됩니다. 반면 <b>한 사람만 수급</b>하면 감액 없이 <b>34만 9,700원</b>을 그대로 받습니다.</div>
+    <div class="pp-note"><b>한 사람만 받는 게 유리한 구간이 존재합니다.</b> 부부 중 한 명의 소득·재산이 경계선에 걸쳐 있다면, 명의·시점 조정으로 <em>한쪽만 먼저 신청</em>하는 편이 가구 합계 기준으로 더 유리할 수 있습니다. 국민연금 수령액이 크게 차이 나는 부부라면 <b>연계감액까지 함께 계산</b>해야 합니다(다음 장 참고).</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">02 · 소득역전방지 감액</div>
+    <div class="pp-h">경계선 수급자는 '전액'이 아닌 '차액'만 받습니다</div>
+    <div class="pp-p">소득인정액이 선정기준액(단독 247만원) <b>바로 아래 구간</b>에 있는 경우, 기초연금을 더한 최종 소득이 선정기준액을 넘는 <b>역전 현상</b>이 생길 수 있습니다. 이를 막기 위해 <b>소득인정액 + 기초연금액이 선정기준액을 초과하지 않도록</b> 기초연금액 자체를 줄여서 지급합니다.</div>
+    <div class="pp-note">즉 소득인정액이 <b>246만원대</b>인 경계선 수급자는 자격을 통과해도 실수령액이 34만 9,700원에 크게 못 미칠 수 있습니다. <em>통과 여부만 보지 말고, 통과 후 실수령액까지 모의계산</em>해야 합니다.</div>
+  </div>
+</div>
+
+<!-- p26 -->
+<div id="p26" data-k="연계감액 판정표 · 추납의 역설" data-t="국민연금을 늘렸을 때 실제로 남는 돈">
+  <div class="pp-sec">
+    <div class="pp-eyebrow">감액 판정표 — 2026년 기준</div>
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <tr><th>국민연금 수령액</th><th>기초연금 판정</th></tr>
+        <tr><td>52만 4,550원 이하</td><td class="ok">감액 없음 — 전액 수령</td></tr>
+        <tr><td>52만 4,550원 초과</td><td class="fx">단계적 감액</td></tr>
+        <tr><td>약 67만원 이상</td><td class="no">최대 감액 — 기준연금액의 50%만 지급</td></tr>
+      </table>
+    </div>
+    <div class="pp-note">판정은 실제 수령액이 아니라 <b>A급여액(소득재분배급여)</b> 기준이며, 국민연금공단에서 조회할 수 있습니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">추납의 역설 — 계산 예시</div>
+    <div class="pp-h">국민연금을 20만원 늘렸는데, 가구 합계는 2만 5천원만 늘었다</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div class="pp-formula" style="margin-bottom:0;">국민연금 50만 <span class="op">+</span> 기초연금 34.97만<span class="sm">추납 전 합계 = 84.97만원</span></div>
+      <div class="pp-formula" style="margin-bottom:0;">국민연금 70만(+20) <span class="op">+</span> 기초연금 17.49만(최대감액)<span class="sm">추납 후 합계 = 87.49만원</span></div>
+    </div>
+    <div class="pp-note">국민연금이 20만원 늘었지만 가구 합계는 약 <b>2만 5천원 증가</b>에 그칩니다. 증가분의 상당 부분이 기초연금 감소로 상쇄되기 때문입니다. <em>추납 비용 대비 실익을 반드시 이 방식으로 대조</em>해야 합니다.</div>
+    <div class="pp-fix">
+      <div class="ft">단순 비교입니다</div>
+      <div class="fb">위 수치는 연계감액만 반영한 단순 비교이며, <b>소득역전방지 감액·부부감액·소득인정액 변동은 제외</b>했습니다. 실제 판정은 공단·지자체 확인이 필요합니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- p27 -->
+<div id="p27" data-k="소득평가액 — 근로소득 공제" data-t="월급이 그대로 잡히지 않는 이유">
+  <div class="pp-sec">
+    <div class="pp-eyebrow">소득평가액 산정 구조 — 2026년</div>
+    <div class="pp-h">근로소득에는 두 번의 공제가 적용됩니다</div>
+    <div class="pp-formula">0.7 × ( 근로소득 − 116만원 ) <span class="op">+</span> 기타소득</div>
+    <div class="pp-p">기본공제 월 <b>116만원</b>을 먼저 빼고, 남은 금액의 <b>30%를 추가 공제</b>하여 <b>70%만 반영</b>합니다. 월 <b>200만원</b> 근로소득자의 소득평가액은 약 <b>59만원</b>입니다. <em>근로소득에만 적용되며 사업·재산·공적이전소득에는 적용되지 않습니다.</em></div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">소득 항목별 반영 방식</div>
+    <div class="pp-scroll">
+      <table class="pp-t">
+        <tr><th>소득 항목</th><th>반영 방식</th><th>비고</th></tr>
+        <tr><td>근로소득</td><td class="hi">공제 후 70%</td><td>기본공제 116만원 + 30% 추가공제</td></tr>
+        <tr><td>사업·임대소득</td><td>전액 반영</td><td>필요경비 차감 후 금액</td></tr>
+        <tr><td>재산소득</td><td>전액 반영</td><td>이자·배당 등</td></tr>
+        <tr><td>공적이전소득</td><td>전액 반영</td><td>국민연금 수령액·실업급여 등</td></tr>
+        <tr><td>무료임차소득</td><td>전액 반영</td><td>자녀 명의 6억원 이상 주택 무상 거주</td></tr>
+      </table>
+    </div>
+    <div class="pp-note">경계선에 있는 대표님이라면 <b>근로소득의 형태를 조정</b>하는 것만으로 소득평가액이 달라질 수 있습니다. 사업·재산·이전소득은 공제가 없다는 점이 함정입니다.</div>
+  </div>
+</div>
+
+<!-- p28 -->
+<div id="p28" data-k="직역연금 수급자는 왜 제외되나" data-t="소득·재산 계산보다 먼저 확인할 것">
+  <div class="pp-sec">
+    <div class="pp-fix">
+      <div class="ft">직역연금 수급권자와 그 배우자는 원칙적 제외</div>
+      <div class="fb">공무원연금·사학연금·군인연금·별정우체국연금 수급권자는 <b>소득인정액과 무관하게 신청 자격 자체가 발생하지 않습니다.</b> <em>배우자도 함께 제외</em>되므로, 본인은 소득이 전혀 없어도 배우자가 직역연금 수급권자라면 신청할 수 없습니다.</div>
+    </div>
+    <div class="pp-note"><b>소득·재산 상담에 앞서 가장 먼저 확인해야 할 항목입니다.</b> 이 항목을 놓치고 소득인정액부터 계산하면 처음부터 다시 상담해야 합니다.</div>
+  </div>
+  <div class="pp-sec pp-chk">
+    <div class="pp-eyebrow" style="margin-bottom:8px;">예외 — 이 세 가지는 신청 가능합니다</div>
+    <div class="row"><div class="b"></div><div class="x">재직 10년 미만으로 <b>퇴직일시금</b>을 수령한 경우</div></div>
+    <div class="row"><div class="b"></div><div class="x"><b>유족·장해일시금</b> 수령 후 5년 경과</div></div>
+    <div class="row"><div class="b"></div><div class="x">이혼 등으로 <b>유족연금 수급권을 상실</b>한 경우</div></div>
+  </div>
+</div>
+
+<!-- p30 -->
+<div id="p30" data-k="배우자 사망 시 유족연금은?" data-t="조기수령이 부부 합산 수령액까지 끌어내리는 구조">
+  <div class="pp-sec">
+    <div class="pp-h">노령연금과 유족연금, 둘 중 하나만 선택</div>
+    <div class="pp-p">본인의 <b>노령연금</b>과 배우자 사망으로 발생한 <b>유족연금</b>은 <b>중복 수령이 불가능</b>하여 하나를 선택해야 합니다. <b>노령연금을 선택</b>하면 <em>유족연금액의 30%가 추가로 지급</em>되지만, <b>유족연금을 선택</b>하면 본인 노령연금은 받을 수 없습니다. 통상 <b>노령연금 선택이 유리</b>합니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-fix">
+      <div class="ft">조기수령의 -30%는 배우자 사후까지 이어집니다</div>
+      <div class="fb">노령연금 선택이 유리한 구조이기 때문에, <b>조기수령으로 평생 -30%가 고정된 연금액</b>이 배우자 사후 <em>총 수령액까지 함께 끌어내립니다.</em> 조기수령 여부는 본인 한 사람이 아니라 <b>부부 단위로 설계</b>해야 하는 이유가 바로 이것입니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- p31 -->
+<div id="p31" data-k="국민연금 4대 급여" data-t="종류별 요건과 근거 법령">
+  <div class="pp-sec">
+    <div class="pp-eyebrow">01 · 노령연금 — 국민연금법 제61조</div>
+    <div class="pp-h">가장 흔히 말하는 ‘국민연금’</div>
+    <div class="pp-kv">
+      <div class="r"><div class="k">요건</div><div class="v">가입기간 <b>120개월(10년) 이상</b> + <b>수급개시연령</b> 도달(출생연도별로 5년 전부터 조기수령 가능)</div></div>
+      <div class="r"><div class="k">성격</div><div class="v">본인 납부보험료를 재원으로 하는 <b>사회보험 급여</b> — 매달 정기 지급</div></div>
+    </div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">02 · 장애연금 — 제67조</div>
+    <div class="pp-h">가입 중 질병·부상으로 장애가 남았을 때</div>
+    <div class="pp-p">초진일 당시 가입자였고, 완치 후에도 신체·정신상 장애가 남아 <b>장애등급 1~4급</b>에 해당하면 지급됩니다. 등급에 따라 <em>기본연금액의 일정 비율(1급 100%~4급 일시보상금)</em>로 산정됩니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">03 · 유족연금 — 제72조</div>
+    <div class="pp-h">가입자·수급권자 사망 시 유족에게</div>
+    <div class="pp-p">가입기간에 따라 <b>기본연금액의 40~60%</b>가 배우자·자녀·부모 등 유족에게 지급됩니다. <em>본인의 노령연금과는 중복 수령이 불가능</em>해 하나를 선택해야 하며, 노령연금을 선택하면 유족연금액의 30%가 추가 지급됩니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-eyebrow">04 · 반환일시금 — 제77조</div>
+    <div class="pp-h">요건을 못 채우고 끝났을 때</div>
+    <div class="pp-p">가입기간 120개월 미만인 상태로 60세 도달·사망·국적상실 등의 사유가 발생하면, <b>납부한 보험료에 이자를 더해 일시금</b>으로 지급합니다. <em>연금이 아니라 저축 반환에 가까운 성격</em>이며, 되돌리기 어렵다는 점은 앞 장(120개월의 벽)에서 다룬 그대로입니다.</div>
+  </div>
+  <div class="pp-sec">
+    <div class="pp-note"><b>공통 원칙</b> — 네 가지는 <b>중복 없이 사유별로 하나만</b> 적용됩니다. 상담 시 클라이언트가 “국민연금”이라 말할 때 어떤 급여를 의미하는지 먼저 확인하면, 이후 설계(조기수령·추납·크레딧)의 방향이 훨씬 명확해집니다.</div>
+  </div>
+</div>
+
+</div><!-- /ppStore -->
+
+<script>
+(function(){
+  var mask=document.getElementById('mask'),
+      sheet=document.getElementById('sheet'),
+      body=document.getElementById('shBody'),
+      kick=document.getElementById('shKicker'),
+      title=document.getElementById('shTitle'),
+      closeBtn=document.getElementById('shClose'),
+      open=false;
+
+  function openSheet(id){
+    var src=document.getElementById(id);
+    if(!src) return;
+    kick.textContent=src.getAttribute('data-k')||'';
+    title.textContent=src.getAttribute('data-t')||'';
+    body.innerHTML=src.innerHTML;
+    body.scrollTop=0;
+    mask.classList.add('on');
+    sheet.classList.add('on');
+    document.body.classList.add('lock');
+    open=true;
+  }
+  function closeSheet(){
+    if(!open) return;
+    mask.classList.remove('on');
+    sheet.classList.remove('on');
+    document.body.classList.remove('lock');
+    open=false;
+    setTimeout(function(){ if(!open) body.innerHTML=''; },340);
+  }
+
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest ? e.target.closest('.more') : null;
+    if(btn){ openSheet(btn.getAttribute('data-pp')); }
+  });
+  mask.addEventListener('click',closeSheet);
+  closeBtn.addEventListener('click',closeSheet);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeSheet(); });
+
+  /* 아래로 스와이프하여 닫기 */
+  var y0=null;
+  sheet.addEventListener('touchstart',function(e){
+    if(body.scrollTop<=0) y0=e.touches[0].clientY; else y0=null;
+  },{passive:true});
+  sheet.addEventListener('touchmove',function(e){
+    if(y0===null) return;
+    var dy=e.touches[0].clientY-y0;
+    if(dy>0) sheet.style.transform='translateX(-50%) translateY('+dy+'px)';
+  },{passive:true});
+  sheet.addEventListener('touchend',function(e){
+    if(y0===null) return;
+    var dy=e.changedTouches[0].clientY-y0;
+    sheet.style.transform='';
+    if(dy>110) closeSheet();
+    y0=null;
+  });
+})();
+</script>
+</body>
+</html>
